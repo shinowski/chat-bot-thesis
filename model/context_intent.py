@@ -13,6 +13,23 @@ class ContextIntent:
         text = message.lower().strip()
         words = set(text.split())
 
+        # ----------------------------------------------------------
+        # RESET / RESTART
+        # ----------------------------------------------------------
+
+        reset_phrases = {
+            "reset",
+            "restart",
+            "start over",
+            "start again",
+            "new screening",
+            "restart screening",
+            "reset screening",
+        }
+
+        if text in reset_phrases:
+            return "reset"
+
         # ==========================================================
         # 1. EMERGENCY - HIGHEST PRIORITY
         # ==========================================================
@@ -52,6 +69,137 @@ class ContextIntent:
         # ==========================================================
         # 2. CONVERSATION INTERRUPTIONS
         # ==========================================================
+        
+
+        # ----------------------------------------------------------
+        # CORRECTION
+        # ----------------------------------------------------------
+
+        correction_phrases = {
+            "i meant",
+            "sorry i meant",
+            "sorry, i meant",
+            "actually",
+            "correction",
+            "let me correct that",
+            "i need to correct that",
+            "i want to correct that",
+        }
+
+        if any(
+            phrase in text
+            for phrase in correction_phrases
+        ):
+            return "correction"
+
+        # ----------------------------------------------------------
+        # CLARIFICATION
+        # ----------------------------------------------------------
+
+        clarification_words = {
+            "what",
+            "huh",
+            "sorry",
+            "pardon",
+        }
+
+        clarification_phrases = {
+            "what do you mean",
+            "what are you saying",
+            "i don't understand",
+            "i dont understand",
+            "i don't get it",
+            "i dont get it",
+            "can you explain",
+            "could you explain",
+            "come again",
+        }
+
+        # Remove common ending punctuation so:
+        # "what", "what?", and "what??" behave the same.
+        clean_text = text.rstrip("?!.")
+
+        if clean_text in clarification_words:
+            return "clarification"
+
+        if clean_text in clarification_phrases:
+            return "clarification"
+
+        # ----------------------------------------------------------
+        # KNOWLEDGE QUESTION
+        # ----------------------------------------------------------
+
+        disease_terms = {
+            "dermatitis",
+            "lichen planus",
+            "psoriasis",
+            "rosacea",
+        }
+
+        knowledge_starters = (
+            "what is ",
+            "what are ",
+            "what causes ",
+            "what cause ",
+            "what does ",
+            "why does ",
+            "why do ",
+            "how does ",
+            "how do ",
+            "can ",
+            "is ",
+            "are ",
+        )
+
+        knowledge_topics = {
+            "symptom",
+            "symptoms",
+            "cause",
+            "causes",
+            "contagious",
+            "treatment",
+            "treatments",
+            "treated",
+            "cure",
+            "cured",
+            "management",
+            "manage",
+        }
+
+        mentions_disease = any(
+            disease in text
+            for disease in disease_terms
+        )
+
+        mentions_knowledge_topic = any(
+            topic in words
+            for topic in knowledge_topics
+        )
+
+        knowledge_reference_words = {
+            "it",
+            "this",
+            "that",
+            "condition",
+            "disease",
+        }
+
+        references_previous_topic = any(
+            word in words
+            for word in knowledge_reference_words
+        )
+
+        looks_like_question = (
+            text.endswith("?")
+            or text.startswith(knowledge_starters)
+        )
+
+        if looks_like_question and (
+        mentions_disease
+        or mentions_knowledge_topic
+        or references_previous_topic
+        ):
+         return "knowledge_question"
 
         confirmation_words = {
             "yes",
@@ -66,8 +214,7 @@ class ContextIntent:
             "right",
             "exactly",
             "definitely",
-            "of",
-            "course",
+            "of course",
             "no",
             "nope",
             "nah",
@@ -274,6 +421,157 @@ class ContextIntent:
 
         if has_severity:
             return "severity"
+
+        # ----------------------------------------------------------
+        # INVALID / UNKNOWN ANSWER VALIDATION
+        # ----------------------------------------------------------
+
+        words = set(
+            text.replace(",", "")
+                .replace(".", "")
+                .replace("?", "")
+                .replace("!", "")
+                .split()
+        )
+
+        # Validate location answers
+        if expected_intent == "location":
+
+            location_words = {
+                "arm", "arms",
+                "leg", "legs",
+                "face",
+                "neck",
+                "chest",
+                "back",
+                "hand", "hands",
+                "foot", "feet",
+                "scalp",
+                "groin",
+                "armpit", "armpits",
+                "knee", "knees",
+                "elbow", "elbows",
+                "lip", "lips",
+                "stomach",
+                "abdomen",
+                "shoulder", "shoulders",
+            }
+
+            has_location = any(
+                word in words
+                for word in location_words
+            )
+
+            if not has_location:
+                return "invalid_location"
+
+        # Validate duration answers
+        if expected_intent == "duration":
+
+            duration_words = {
+                "hour", "hours",
+                "day", "days",
+                "week", "weeks",
+                "month", "months",
+                "year", "years",
+                "today",
+                "yesterday",
+                "recently",
+                "since",
+                "ago",
+            }
+
+            has_duration = any(
+                word in words
+                for word in duration_words
+            )
+
+            if not has_duration:
+                return "invalid_duration"
+
+        # Validate severity answers
+        if expected_intent == "severity":
+
+            severity_words = {
+                "mild",
+                "moderate",
+                "severe",
+            }
+
+            has_severity = any(
+                word in words
+                for word in severity_words
+            )
+
+            if not has_severity:
+                return "invalid_severity"
+
+        # Validate medication answers
+        if expected_intent == "medication":
+
+            no_medication_phrases = {
+                "no",
+                "none",
+                "nothing",
+                "nope",
+                "not yet",
+                "i haven't",
+                "i have not",
+                "haven't used anything",
+                "i haven't used anything",
+                "i have not used anything",
+                "no medication",
+                "no medicine",
+            }
+
+            medication_terms = {
+                "cream",
+                "ointment",
+                "lotion",
+                "medicine",
+                "medication",
+                "medications",
+                "drug",
+                "gel",
+                "steroid",
+                "hydrocortisone",
+                "antihistamine",
+                "antibiotic",
+                "prescription",
+                "tablet",
+                "tablets",
+                "pill",
+                "pills",
+            }
+
+            is_no_medication = (
+                text in no_medication_phrases
+                or any(
+                    phrase in text
+                    for phrase in {
+                        "haven't used",
+                        "have not used",
+                        "didn't use",
+                        "did not use",
+                        "not using",
+                    }
+                )
+            )
+
+            has_medication_term = any(
+                word in words
+                for word in medication_terms
+            )
+
+            if not is_no_medication and not has_medication_term:
+                return "invalid_medication"
+
+        # ---------------------------------------------------------
+        # IMAGE UPLOAD MUST NOT BE INFERRED FROM TEXT
+        # ----------------------------------------------------------
+
+        if expected_intent == "image_upload":
+            return "awaiting_image"
 
         # ==========================================================
         # 9. EXPECTED FLOW INTENT

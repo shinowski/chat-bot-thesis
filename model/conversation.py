@@ -7,13 +7,16 @@ class Conversation:
     def reset(self):
 
         self.data = {
-            "symptoms": [],          # Changed from "symptom": None
-            "location": None,
-            "duration": None,
-            "severity": None,
-            "medication": None,      # New field
-            "image_uploaded": False
-        }
+        "symptoms": [],
+        "location": None,
+        "duration": None,
+        "severity": None,
+        "medication": None,
+        "image_uploaded": False,
+        "classification": None,
+        "classification_confidence": None,
+        "knowledge_disease": None
+    }
 
     def set(self, key, value):
 
