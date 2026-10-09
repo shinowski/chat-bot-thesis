@@ -1,0 +1,10 @@
+import requests
+
+response = requests.post(
+    "http://127.0.0.1:5000/chat",
+    json={
+        "message":"Hello Flask"
+    }
+)
+
+print(response.json())

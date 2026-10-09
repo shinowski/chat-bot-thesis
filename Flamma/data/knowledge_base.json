@@ -1,0 +1,90 @@
+{
+    "dermatitis": {
+        "name": "Dermatitis",
+        "aliases": ["eczema"],
+        "overview": "Dermatitis is a general term for conditions that cause inflammation of the skin. Different types of dermatitis can have different causes and appearances. One common type is atopic dermatitis, also called eczema, which often causes itchy, dry, and inflamed skin.",
+        "symptoms": "Symptoms of dermatitis vary depending on the type. Atopic dermatitis commonly causes itching, dry or scaly skin, a rash, inflammation, scratch marks, and sometimes oozing or crusting areas.",
+        "causes": "Dermatitis can have different causes depending on the type. For atopic dermatitis, factors involving the skin barrier, immune system, genes, and environmental exposures may play a role.",
+        "contagious": "Atopic dermatitis is not contagious and cannot spread from one person to another. Other forms of dermatitis also need to be distinguished by their specific cause.",
+        "management": "Management depends on the type and severity of dermatitis. For atopic dermatitis, keeping the skin moisturized is an important part of care, and a dermatologist may recommend additional treatment based on the person's symptoms.",
+        "referral": "A dermatologist can evaluate the type and severity of dermatitis and determine an appropriate treatment plan. Professional evaluation is especially useful when symptoms persist, worsen, or are difficult to control."
+    },
+
+    "atopic_dermatitis": {
+        "name": "Atopic Dermatitis",
+        "aliases": ["atopic eczema"],
+        "overview": "Atopic dermatitis is a type of eczema that causes itchy, dry, inflamed skin. It can last a long time and flare up repeatedly. It often starts in childhood, but it can begin at any age.",
+        "symptoms": "Common signs include itching, dry skin, and irritated patches. The appearance can vary with skin tone; affected areas may look pink, red, brown, gray, or purple.",
+        "causes": "Genes, the immune system, and changes in the skin's protective barrier can contribute. The exact cause is complex, and things touching the skin can affect flare-ups.",
+        "contagious": "Atopic dermatitis is not contagious; it does not pass from person to person.",
+        "management": "Keeping the skin moisturized with a mild, fragrance-free cream or ointment can help. A dermatologist can confirm the condition and recommend a treatment plan suited to the symptoms.",
+        "referral": "A dermatologist can assess suspected atopic dermatitis and help control flare-ups. Seek an evaluation when symptoms persist, worsen, or are difficult to manage.",
+        "sources": [
+            "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis",
+            "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/causes"
+        ]
+    },
+
+    "contact_dermatitis": {
+        "name": "Contact Dermatitis",
+        "aliases": ["allergic contact dermatitis", "irritant contact dermatitis"],
+        "overview": "Contact dermatitis is skin inflammation caused by something touching the skin. The substance may irritate the skin directly or cause an allergic skin reaction.",
+        "symptoms": "Itching followed by a rash is common. Blisters can also occur, and the reaction may appear after exposure to the substance.",
+        "causes": "Irritants or allergens can trigger contact dermatitis. Examples include repeated exposure to water, fragrances, and nickel. A dermatologist can help work out the cause.",
+        "contagious": "Contact dermatitis is not contagious and cannot be passed to another person.",
+        "management": "Identifying and avoiding the substance responsible is an important part of care. A dermatologist can help identify the trigger and treat the itching and rash.",
+        "referral": "See a dermatologist if you cannot identify the cause or the rash keeps returning. They can investigate possible triggers and recommend appropriate care.",
+        "sources": ["https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"]
+    },
+
+    "hives": {
+        "name": "Hives",
+        "aliases": ["urticaria"],
+        "overview": "Hives, also called urticaria, are a skin reaction that produces raised bumps or patches that often itch. They can appear suddenly and come and go.",
+        "symptoms": "Itchy, raised bumps or patches are common. Individual hives often fade within a day, but new ones can appear. Their color can vary with skin tone.",
+        "causes": "Hives can develop when the body releases histamine. Triggers can include allergies, infections, heat, cold, pressure, or stress; sometimes the cause cannot be identified.",
+        "contagious": "Hives themselves are not contagious. An infection that triggers them may be contagious.",
+        "management": "Many cases settle on their own. A dermatologist can help assess hives that keep returning and recommend treatment to control flare-ups.",
+        "referral": "Get emergency medical help if hives occur with trouble breathing or swallowing, faintness, or swelling of the face, mouth, or throat. Recurrent or persistent hives should be evaluated by a clinician.",
+        "sources": [
+            "https://www.aad.org/public/diseases/a-z/hives-overview",
+            "https://www.aad.org/public/diseases/a-z/hives-causes"
+        ]
+    },
+
+    "normal_skin": {
+        "name": "Normal Skin",
+        "aliases": ["no condition detected", "healthy skin"],
+        "overview": "Normal skin is a screening label, not a disease. It means the photo model's closest match was its normal-skin class. This does not confirm that the skin is healthy or rule out conditions outside the model's supported classes."
+    },
+
+    "lichen_planus": {
+        "name": "Lichen Planus",
+        "overview": "Lichen planus is an inflammatory condition that can affect the skin and may also involve areas such as the mouth, scalp, nails, or genitals. Its appearance and symptoms can differ depending on the affected area.",
+        "symptoms": "Lichen planus can cause different symptoms depending on where it develops. On the skin it may cause itchy bumps. It can also cause changes in the mouth, scalp, nails, or genital area.",
+        "causes": "The exact cause of lichen planus is not known. It is thought to involve the immune system mistakenly attacking healthy cells, although researchers are still studying why this happens.",
+        "contagious": "Lichen planus is not considered a condition that spreads from person to person through ordinary contact.",
+        "management": "Management of lichen planus depends on the affected area and the severity of symptoms. Some mild skin cases may improve without treatment, while treatment may be recommended to reduce symptoms such as itching or pain and to prevent worsening.",
+        "referral": "A dermatologist can help confirm whether a skin, scalp, nail, or other change is lichen planus and determine whether treatment is needed. Persistent, painful, or worsening symptoms should be professionally evaluated."
+    },
+
+    "psoriasis": {
+        "name": "Psoriasis",
+        "overview": "Psoriasis is a chronic inflammatory skin condition in which the body produces new skin cells much faster than usual. These cells can build up on the skin and form visible thick or scaly patches.",
+        "symptoms": "Psoriasis commonly causes dry, thick, raised patches of skin that may have scale and may itch. The appearance, location, and symptoms can vary depending on the type of psoriasis and the person's skin tone.",
+        "causes": "The exact process that causes psoriasis is complex. Research shows that the immune system and genes play important roles, and environmental factors may also contribute to the condition or its flare-ups.",
+        "contagious": "Psoriasis is not contagious. You cannot catch psoriasis by touching someone who has it or by ordinary contact with them.",
+        "management": "Psoriasis is often a long-term condition, but treatment and skin care can help control symptoms and flare-ups. Management may include identifying triggers, following an appropriate skin-care routine, maintaining healthy habits, and using treatment recommended by a healthcare professional when needed.",
+        "referral": "A dermatologist can confirm whether skin changes are psoriasis and recommend treatment based on the type, location, and severity. Professional evaluation is also important because psoriasis can be associated with conditions such as psoriatic arthritis."
+    },
+
+    "rosacea": {
+        "name": "Rosacea",
+        "overview": "Rosacea is a chronic skin condition that mainly affects the face. It can cause flushing, persistent changes in facial color, acne-like breakouts, or visible blood vessels, and some people can also develop eye symptoms or thickened skin.",
+        "symptoms": "Rosacea may cause frequent flushing, persistent red, violet, or brown facial discoloration depending on skin tone, acne-like bumps, visible blood vessels, warmth, burning or stinging, and sometimes irritated eyes.",
+        "causes": "The exact cause of rosacea is not fully understood. Researchers believe several factors may be involved, and different triggers can cause symptoms to flare in different people.",
+        "contagious": "Rosacea is not contagious and does not spread from person to person.",
+        "management": "Rosacea has no current cure, but treatment can help control symptoms and reduce flare-ups. Management may include gentle skin care, sun protection, identifying and avoiding personal triggers, and treatments recommended by a dermatologist.",
+        "referral": "A dermatologist can distinguish rosacea from other conditions that may look similar and recommend an appropriate treatment plan. Evaluation is particularly important when symptoms persist, worsen, or involve the eyes."
+    }
+}

@@ -1,3 +1,8 @@
-flask
-sentence-transformers
-scikit-learn
+# Install both services into one environment from the workspace root.
+-r Flamma/requirements.txt
+flask-cors
+pillow
+numpy
+torch
+torchvision
+opencv-python

@@ -1,0 +1,14 @@
+{
+  "method": "entropy",
+  "temperature": 1.0,
+  "threshold": 0.9399791955947876,
+  "target_tpr": 0.95,
+  "class_names": [
+    "atopic_dermatitis",
+    "contact_dermatitis",
+    "lichen_planus",
+    "normal_skin",
+    "psoriasis",
+    "rosacea"
+  ]
+}

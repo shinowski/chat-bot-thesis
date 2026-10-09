@@ -1,22 +1,22 @@
-# Python
+# Local runtime files and credentials
 __pycache__/
 *.py[cod]
-.venv/
 venv/
+.venv/
 env/
-
-# Node
 node_modules/
-
-# Vite
-dist/
-.vite/
-
-# Environment
+instance/
+.logs/
+.tools/
+.github-backup/
+.codex/
+.agents/
+.aws/
 .env
 .env.*
-
-# IDE / OS
+*.sqlite3
+*.sqlite3-*
+*.db
 .vscode/
 .idea/
 .DS_Store
