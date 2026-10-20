@@ -14,7 +14,7 @@ from test_image_integration import make_bot
 def patient_data(bot):
     """Assert clinical memory independently of reply/question bookkeeping."""
     return {key: deepcopy(value) for key, value in bot.conversation.data.items()
-            if key not in {'last_reply_intent', 'pending_question', 'last_knowledge_topics', 'invalid_answers'}}
+            if key not in {'last_reply_intent', 'pending_question', 'last_knowledge_topics', 'last_management_style', 'knowledge_origin', 'invalid_answers'}}
 
 
 class FollowupTests(unittest.TestCase):

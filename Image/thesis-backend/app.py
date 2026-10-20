@@ -92,7 +92,8 @@ def predict_image():
 
     # ========================================================
     # STAGE 2: MODEL PREDICTION
-    # (includes OOD gate + normal-skin safety gate)
+    # The active classifier applies OOD and a shared confidence threshold.
+    # It has no separately calibrated normal-skin/crop safety gate.
     # ========================================================
 
     with prediction_lock:
@@ -112,10 +113,8 @@ def predict_image():
             "ood_threshold": result["ood_threshold"],
         }), 400
 
-    # Model said "normal_skin" but failed the stricter normal-skin gate.
-    # Has its own reason so the frontend can show an honest message
-    # (not the "image too unclear" one). Extra fields are for
-    # debugging/thesis metrics.
+    # Compatibility for classifiers that implement an inconclusive result.
+    # The currently selected classifier does not emit this status.
     if result["status"] == "inconclusive":
         return jsonify({
             "status": "rejected",

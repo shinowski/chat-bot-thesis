@@ -5,6 +5,7 @@ __pycache__/
 venv/
 env/
 instance/
+eval/results/
 
 # Node
 node_modules/

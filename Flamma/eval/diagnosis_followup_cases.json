@@ -1,0 +1,30 @@
+[
+  {"name":"user_reported_rosacea_sequence", "initial_state":{"last_image_status":"rejected"}, "turns":[
+    {"text":"but this is my skin how can I treat this", "intent":"knowledge_question"},
+    {"text":"I think this is rosacea", "intent":"knowledge_question", "state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"is this my skin conditon?", "intent":"diagnosis_question", "contains":["cannot confirm", "Rosacea"], "state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "contains_topic":"management", "state":{"knowledge_disease":"rosacea","classification":null}}
+  ]},
+  {"name":"general_treatment_after_diagnosis_limit", "turns":[
+    {"text":"I think I have psoriasis", "intent":"knowledge_question"},
+    {"text":"do I really have it?", "intent":"diagnosis_question", "state":{"knowledge_disease":"psoriasis","classification":null}},
+    {"text":"can it be managed?", "intent":"knowledge_question", "contains_topic":"management"}
+  ]},
+  {"name":"no_condition_to_confirm", "turns":[
+    {"text":"is this my skin condition?", "intent":"diagnosis_question", "state":{"knowledge_disease":null,"classification":null}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "state":{"knowledge_disease":null,"classification":null}}
+  ]},
+  {"name":"named_diagnosis_question", "turns":[
+    {"text":"do I have rosacea?", "intent":"diagnosis_question", "state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"is it curable?", "intent":"knowledge_question", "contains_topic":"management"}
+  ]},
+  {"name":"accepted_photo_is_still_screening", "initial_state":{"image_uploaded":true,"classification":"psoriasis","classification_confidence":0.9,"image_condition":"Psoriasis","image_knowledge_key":"psoriasis","knowledge_disease":"psoriasis"}, "turns":[
+    {"text":"does this mean I have psoriasis?", "intent":"diagnosis_question", "contains":["screening suggestion", "not a confirmed diagnosis"], "state":{"classification":"psoriasis"}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "contains_topic":"management"}
+  ]},
+  {"name":"overview_is_not_diagnosis", "turns":[
+    {"text":"is rosacea contagious?", "intent":"knowledge_question", "contains_topic":"contagious"},
+    {"text":"is this rosacea?", "intent":"diagnosis_question", "state":{"classification":null}},
+    {"text":"What is rosacea?", "intent":"knowledge_question", "contains_topic":"overview"}
+  ]}
+]

@@ -1,0 +1,41 @@
+{
+  "source_checked_on": "2026-10-16",
+  "description": "General condition course, not an individual prognosis or confirmation of a screening label.",
+  "conditions": {
+    "contact_dermatitis": {
+      "text": "Contact dermatitis can clear over days to weeks once the triggering substance is avoided. Some cases last longer or return with further exposure. This is a general range, not a personal recovery deadline. Get assessed if symptoms persist, worsen, keep returning, or are not responding to treatment.",
+      "sources": [{"title": "NHS 111 Wales: Contact dermatitis course", "url": "https://111.wales.nhs.uk/Encyclopaedia/c/article/contactdermatitis"}]
+    },
+    "atopic_dermatitis": {
+      "text": "Atopic dermatitis can have flare-ups and periods when symptoms are better. Treatment helps manage it, but there is no single number of days until it is permanently gone. A clinician can assess your symptoms and treatment response; a photo cannot predict your recovery time.",
+      "sources": [{"title": "NHS: Atopic eczema", "url": "https://www.nhs.uk/conditions/atopic-eczema/"}]
+    },
+    "dermatitis": {
+      "text": "Dermatitis includes different types, so there is no single usual duration. Contact dermatitis may settle after its trigger is avoided; atopic dermatitis can flare and improve repeatedly. The type has not been confirmed here. A clinician can help identify it and assess persistent or worsening symptoms.",
+      "sources": [
+        {"title": "NHS: Contact dermatitis", "url": "https://www.nhs.uk/conditions/contact-dermatitis/"},
+        {"title": "NHS: Atopic eczema", "url": "https://www.nhs.uk/conditions/atopic-eczema/"}
+      ]
+    },
+    "psoriasis": {
+      "text": "Psoriasis can have flare-ups and periods when symptoms are better. Treatment can help manage symptoms, but it does not have a fixed clearing time or a current cure. A clinician can assess your type of psoriasis and treatment response; a photo cannot predict how long your symptoms will last.",
+      "sources": [{"title": "NHS: Psoriasis", "url": "https://www.nhs.uk/conditions/psoriasis/"}]
+    },
+    "rosacea": {
+      "text": "Rosacea is a long-term condition. Symptoms can come and go, and treatment can help control them. There is no single time until it is permanently gone. A clinician can assess the symptoms and response to treatment; a photo cannot predict an individual recovery date.",
+      "sources": [{"title": "NHS: Rosacea", "url": "https://www.nhs.uk/conditions/rosacea/"}]
+    },
+    "lichen_planus": {
+      "text": "Lichen planus on the skin often improves over about 9 to 18 months, while mouth involvement can last several years. The affected area matters. These are general patterns, not a prediction for your skin; ask a clinician to confirm the condition and assess ongoing symptoms.",
+      "sources": [{"title": "NHS: Lichen planus", "url": "https://www.nhs.uk/conditions/lichen-planus/"}]
+    },
+    "hives": {
+      "text": "Hives often improve within a few days, but they can keep returning. Seek medical advice if they do not improve after two days or keep recurring. This is general information, not a prediction of when your rash will resolve. Trouble breathing or swallowing or sudden mouth or tongue swelling needs emergency care.",
+      "sources": [{"title": "NHS: Hives", "url": "https://www.nhs.uk/conditions/hives/"}]
+    },
+    "normal_skin": {
+      "text": "A normal-skin screening match cannot identify the cause of symptoms or predict how long they will last. It does not confirm healthy skin. A clinician can assess persistent or worsening symptoms.",
+      "sources": []
+    }
+  }
+}

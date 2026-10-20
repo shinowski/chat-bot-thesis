@@ -2,8 +2,9 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 
 from model.semantic_model import SemanticModel
-from model.dataset import Dataset
 from model.text_understanding import normalize_message
+from model.config import intent_model_path, read_intent_artifact
+from model.training_data import load_training_examples
 
 
 class IntentClassifier:
@@ -22,20 +23,8 @@ class IntentClassifier:
         self.labels = []
 
     def prepare_dataset(self):
-        dataset = Dataset("data/intents.json")
-        data = dataset.load()
-
-        texts = []
-        labels = []
-
-        for intent in data["intents"]:
-            tag = intent["tag"]
-
-            for pattern in intent["patterns"]:
-                texts.append(pattern)
-                labels.append(tag)
-
-        return texts, labels
+        examples, self.training_audit = load_training_examples()
+        return [item['text'] for item in examples], [item['label'] for item in examples]
 
     def train(self):
 
@@ -72,17 +61,23 @@ class IntentClassifier:
 
         return prediction, confidence
 
-    def save(self, path="semantic_classifier.pkl"):
+    def save(self, path=None):
+
+        path = path if path is not None else intent_model_path()
 
         with open(path, "wb") as file:
             pickle.dump(self.classifier, file)
 
         print(f"Semantic classifier saved to {path}")
 
-    def load(self, path="semantic_classifier.pkl"):
+    def load(self, path=None):
 
-        with open(path, "rb") as file:
-            self.classifier = pickle.load(file)
+        path = path if path is not None else intent_model_path()
+
+        selected, artifact, checksum = read_intent_artifact(path)
+        self.classifier = pickle.loads(artifact)
+        self.model_path = selected
+        self.model_sha256 = checksum
 
         self.labels = list(self.classifier.classes_)
 

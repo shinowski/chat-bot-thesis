@@ -96,7 +96,7 @@ class LanguageTests(unittest.TestCase):
     def test_question_about_cream_is_not_recorded_as_using_it(self):
         bot = prepare_bot("medication")
         result = bot.reply("can i use this creem?")
-        self.assertEqual(result["intent"], "knowledge_question")
+        self.assertEqual(result["intent"], "product_clarification")
         self.assertIsNone(bot.conversation.get("medication"))
 
     def test_uncertainty_shorthand_has_the_same_meaning(self):

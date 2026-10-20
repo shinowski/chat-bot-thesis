@@ -1,0 +1,31 @@
+[
+  {"name":"user_dermatitis_sequence", "turns":[
+    {"text":"hello", "intent":"greeting"},
+    {"text":"I have a rashes I think this is dermatitis", "intent":"knowledge_question", "state":{"symptoms":["I have a rashes I think this is dermatitis"],"classification":null,"knowledge_disease":"dermatitis"}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "contains":["Dermatitis has treatment options"], "excludes":["Treatment options to discuss with a clinician:"], "max_words":55},
+    {"text":"is it treatable", "intent":"knowledge_question", "contains":["Dermatitis has treatment options"], "max_words":55},
+    {"text":"What can I do next?", "intent":"knowledge_question", "contains":["1.","Where is the affected area located?"], "state":{"pending_question":"location"}},
+    {"text":"my arm", "intent":"location", "state":{"location":"my arm","pending_question":"duration"}}
+  ]},
+  {"name":"rosacea_treatment_vs_cure", "turns":[
+    {"text":"I think this is rosacea", "intent":"knowledge_question"},
+    {"text":"is it treatable?", "intent":"knowledge_question", "contains":["treatment can help control symptoms"], "max_words":55},
+    {"text":"is it curable?", "intent":"knowledge_question", "contains":["no current cure"], "max_words":55}
+  ]},
+  {"name":"known_rash_next_step", "turns":[
+    {"text":"My rash is on my arm for two weeks, I think this is dermatitis", "intent":"knowledge_question", "state":{"location":"My rash is on my arm for two weeks, I think this is dermatitis","duration":"My rash is on my arm for two weeks, I think this is dermatitis"}},
+    {"text":"What can I do next?", "intent":"knowledge_question", "contains":["Have you applied any medication?"], "state":{"pending_question":"medication"}},
+    {"text":"none", "intent":"medication", "state":{"medication":"none"}}
+  ]},
+  {"name":"information_question_does_not_record_a_rash", "turns":[
+    {"text":"If I have a rash, could it be dermatitis?", "intent":"diagnosis_question", "state":{"symptoms":[],"classification":null}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "max_words":55,"state":{"symptoms":[],"classification":null}}
+  ]},
+  {"name":"explicit_full_treatment_still_available", "turns":[
+    {"text":"How is dermatitis treated?", "intent":"knowledge_question", "contains":["Treatment options to discuss with a clinician:"]},
+    {"text":"is it treatable", "intent":"knowledge_question", "max_words":55}
+  ]},
+  {"name":"unknown_condition_never_gets_a_yes_answer", "turns":[
+    {"text":"is it treatable?", "intent":"knowledge_question", "excludes":["Dermatitis has treatment options"],"state":{"knowledge_disease":null,"classification":null}}
+  ]}
+]

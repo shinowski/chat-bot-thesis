@@ -1,0 +1,34 @@
+[
+  {"name":"complete_written_duration_correction","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"Actually, twenty-one days, not two weeks","intent":"correction","state":{"duration":"twenty-one days"}},
+    {"text":"Not twenty-three days, thirteen days","intent":"correction","state":{"duration":"thirteen days"}}
+  ]},
+  {"name":"night_and_half_duration_corrections","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"Actually, a couple of nights, not two weeks","intent":"correction","state":{"duration":"a couple of nights"}},
+    {"text":"Actually, half an hour, not two nights","intent":"correction","state":{"duration":"half an hour"}}
+  ]},
+  {"name":"clarify_whole_timeframes","turns":[
+    {"text":"My skin is itchy on my arm","intent":"location"},
+    {"text":"two nights or twenty days","intent":"duration_clarification","state":{"duration":null}},
+    {"text":"second one","intent":"duration","state":{"duration":"twenty days"}}
+  ]},
+  {"name":"directional_area_correction","turns":[
+    {"text":"My rash is on my lower back for two weeks","intent":"location"},
+    {"text":"Actually it is on my upper back, not my lower back","intent":"correction","state":{"location":"upper back","duration":"My rash is on my lower back for two weeks"}},
+    {"text":"Not my outer thigh, my inner thigh instead","intent":"correction","state":{"location":"inner thigh"}}
+  ]},
+  {"name":"directional_area_choices","turns":[
+    {"text":"My skin is itchy","intent":"symptom"},
+    {"text":"my upper back or my lower back","intent":"location_clarification","state":{"location":null}},
+    {"text":"both areas","intent":"location","state":{"location":"upper back and lower back"}}
+  ]},
+  {"name":"new_progress_wording_keeps_onset","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"The rash has cleared up today","intent":"symptom_update","state":{"duration":"My rash is on my arm for two weeks"}},
+    {"text":"The rash has come back today","intent":"symptom_update","state":{"duration":"My rash is on my arm for two weeks"}},
+    {"text":"The stinging has eased","intent":"symptom_update","state":{"duration":"My rash is on my arm for two weeks"}},
+    {"text":"My rash comes and goes","intent":"symptom_update","state":{"duration":"My rash is on my arm for two weeks"}}
+  ]}
+]

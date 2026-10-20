@@ -1,0 +1,71 @@
+[
+  {"name":"casual_screening", "turns":[
+    {"text":"Hey, my skin has been flaky lately", "intent":"duration"},
+    {"text":"it is over both hands", "intent":"location"},
+    {"text":"since last Tuesday", "intent":"duration"},
+    {"text":"I don't remember which cream I used", "intent":"uncertain_answer", "state":{"medication":"unknown"}}
+  ]},
+  {"name":"fortnight_and_uncertain_treatment", "turns":[
+    {"text":"I have itchy patches around my elbows", "intent":"location"},
+    {"text":"roughly a fortnight", "intent":"duration"},
+    {"text":"idk what I used", "intent":"uncertain_answer", "state":{"medication":"unknown"}}
+  ]},
+  {"name":"named_medicine_question", "turns":[
+    {"text":"My rash is on my arm for four days", "intent":"location"},
+    {"text":"Can I apply hydrocortisone on my face?", "intent":"product_information", "state":{"location":"My rash is on my arm for four days","medication":null}},
+    {"text":"Where should I apply the ointment?", "intent":"product_clarification", "state":{"location":"My rash is on my arm for four days"}}
+  ]},
+  {"name":"product_risk_question", "turns":[
+    {"text":"What is rosacea?", "intent":"knowledge_question"},
+    {"text":"What are the side effects of this cream?", "intent":"product_clarification", "state":{"medication":null}},
+    {"text":"I forgot its name", "intent":"uncertain_answer", "state":{"medication":null}}
+  ]},
+  {"name":"causes_and_contagious_paraphrases", "turns":[
+    {"text":"Tell me about psoriasis", "intent":"knowledge_question"},
+    {"text":"What is triggering it?", "intent":"knowledge_question", "contains_topic":"causes"},
+    {"text":"Does it spread to other people?", "intent":"knowledge_question", "contains_topic":"contagious"},
+    {"text":"Can I give it to my partner?", "intent":"knowledge_question", "contains_topic":"contagious"},
+    {"text":"how abt tretment", "intent":"knowledge_question", "contains_topic":"management"}
+  ]},
+  {"name":"synonymous_condition_names", "turns":[
+    {"text":"What is atopic dermatitis (eczema)?", "intent":"knowledge_question", "state":{"knowledge_disease":"atopic_dermatitis","classification":null}},
+    {"text":"What is the diference between ecsema and psoriassis?", "intent":"condition_comparison", "state":{"classification":null}}
+  ]},
+  {"name":"reported_clinician_diagnosis", "turns":[
+    {"text":"My dermatologist diagnosed contact dermatitis", "intent":"knowledge_question", "state":{"knowledge_disease":"contact_dermatitis","classification":null}},
+    {"text":"What usually brings it on?", "intent":"knowledge_question", "contains_topic":"causes"}
+  ]},
+  {"name":"polite_followup_fragments", "turns":[
+    {"text":"Explain lichen planus", "intent":"knowledge_question"},
+    {"text":"Treatment please", "intent":"knowledge_question", "contains_topic":"management"},
+    {"text":"shorter please", "intent":"simple_explanation"},
+    {"text":"what do u remember about me", "intent":"conversation_summary"}
+  ]},
+  {"name":"one_word_product_answer", "turns":[
+    {"text":"could I try that medicine", "intent":"product_clarification"},
+    {"text":"CeraVe", "intent":"product_information", "state":{"medication":null}},
+    {"text":"actually I used it yesterday", "intent":"correction"}
+  ]},
+  {"name":"out_of_scope_casual_requests", "turns":[
+    {"text":"Could you tell me a joke?", "intent":"out_of_scope"},
+    {"text":"Help me write a birthday message", "intent":"out_of_scope"},
+    {"text":"Recommend a good movie tonight", "intent":"out_of_scope"}
+  ]},
+  {"name":"concern_without_diagnosis", "turns":[
+    {"text":"I feel nervous about my skin", "intent":"emotional_support", "state":{"classification":null}},
+    {"text":"I just want information, skip the screening", "intent":"screening_pause"},
+    {"text":"could we continue the questions", "intent":"screening_resume"}
+  ]},
+  {"name":"third_condition_choice", "turns":[
+    {"text":"What causes dermatitis, psoriasis, or rosacea?", "intent":"condition_clarification"},
+    {"text":"the third one", "intent":"knowledge_question", "state":{"knowledge_disease":"rosacea"}, "contains_topic":"causes"}
+  ]},
+  {"name":"self_description_is_not_a_new_diagnosis", "turns":[
+    {"text":"My cheeks are red and flaky", "intent":"location", "state":{"classification":null}},
+    {"text":"Can you tell which disease I have?", "intent":"knowledge_question", "state":{"classification":null,"knowledge_disease":null}}
+  ]},
+  {"name":"clarify_then_urgent_report", "turns":[
+    {"text":"Do you mean eczema or psoriasis?", "intent":"condition_clarification"},
+    {"text":"I don't know, my thorat is swolen", "intent":"emergency"}
+  ]}
+]

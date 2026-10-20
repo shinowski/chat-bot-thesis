@@ -1,0 +1,52 @@
+[
+  {"name":"combined_rash_and_treatment", "turns":[
+    {"text":"My rash is on my arm for two weeks and I used a cream for three days", "intent":"medication", "state":{"location":"My rash is on my arm for two weeks", "duration":"My rash is on my arm for two weeks", "medication":"I used a cream for three days", "pending_question":"image_upload"}}
+  ]},
+  {"name":"treatment_before_rash", "turns":[
+    {"text":"I used a cream for three days; my rash is on my leg for two weeks", "intent":"medication", "state":{"location":"my rash is on my leg for two weeks", "duration":"my rash is on my leg for two weeks", "medication":"I used a cream for three days"}}
+  ]},
+  {"name":"standalone_treatment_preserves_rash_facts", "turns":[
+    {"text":"My rash is on my arm for four weeks", "intent":"location"},
+    {"text":"I used lotion on my leg for three days", "intent":"medication", "state":{"location":"My rash is on my arm for four weeks", "duration":"My rash is on my arm for four weeks"}}
+  ]},
+  {"name":"known_product_reference", "turns":[
+    {"text":"Can I use that cream?", "intent":"product_clarification"},
+    {"text":"CeraVe", "intent":"product_information"},
+    {"text":"Can I apply it?", "intent":"product_information", "state":{"mentioned_product":"CeraVe", "medication":null}}
+  ]},
+  {"name":"both_locations", "turns":[
+    {"text":"My skin is itchy", "intent":"symptom"},
+    {"text":"My arm or leg", "intent":"location_clarification"},
+    {"text":"both", "intent":"location", "state":{"location":"arm and leg", "pending_question":"duration"}}
+  ]},
+  {"name":"nothing_used_yet", "turns":[
+    {"text":"My rash is on my arm for two weeks", "intent":"location"},
+    {"text":"I haven't used anything yet", "intent":"medication", "state":{"medication":"none"}}
+  ]},
+  {"name":"unsolicited_negative_usage", "turns":[
+    {"text":"I haven't applied anything for this rash", "intent":"medication", "state":{"medication":"none", "location":null, "duration":null}}
+  ]},
+  {"name":"other_condition_treatment_keeps_severity", "turns":[
+    {"text":"My rash is mild on my arm for two weeks", "intent":"location"},
+    {"text":"I used cream for severe acne last year", "intent":"medication", "state":{"severity":"My rash is mild on my arm for two weeks", "duration":"My rash is mild on my arm for two weeks"}}
+  ]},
+  {"name":"unknown_product_usage_reference", "turns":[
+    {"text":"My rash is on my arm for two weeks", "intent":"location"},
+    {"text":"I used it yesterday", "intent":"medication_clarification", "state":{"duration":"My rash is on my arm for two weeks", "medication":null}},
+    {"text":"a moisturizer", "intent":"medication", "state":{"medication":"I used it yesterday; product: a moisturizer"}}
+  ]},
+  {"name":"explicit_duration_replacement", "turns":[
+    {"text":"My rash is on my arm for three days", "intent":"location"},
+    {"text":"Not two days, two weeks", "intent":"correction", "state":{"duration":"two weeks"}}
+  ]},
+  {"name":"duration_choice", "turns":[
+    {"text":"My rash is on my arm", "intent":"location"},
+    {"text":"two days or two weeks", "intent":"duration_clarification"},
+    {"text":"the second one", "intent":"duration", "state":{"duration":"two weeks", "pending_question":"medication"}}
+  ]},
+  {"name":"known_product_not_used", "turns":[
+    {"text":"Can I use this cream?", "intent":"product_clarification"},
+    {"text":"CeraVe", "intent":"product_information"},
+    {"text":"I haven't used it", "intent":"medication", "state":{"medication":"none", "mentioned_product":"CeraVe"}}
+  ]}
+]

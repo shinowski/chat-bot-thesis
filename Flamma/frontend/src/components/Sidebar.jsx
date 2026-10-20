@@ -83,7 +83,7 @@ export default function Sidebar({ conversations, activeId, onSelect, onNewChat, 
         </nav>
         <div className="sidebar-footer">
           <button className="clear-history" onClick={() => action('clear')} disabled={disabled || !conversations.some((c) => c.saved)}>Clear history</button>
-          <div className="sidebar-foot"><span className="dot-live" />History saved on this computer</div>
+          <div className="sidebar-foot"><span className="dot-live" />History saved on the Flamma server</div>
         </div>
       </aside>
     </>

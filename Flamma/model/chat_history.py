@@ -30,6 +30,13 @@ class ChatHistory:
             );
             CREATE INDEX IF NOT EXISTS messages_chat
                 ON messages(owner, conversation_id, created_at);
+            CREATE TABLE IF NOT EXISTS request_receipts (
+                owner TEXT NOT NULL, conversation_id TEXT NOT NULL,
+                request_id TEXT NOT NULL, fingerprint TEXT NOT NULL,
+                response_status INTEGER NOT NULL, user_id TEXT NOT NULL, bot_id TEXT NOT NULL,
+                PRIMARY KEY (owner, conversation_id, request_id),
+                FOREIGN KEY (owner, conversation_id) REFERENCES conversations(owner, id) ON DELETE CASCADE
+            );
         """)
 
     def get(self, owner, chat_id):
@@ -70,7 +77,36 @@ class ChatHistory:
         ).fetchall()
         return [json.loads(row["payload"]) for row in rows]
 
-    def save_turn(self, owner, chat_id, text, result, state, image=None, mime=None):
+    def latest_image_result(self, owner, chat_id):
+        row = self.db.execute("""
+            SELECT payload FROM messages WHERE owner=? AND conversation_id=?
+              AND json_extract(payload, '$.intent') IN
+                  ('image_classification', 'image_rejected', 'image_error')
+            ORDER BY created_at DESC, rowid DESC LIMIT 1
+        """, (owner, chat_id)).fetchone()
+        return json.loads(row['payload']) if row else None
+
+    def request_receipt(self, owner, chat_id, request_id):
+        receipt = self.db.execute(
+            'SELECT * FROM request_receipts WHERE owner=? AND conversation_id=? AND request_id=?',
+            (owner, chat_id, request_id),
+        ).fetchone()
+        if receipt is None:
+            return None
+        messages = []
+        for message_id in [receipt['user_id'], receipt['bot_id']]:
+            row = self.db.execute('SELECT payload FROM messages WHERE owner=? AND conversation_id=? AND id=?',
+                                  (owner, chat_id, message_id)).fetchone()
+            messages.append(json.loads(row['payload']))
+        bot = messages[1]
+        result = {key: value for key, value in bot.items() if key not in {'id', 'who', 'text', 'createdAt'}}
+        result['reply'] = bot['text']
+        return dict(fingerprint=receipt['fingerprint'], status=receipt['response_status'],
+                    response=dict(result, conversation=self.summary(owner, chat_id), messages=messages,
+                                  replayed=True))
+
+    def save_turn(self, owner, chat_id, text, result, state, image=None, mime=None,
+                  request_id=None, fingerprint=None, response_status=200):
         now = datetime.now(timezone.utc).isoformat()
         user_id, bot_id = uuid4().hex, uuid4().hex
         user = {"id": user_id, "who": "user", "text": text or "Uploaded an image", "createdAt": now}
@@ -78,6 +114,11 @@ class ChatHistory:
             user["image"] = f"/api/conversations/{chat_id}/images/{user_id}"
         bot = {**result, "id": bot_id, "who": "bot", "text": result["reply"], "createdAt": now}
         bot.pop("reply", None)
+        if request_id:
+            user['requestId'] = bot['requestId'] = request_id
+        if image is not None and result.get("imageResult", {}).get("status") == "ok":
+            bot["sourceImageId"] = user_id
+            state["classification_image_id"] = user_id
         with self.db:
             self.db.execute("""
                 INSERT INTO conversations VALUES (?, ?, ?, ?, ?, ?)
@@ -88,6 +129,9 @@ class ChatHistory:
                     message["id"], owner, chat_id, message["text"], json.dumps(message),
                     attachment, mime if attachment is not None else None, now,
                 ))
+            if request_id:
+                self.db.execute('INSERT INTO request_receipts VALUES (?, ?, ?, ?, ?, ?, ?)',
+                                (owner, chat_id, request_id, fingerprint, response_status, user_id, bot_id))
         return self.summary(owner, chat_id), [user, bot]
 
     def rename(self, owner, chat_id, title):

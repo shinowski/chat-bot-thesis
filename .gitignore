@@ -21,3 +21,5 @@ instance/
 .idea/
 .DS_Store
 Thumbs.db
+/Flamma/artifacts/embeddings-*.npz
+/Flamma/eval/results/

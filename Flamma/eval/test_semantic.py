@@ -28,12 +28,13 @@ from collections import defaultdict
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from model.intent_classifier import IntentClassifier  # noqa: E402
+from model.config import intent_model_path
 from test_cases import TEST_CASES  # noqa: E402
 
 CONFIDENCE_WARN_THRESHOLD = 0.55  # flag correct-but-shaky predictions
 
 _classifier = IntentClassifier()
-_classifier.load("semantic_classifier.pkl")
+_classifier.load(intent_model_path())
 
 
 def predict(text: str):

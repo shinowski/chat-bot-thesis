@@ -1,0 +1,23 @@
+[
+  {"name":"reported_contact_dermatitis_followup","initial_state":{"symptoms":["itchy rash"],"location":"in my elbow","duration":"1 hour","medication":"I used a cream","classification":"dermatitis","classification_confidence":0.997,"image_uploaded":true,"image_knowledge_key":"contact_dermatitis","image_condition":"Contact Dermatitis","knowledge_disease":"contact_dermatitis","knowledge_origin":"photo_screening","classification_image_id":"test-photo","last_image_status":"ok"},"turns":[
+    {"text":"how long this usually last?","intent":"knowledge_question","contains":["days to weeks","not a personal recovery deadline"],"state":{"duration":"1 hour","location":"in my elbow","medication":"I used a cream","last_knowledge_topics":["course"]}},
+    {"text":"Will my rash last 3 weeks?","intent":"knowledge_question","state":{"duration":"1 hour","symptoms":["itchy rash"],"last_knowledge_topics":["course"]}}
+  ]},
+  {"name":"prospective_uncertainty_is_not_unknown_onset","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"Tell me about contact dermatitis","intent":"knowledge_question"},
+    {"text":"I don't know how long this will last","intent":"knowledge_question","contains":["days to weeks"],"state":{"duration":"My rash is on my arm for two weeks"}}
+  ]},
+  {"name":"named_course_then_subject_switch","turns":[
+    {"text":"How long does contact dermatitis last?","intent":"knowledge_question","contains":["days to weeks"],"state":{"last_knowledge_topics":["course"]}},
+    {"text":"and rosacea","intent":"knowledge_question","contains":["long-term"],"state":{"knowledge_disease":"rosacea","last_knowledge_topics":["course"]}}
+  ]},
+  {"name":"healing_paraphrases","turns":[
+    {"text":"Tell me about contact dermatitis","intent":"knowledge_question"},
+    {"text":"When will it clear up?","intent":"knowledge_question","contains":["days to weeks"],"state":{"last_knowledge_topics":["course"]}},
+    {"text":"how much time does it take to heal","intent":"knowledge_question","contains":["days to weeks"],"state":{"last_knowledge_topics":["course"]}}
+  ]},
+  {"name":"unknown_condition_does_not_get_a_timeline","turns":[
+    {"text":"how long does this rash usually last?","intent":"knowledge_question","contains":["don't have a disease name"],"state":{"duration":null,"classification":null}}
+  ]}
+]

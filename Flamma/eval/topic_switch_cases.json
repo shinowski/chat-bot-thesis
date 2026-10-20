@@ -1,0 +1,25 @@
+[
+  {"name":"user_roscea_switch", "turns":[
+    {"text":"I think this is dermatitis", "intent":"knowledge_question"},
+    {"text":"Is it treatable", "intent":"knowledge_question"},
+    {"text":"how about roscea", "intent":"knowledge_question", "contains":["Rosacea treatment"], "max_words":55, "state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"I have roscea", "intent":"knowledge_question", "state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"in my butt", "intent":"location", "contains":["Rosacea mainly affects the face"],"state":{"location":"in my butt","knowledge_disease":"rosacea"}},
+    {"text":"is it treatable?", "intent":"knowledge_question", "contains":["Rosacea mainly affects the face","Rosacea treatment"], "excludes":["About Dermatitis"], "state":{"knowledge_disease":"rosacea","classification":null}}
+  ]},
+  {"name":"switch_keeps_curability_topic", "turns":[
+    {"text":"Is dermatitis curable?", "intent":"knowledge_question"},
+    {"text":"what about roscea", "intent":"knowledge_question", "contains":["Rosacea has no current cure"], "max_words":55, "state":{"knowledge_disease":"rosacea"}}
+  ]},
+  {"name":"switch_keeps_causes_topic", "turns":[
+    {"text":"What causes psoriasis?", "intent":"knowledge_question"},
+    {"text":"how about roscea", "intent":"knowledge_question", "contains_topic":"causes", "state":{"knowledge_disease":"rosacea"}}
+  ]},
+  {"name":"switch_without_history_is_an_overview", "turns":[
+    {"text":"how about roscea", "intent":"knowledge_question", "contains_topic":"overview", "state":{"knowledge_disease":"rosacea","classification":null}}
+  ]},
+  {"name":"short_topic_reference_with_a_question_mark", "turns":[
+    {"text":"Is dermatitis treatable?", "intent":"knowledge_question"},
+    {"text":"what about roscea?", "intent":"knowledge_question", "contains":["Rosacea treatment"], "max_words":55}
+  ]}
+]

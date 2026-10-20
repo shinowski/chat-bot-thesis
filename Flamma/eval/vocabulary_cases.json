@@ -1,0 +1,52 @@
+[
+  {"name":"everyday_body_words","turns":[
+    {"text":"My skin is itchy","intent":"symptom"},
+    {"text":"around my bellybutton","intent":"location","state":{"location":"around my bellybutton"}},
+    {"text":"a fortnight ago","intent":"duration"}
+  ]},
+  {"name":"nape_and_time_abbreviations","turns":[
+    {"text":"I have a rash","intent":"symptom"},
+    {"text":"on the nape of my neck","intent":"location"},
+    {"text":"about 3 dys","intent":"duration","state":{"duration":"about 3 dys"}}
+  ]},
+  {"name":"literal_symptom_vocabulary","turns":[
+    {"text":"It stings","intent":"symptom","state":{"symptoms":["It stings"]}},
+    {"text":"on my torso","intent":"location"},
+    {"text":"a day and a half","intent":"duration"},
+    {"text":"It is bothersome","intent":"severity","state":{"severity":"It is bothersome"}}
+  ]},
+  {"name":"typo_combined_facts","turns":[
+    {"text":"My skni is itchey on my forarms for 2 weaks","intent":"location","state":{"location":"My skni is itchey on my forarms for 2 weaks","duration":"My skni is itchey on my forarms for 2 weaks","classification":null}}
+  ]},
+  {"name":"spaced_condition_names_and_switches","turns":[
+    {"text":"Is contactdermatitis treatable","intent":"knowledge_question","state":{"knowledge_disease":"contact_dermatitis"}},
+    {"text":"and roseaca","intent":"knowledge_question","contains":["Rosacea treatment"],"max_words":55,"state":{"knowledge_disease":"rosacea","classification":null}},
+    {"text":"same question for psoriosis","intent":"knowledge_question","state":{"knowledge_disease":"psoriasis"}},
+    {"text":"what about lichenplanus then","intent":"knowledge_question","state":{"knowledge_disease":"lichen_planus"}}
+  ]},
+  {"name":"plain_english_topics","turns":[
+    {"text":"Tell me about eczema","intent":"knowledge_question"},
+    {"text":"What brings it on","intent":"knowledge_question","contains_topic":"causes"},
+    {"text":"Can other people catch it from me","intent":"knowledge_question","contains_topic":"contagious"},
+    {"text":"Is there anything that can help it","intent":"knowledge_question","contains_topic":"management"},
+    {"text":"Could you put that in plain English","intent":"simple_explanation"},
+    {"text":"Could you give me the gist of our conversation","intent":"conversation_summary"}
+  ]},
+  {"name":"bounded_screening_commands","turns":[
+    {"text":"Please hold off on the questions","intent":"screening_pause","state":{"screening_paused":true}},
+    {"text":"Could we carry on with the screening","intent":"screening_resume","state":{"screening_paused":false}},
+    {"text":"I would rather chat without a picture","intent":"image_declined","state":{"image_declined":true}}
+  ]},
+  {"name":"treatment_spelling_and_negation","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"I havent used any oitmnet","intent":"medication","state":{"medication":"none","duration":"My rash is on my arm for two weeks"}}
+  ]},
+  {"name":"preserve_medication_evidence","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"I used Xylarose 0.05% oitmnet for 3 dys","intent":"medication","state":{"medication":"I used Xylarose 0.05% oitmnet for 3 dys","duration":"My rash is on my arm for two weeks"}}
+  ]},
+  {"name":"question_not_a_patient_fact","turns":[
+    {"text":"Tell me about rosacea","intent":"knowledge_question"},
+    {"text":"Can it be kept under control","intent":"knowledge_question","contains_topic":"management","state":{"location":null,"duration":null,"medication":null,"classification":null}}
+  ]}
+]

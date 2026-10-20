@@ -5,18 +5,20 @@ import MessageList from './components/MessageList.jsx';
 import Composer from './components/Composer.jsx';
 import HistoryDialog from './components/HistoryDialog.jsx';
 import { DEFAULT_FOLLOWUPS } from './intents.js';
+import { fetchJson, RequestTimeoutError } from './request.js';
+import { formatChatExport } from './chat-export.js';
+import { RetryRequests, mergeSavedExchange } from './retry-requests.js';
 
 function newConversation() {
   return { id: crypto.randomUUID(), title: 'New conversation', preview: '', messages: [], loaded: true };
 }
 async function api(path, options) {
-  const response = await fetch(path, options);
-  const data = await response.json();
+  const { response, data } = await fetchJson(path, options);
   if (!response.ok) throw new Error(data.error || 'Could not save your changes. Please try again.');
   return data;
 }
 function restoreMessages(messages) {
-  return messages.map((m) => ({ ...m, animate: false, followUps: m.followUps || DEFAULT_FOLLOWUPS[m.intent] || [] }));
+  return messages.map((m) => ({ ...m, followUps: m.followUps || DEFAULT_FOLLOWUPS[m.intent] || [] }));
 }
 
 export default function App() {
@@ -36,6 +38,8 @@ export default function App() {
   const [dialogBusy, setDialogBusy] = useState(false);
   const [reload, setReload] = useState(0);
   const sendingRef = useRef(false);
+  const retries = useRef(null);
+  retries.current ||= new RetryRequests();
   const imageInputRef = useRef(null);
   const bootRef = useRef(null);
   const selectedRef = useRef(initial.id);
@@ -58,6 +62,7 @@ export default function App() {
         const detail = await api(`/api/conversations/${chosen.id}`);
         chosen.messages = restoreMessages(detail.messages);
         chosen.loaded = true;
+        retries.current.reconcile(chosen.id, detail.messages);
       }
       if (cancelled) return;
       setConversations(chosen ? summaries : [...summaries, initial]);
@@ -114,30 +119,40 @@ export default function App() {
     }));
     setInput(''); setSelectedImage(null); setTypingId(chatId); setError('');
     try {
+      const attempt = await retries.current.forPayload(chatId, text, imageToSend);
       const form = new FormData();
       form.append('message', text); form.append('conversation_id', chatId);
+      form.append('request_id', attempt.requestId);
       if (imageToSend) form.append('image', imageToSend);
-      const response = await fetch('/predict', { method: 'POST', body: form });
-      const data = await response.json();
+      const { response, data } = await fetchJson('/predict', { method: 'POST', body: form }, imageToSend ? 120000 : 60000);
+      if (!response.ok && !data.messages) {
+        const failure = new Error(data.reply || 'This message could not be saved.');
+        failure.confirmedUnsaved = true;
+        throw failure;
+      }
       if (!data.reply) throw new Error('No reply received');
       const bot = { id: crypto.randomUUID(), who: 'bot', text: data.reply, intent: data.intent,
         confidence: data.confidence, confidenceSource: data.confidenceSource, imageResult: data.imageResult,
-        action: data.action, followUps: data.followUps || DEFAULT_FOLLOWUPS[data.intent] || [], animate: true };
+        treatmentInfo: data.treatmentInfo,
+        action: data.action, followUps: data.followUps || DEFAULT_FOLLOWUPS[data.intent] || [] };
       updateChat(chatId, (c) => ({ ...c, ...data.conversation, saved: !!data.conversation || c.saved,
         messages: data.messages
-          ? [...c.messages.filter((m) => m.id !== userMsg.id), data.messages[0], { ...data.messages[1], animate: selectedRef.current === chatId }]
+          ? mergeSavedExchange(c.messages, userMsg.id, data.messages)
           : [...c.messages, bot],
       }));
       if (data.messages && imagePreview) URL.revokeObjectURL(imagePreview);
+      if (data.messages) retries.current.clear(chatId, attempt.requestId);
       if (!data.conversation) setError('This exchange was not saved. You can send it again.');
-    } catch {
+    } catch (err) {
       updateChat(chatId, (c) => ({ ...c, messages: c.messages.filter((m) => m.id !== userMsg.id) }));
       if (imagePreview) URL.revokeObjectURL(imagePreview);
       if (selectedRef.current === chatId) {
         setInput((draft) => draft || text);
         setSelectedImage((draft) => draft || imageToSend);
       }
-      setError('The message could not be confirmed as saved. Check your connection and reload the conversation before retrying.');
+      setError(err.confirmedUnsaved ? err.message : err instanceof RequestTimeoutError
+        ? 'This reply is taking too long. Your draft is restored. You can resend it, or reload the conversation to check for a saved reply.'
+        : 'The reply could not be confirmed. Your draft is restored. Check your connection, then resend it or reload the conversation.');
     } finally { setTypingId(null); sendingRef.current = false; }
   }
 
@@ -151,6 +166,12 @@ export default function App() {
   async function loadChat(id) {
     try {
       const data = await api(`/api/conversations/${id}`);
+      const resolved = retries.current.reconcile(id, data.messages);
+      if (resolved && selectedRef.current === id) {
+        const original = data.messages.find(message => message.who === 'user' && message.requestId === resolved.requestId);
+        if (original) setInput(draft => draft.trim() === original.text ? '' : draft);
+        if (resolved.image) setSelectedImage(draft => draft === resolved.image ? null : draft);
+      }
       setConversations((prev) => {
         const restored = { ...data.conversation, saved: true, messages: restoreMessages(data.messages), loaded: true };
         return prev.some((c) => c.id === id) ? prev.map((c) => c.id === id ? { ...c, ...restored } : c) : [...prev, restored];
@@ -170,9 +191,7 @@ export default function App() {
   }
 
   function exportChat(chat) {
-    const text = `${chat.title}\n\n` + chat.messages.map((m) =>
-      `${m.who === 'user' ? 'You' : 'Flamma'}${m.createdAt ? ` · ${new Date(m.createdAt).toLocaleString()}` : ''}\n${m.text}${m.image ? '\n[Attached photo]' : ''}`
-    ).join('\n\n');
+    const text = formatChatExport(chat);
     const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
     const link = document.createElement('a');
     link.href = url;
@@ -201,6 +220,7 @@ export default function App() {
         updateChat(chat.id, (c) => ({ ...c, ...data.conversation }));
       } else {
         await api(type === 'clear' ? '/api/conversations' : `/api/conversations/${chat.id}`, { method: 'DELETE' });
+        if (type === 'clear') retries.current.clearAll(); else retries.current.clear(chat.id);
         const remaining = type === 'clear' ? [] : conversations.filter((c) => c.id !== chat.id);
         if (!remaining.length) remaining.push(newConversation());
         setConversations(remaining);
@@ -230,6 +250,11 @@ export default function App() {
       <main className={`main${!loading && active.loaded && active.messages.length === 0 ? ' chat-empty' : ''}`}>
         <ChatHeader title={active.title} lastIntent={lastBotMsg?.intent} lastConfidence={lastBotMsg?.confidence}
           confidenceSource={lastBotMsg?.confidenceSource} onMenuClick={() => setSidebarOpen((o) => !o)} />
+        <details className="prototype-info">
+          <summary>About this prototype and saved chats</summary>
+          <p>Flamma provides educational skin information and photo screening. It cannot confirm a diagnosis or replace a clinician. Model scores are not disease probabilities.</p>
+          <p>Chats and photos save on the Flamma server and are linked to this browser session. The app does not encrypt stored records or provide account sign-in. Anyone using this browser profile or with access to server files may access them. Use the conversation menu or Clear history to delete application records; exports and backups are separate copies.</p>
+        </details>
         {error && <div className="history-notice" role="alert">{error} <button onClick={retry}>Try again</button></div>}
         {loading || !active.loaded ? <div className="chat-loading" role="status">Loading your conversation…</div>
           : <MessageList key={`messages-${activeId}`} messages={active.messages} isTyping={typingId === activeId}

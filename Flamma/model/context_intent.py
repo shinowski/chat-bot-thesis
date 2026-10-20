@@ -1,9 +1,15 @@
+import re
+
 from model.text_understanding import (
-    DURATION_WORDS, LOCATION_WORDS, MEDICATION_WORDS, PHOTO_WORDS, SYMPTOM_WORDS,
-    clean_message, has_duration_answer, has_medication_answer, is_explicit_photo_request, is_photo_question, message_words,
+    DURATION_WORDS, LOCATION_WORDS, MEDICATION_WORDS, PHOTO_WORDS, PHOTO_REFERENCES, SYMPTOM_WORDS, SEVERITY_WORDS,
+    clean_message, has_duration_answer, has_medication_answer, is_explicit_photo_request, is_photo_question, message_words, symptom_mentions, no_medication,
 )
-from model.dialogue import dialogue_act, is_medication_report, looks_like_question as asks_question
-from model.knowledge_base import KnowledgeBase, is_disease_overview_question, topic_requests
+from model.dialogue import dialogue_act, is_medication_report, medication_use_reference, looks_like_question as asks_question
+from model.knowledge_base import KnowledgeBase, is_disease_overview_question, is_diagnosis_question, topic_requests, is_course_question
+from model.safety import is_care_question, safety_intent
+from model.chat_support import unrelated_request, support_intent, emotional_only
+from model.question_clarification import clarification_request, bare_product_answer, knowledge_choice_index, screening_choice_answer, explicit_fact_replacement
+from model.conversation_language import uncertainty_detail, is_symptom_update
 
 
 class ContextIntent:
@@ -40,6 +46,8 @@ class ContextIntent:
 
     @classmethod
     def is_uncertain(cls, message):
+        if uncertainty_detail(message)[0]:
+            return True
         text = cls.normalize(message).replace("'", "")
         return text in {
             "i dont know", "i do not know", "dont know", "do not know",
@@ -49,7 +57,21 @@ class ContextIntent:
             "im not sure how severe it is", "i am not sure how severe it is",
             "i do not know how severe it is", "i have no idea", "no idea",
             "i am not sure yet", "i do not know yet", "skip",
-        }
+        } or bool(re.fullmatch(
+            r'(?:i (?:do not|cannot) (?:know|remember|recall)|i forgot|i am not sure|not sure) '
+            r'(?:what i (?:used|applied|took)|which (?:cream|medicine|medication|ointment|product) (?:i (?:used|applied|took)|it was)|'
+            r'(?:its|the|that|the products|the medicines) name)', text
+        ))
+
+    @classmethod
+    def uncertain_target(cls, message):
+        detail = uncertainty_detail(message)
+        if detail[0]:
+            return detail[1]
+        text = cls.normalize(message)
+        if cls.is_uncertain(message) and re.search(r'\b(?:what i (?:used|applied|took)|which (?:cream|medicine|medication|ointment|product) i (?:used|applied|took))\b', text):
+            return 'medication'
+        return None
 
     def __init__(self, knowledge=None):
         self.knowledge = knowledge or KnowledgeBase()
@@ -85,37 +107,18 @@ class ContextIntent:
         # 1. EMERGENCY - HIGHEST PRIORITY
         # ==========================================================
 
-        emergency_phrases = {
-            "difficulty breathing",
-            "trouble breathing",
-            "having trouble breathing",
-            "can't breathe",
-            "cannot breathe",
-            "barely breathe",
-            "barely breathing",
-            "chest feels tight",
-            "chest is tight",
-            "throat swelling",
-            "swelling to my throat",
-            "lips are swollen",
-            "face is swelling",
-        }
-
-        emergency_words = {
-            "breathing",
-            "breathe",
-            "swelling",
-            "swollen",
-        }
-
-        if predicted_intent == "emergency" or any(phrase in text for phrase in emergency_phrases):
-            return "emergency"
-
-        if (
-            ("breathing" in words or "breathe" in words)
-            and ("swelling" in words or "swollen" in words)
-        ):
-            return "emergency"
+        safety = safety_intent(message)
+        if safety:
+            return safety
+        if emotional_only(message):
+            return 'emotional_support'
+        if is_care_question(message):
+            return 'knowledge_question'
+        if unrelated_request(message):
+            return 'out_of_scope'
+        support = support_intent(message)
+        if support:
+            return support
 
         # ==========================================================
         # 2. CONVERSATION INTERRUPTIONS
@@ -137,22 +140,59 @@ class ContextIntent:
                 return 'image_explanation'
             return act
 
+        if is_course_question(message):
+            return 'knowledge_question'
         if self.is_uncertain(message):
             return "uncertain_answer"
+        if is_symptom_update(message, conversation.get('mentioned_product')):
+            return 'symptom_update'
+
+        choices = conversation.get('pending_screening_choices')
+        if screening_choice_answer(message, choices) is not None:
+            return choices['field']
+        if choices and knowledge_choice_index(message) is not None:
+            return choices['field'] + '_clarification'
+        if explicit_fact_replacement(message):
+            return 'correction'
+
+        clarification = clarification_request(message, self.knowledge)
+        if clarification:
+            if clarification[0] == 'product_clarification' and conversation.get('mentioned_product') and re.fullmatch(
+                r'(?:can|should|could|may) i (?:use|apply|take|try) (?:it|that|this)(?: (?:on|for|to) .+)?', text
+            ):
+                return 'product_information'
+            return clarification[0]
+        if is_diagnosis_question(message, bool(named_disease)):
+            return 'diagnosis_question'
+        if conversation.get('pending_knowledge_choices') and not named_disease and (topic_requests(message) or is_disease_overview_question(message)):
+            return 'condition_clarification'
+        choice = knowledge_choice_index(message)
+        if conversation.get('pending_knowledge_choices') and choice is not None:
+            return 'knowledge_question' if choice < len(conversation.get('pending_knowledge_choices')) else 'condition_clarification'
+        if conversation.get('pending_product_clarification') and not named_disease and bare_product_answer(message) and not message_words(message) & (SYMPTOM_WORDS | LOCATION_WORDS | DURATION_WORDS):
+            if text not in {'hi', 'hello', 'hey', 'thanks', 'thank you', 'bye', 'yes', 'no'}:
+                return 'product_information'
+
+        if conversation.get('pending_medication_report') and not named_disease and bare_product_answer(message) and not words & (SYMPTOM_WORDS | LOCATION_WORDS | DURATION_WORDS):
+            return 'medication'
+        if medication_use_reference(message) and not conversation.get('mentioned_product') and not words & MEDICATION_WORDS and not asks_question(message):
+            return 'medication' if no_medication(message) else 'medication_clarification'
 
         if self.is_image_followup(message) and conversation.get("image_uploaded"):
             return "image_followup"
 
-        if is_disease_overview_question(message) or (named_disease and (asks_question(message) or text.removesuffix(' please') in self.knowledge.aliases)):
+        if self.knowledge.is_condition_followup(message) or is_disease_overview_question(message) or (named_disease and (asks_question(message) or text.removesuffix(' please') in self.knowledge.aliases or re.search(r'\bi (?:think|suspect|have|was told|was diagnosed)\b|\b(?:doctor|dermatologist|clinician) (?:diagnosed|said|suspects)\b', text))):
             return 'knowledge_question'
 
-        photo_reference = words & (PHOTO_WORDS | {"result", "results", "heatmap"})
+        photo_reference = words & PHOTO_REFERENCES
+        topics = topic_requests(message)
+        if photo_reference and topics:
+            return 'knowledge_question'
         another_topic = words & (MEDICATION_WORDS | {"psoriasis", "dermatitis", "rosacea", "lichen", "cause", "causes", "contagious", "doctor", "dermatologist"})
         has_photo_context = conversation.get("classification") or conversation.get("last_image_status") == "rejected"
         if has_photo_context and is_photo_question(message) and (photo_reference or not another_topic):
             return "image_explanation"
 
-        topics = topic_requests(message)
         topic_fragment = bool(topics) and (
             len(words) <= 5 or text.startswith(('and ', 'what about ', 'how about '))
         ) and not words & (LOCATION_WORDS | DURATION_WORDS | SYMPTOM_WORDS | {'i', 'my', 'used', 'using', 'applied', 'tried', 'took', 'no', 'not', 'none', 'have'})
@@ -295,11 +335,24 @@ class ContextIntent:
         # A description followed by "can you help me?" is still a symptom
         # report, rather than a general question about a named disease.
         asks_for_help = any(phrase in text for phrase in {"can you help", "could you help", "help me"})
-        describes_symptoms = bool(words & SYMPTOM_WORDS)
+        affirmative_symptoms, denied_symptoms = symptom_mentions(message)
+        describes_symptoms = bool(affirmative_symptoms)
 
         help_with_symptoms = asks_for_help and describes_symptoms and not mentions_disease and not mentions_knowledge_topic
         if looks_like_question and (mentions_disease or mentions_knowledge_topic or references_previous_topic) and not help_with_symptoms:
             return "knowledge_question"
+
+        if is_medication_report(message, conversation.get('mentioned_product')) or (expected_intent == 'medication' and has_medication_answer(message)):
+            return 'medication'
+
+        if denied_symptoms and not affirmative_symptoms:
+            return 'symptom_denial'
+
+        # Recognized questions and conversation acts take priority over a guess.
+        # Unfamiliar warning wording still gets a conditional safety check.
+        safety = safety_intent(message, predicted_intent)
+        if safety:
+            return safety
 
         confirmation_words = {
             "yes",
@@ -432,32 +485,13 @@ class ContextIntent:
         if any(phrase in text for phrase in greeting_phrases) and not words & (SYMPTOM_WORDS | LOCATION_WORDS | DURATION_WORDS):
             return "greeting"
 
-        # A treatment answer can mention a time or location without changing
-        # the skin problem's duration/location question.
-        if (expected_intent == "medication" and has_medication_answer(text)) or is_medication_report(message):
-            return "medication"
-
         # ==========================================================
         # 6. INFORMATION SIGNAL DETECTION
         # ==========================================================
 
         location_words = LOCATION_WORDS
 
-        severity_words = {
-            "mild",
-            "moderate",
-            "severe",
-            "bad",
-            "worse",
-            "worst",
-            "painful",
-            "pain",
-            "hurts",
-            "hurt",
-            "unbearable",
-            "intense",
-            "serious",
-        }
+        severity_words = SEVERITY_WORDS
 
         # ==========================================================
         # 7. MULTI-INFORMATION MESSAGES
@@ -532,11 +566,7 @@ class ContextIntent:
         # Validate severity answers
         if expected_intent == "severity":
 
-            severity_words = {
-                "mild",
-                "moderate",
-                "severe",
-            }
+            severity_words = SEVERITY_WORDS
 
             has_severity = any(
                 word in words

@@ -44,7 +44,11 @@ class DialogueTests(unittest.TestCase):
             with self.subTest(message=message):
                 result = self.bot.reply(message)
                 self.assertEqual(result['intent'], 'knowledge_question')
-                self.assertIn(self.bot.knowledge.get('dermatitis', topic), result['reply'])
+                if message == 'what next?':
+                    self.assertIn(self.bot.knowledge.treatment_info('dermatitis')['self_care'][0], result['reply'])
+                    self.assertIn('Can you describe your skin problem?', result['reply'])
+                else:
+                    self.assertIn(self.bot.knowledge.get('dermatitis', topic), result['reply'])
                 self.assertEqual(self.bot.conversation.get('knowledge_disease'), 'dermatitis')
 
     def test_multi_part_question_answers_both_topics(self):

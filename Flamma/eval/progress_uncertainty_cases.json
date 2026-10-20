@@ -1,0 +1,49 @@
+[
+  {"name":"duration_uncertainty_while_location_pending", "turns":[
+    {"text":"My skin is itchy", "intent":"symptom"},
+    {"text":"I don't know how long it's been there", "intent":"uncertain_answer", "state":{"duration":"unknown","location":null,"pending_question":"location"}},
+    {"text":"my elbow", "intent":"location", "state":{"pending_question":"medication"}}
+  ]},
+  {"name":"started_when_uncertain", "turns":[
+    {"text":"My rash is on my arm", "intent":"location"},
+    {"text":"I can't remember when it started", "intent":"uncertain_answer", "state":{"duration":"unknown","pending_question":"medication"}}
+  ]},
+  {"name":"specific_uncertainty_does_not_skip_a_different_field", "turns":[
+    {"text":"My skin is itchy", "intent":"symptom"},
+    {"text":"I'm not sure which body area is affected", "intent":"uncertain_answer", "state":{"location":"unknown","duration":null,"pending_question":"duration"}}
+  ]},
+  {"name":"forgotten_product_name_is_not_usage", "turns":[
+    {"text":"Can I use that cream?", "intent":"product_clarification"},
+    {"text":"I can't remember what cream it was", "intent":"uncertain_answer", "state":{"medication":null}},
+    {"text":"CeraVe", "intent":"product_information", "state":{"medication":null}}
+  ]},
+  {"name":"improvement_today_is_not_rash_onset", "turns":[
+    {"text":"My rash is on my arm for two weeks", "intent":"location"},
+    {"text":"I used a cream for three days", "intent":"medication"},
+    {"text":"It is getting better today", "intent":"symptom_update", "state":{"duration":"My rash is on my arm for two weeks","location":"My rash is on my arm for two weeks","medication":"I used a cream for three days","symptom_updates":["It is getting better today"]}},
+    {"text":"summarize our conversation", "intent":"conversation_summary", "contains":["Changes you've reported", "It is getting better today"]}
+  ]},
+  {"name":"itch_stopped_is_a_change_not_new_itch", "turns":[
+    {"text":"My skin is itchy on my elbow for two weeks", "intent":"location"},
+    {"text":"The itching has stopped", "intent":"symptom_update", "state":{"duration":"My skin is itchy on my elbow for two weeks","symptoms":["My skin is itchy on my elbow for two weeks"]}}
+  ]},
+  {"name":"worsening_today_keeps_original_duration", "turns":[
+    {"text":"My rash is on my arm for two weeks", "intent":"location"},
+    {"text":"The redness is worse today", "intent":"symptom_update", "state":{"duration":"My rash is on my arm for two weeks","location":"My rash is on my arm for two weeks"}}
+  ]},
+  {"name":"symptom_update_is_not_a_diagnosis", "turns":[
+    {"text":"The itching has gone away", "intent":"symptom_update", "state":{"classification":null,"knowledge_disease":null,"duration":null}}
+  ]},
+  {"name":"treatment_negation_does_not_hide_swelling", "turns":[
+    {"text":"I haven't treated my swollen lips", "intent":"emergency"}
+  ]},
+  {"name":"no_cream_does_not_deny_swelling", "turns":[
+    {"text":"I have not used cream for swollen lips", "intent":"emergency"}
+  ]},
+  {"name":"symptom_negation_remains_a_denial", "turns":[
+    {"text":"My lips are not swollen", "intent":"safety_information"}
+  ]},
+  {"name":"current_danger_overrides_change_report", "turns":[
+    {"text":"My skin is getting better but I cannot breathe", "intent":"emergency"}
+  ]}
+]

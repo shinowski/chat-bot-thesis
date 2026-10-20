@@ -1,0 +1,28 @@
+[
+  {"name":"plural_photo_reference_overrides_named_topic","initial_state":{"classification":"dermatitis","classification_confidence":0.88,"image_uploaded":true,"image_knowledge_key":"atopic_dermatitis","image_condition":"Atopic Dermatitis","classification_image_id":"test-photo","knowledge_disease":"rosacea","last_image_status":"ok"},"turns":[
+    {"text":"Treatment for my pictures","intent":"knowledge_question","state":{"knowledge_disease":"atopic_dermatitis"},"contains":["photo model's screening suggestion","Atopic Dermatitis"]},
+    {"text":"Is it treatable?","intent":"knowledge_question","state":{"knowledge_disease":"atopic_dermatitis"},"contains":["photo model's screening suggestion"]}
+  ]},
+  {"name":"plural_rejected_photo_blocks_stale_named_care","initial_state":{"last_image_status":"rejected","knowledge_disease":"rosacea"},"turns":[
+    {"text":"Treatment for my images","intent":"knowledge_question","contains":["couldn't reliably classify"],"excludes":["Treatment options to discuss","About Rosacea"]}
+  ]},
+  {"name":"explicit_named_condition_retains_educational_origin","initial_state":{"classification":"dermatitis","classification_confidence":0.88,"image_uploaded":true,"image_knowledge_key":"atopic_dermatitis","image_condition":"Atopic Dermatitis","classification_image_id":"test-photo","knowledge_disease":"atopic_dermatitis","last_image_status":"ok"},"turns":[
+    {"text":"Treatment options for atopic dermatitis","intent":"knowledge_question","state":{"knowledge_origin":"named_condition"},"excludes":["I'm explaining your photo model's"]},
+    {"text":"Is it treatable?","intent":"knowledge_question","state":{"knowledge_origin":"named_condition"},"excludes":["For the photo model's"]},
+    {"text":"Treatment options for these pics","intent":"knowledge_question","state":{"knowledge_origin":"photo_screening"},"contains":["I'm explaining your photo model's"]}
+  ]},
+  {"name":"own_photo_and_different_named_condition","initial_state":{"classification":"dermatitis","classification_confidence":0.88,"image_uploaded":true,"image_knowledge_key":"atopic_dermatitis","image_condition":"Atopic Dermatitis","classification_image_id":"test-photo","last_image_status":"ok"},"turns":[
+    {"text":"Treatment for rosacea in my photo","intent":"knowledge_question","state":{"knowledge_disease":"rosacea","knowledge_origin":"named_condition"},"contains":["latest photo's screening match was Atopic Dermatitis","general information about Rosacea"]}
+  ]},
+  {"name":"explain_photo_then_bare_followup","initial_state":{"classification":"dermatitis","classification_confidence":0.88,"image_uploaded":true,"image_knowledge_key":"atopic_dermatitis","image_condition":"Atopic Dermatitis","knowledge_disease":"rosacea","last_image_status":"ok"},"turns":[
+    {"text":"What do you think about my photos?","intent":"image_explanation","state":{"knowledge_disease":"atopic_dermatitis","knowledge_origin":"photo_screening"}},
+    {"text":"Is it treatable?","intent":"knowledge_question","contains":["photo model's screening suggestion"],"state":{"knowledge_disease":"atopic_dermatitis"}}
+  ]},
+  {"name":"explain_rejection_then_bare_followup","initial_state":{"last_image_status":"rejected","last_image_feedback":"Not reliable.","knowledge_disease":"rosacea","knowledge_origin":"named_condition"},"turns":[
+    {"text":"What do you think about my photos?","intent":"image_explanation","state":{"knowledge_disease":null,"knowledge_origin":null}},
+    {"text":"Is it treatable?","intent":"knowledge_question","contains":["couldn't reliably classify"]}
+  ]},
+  {"name":"plural_photo_doctor_question_uses_photo_context","initial_state":{"classification":"dermatitis","classification_confidence":0.88,"image_uploaded":true,"image_knowledge_key":"atopic_dermatitis","image_condition":"Atopic Dermatitis","knowledge_disease":"rosacea","last_image_status":"ok"},"turns":[
+    {"text":"When should I see a doctor for my photos?","intent":"knowledge_question","contains":["For Atopic Dermatitis:"],"excludes":["For Rosacea:"]}
+  ]}
+]

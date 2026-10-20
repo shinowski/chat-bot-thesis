@@ -1,5 +1,11 @@
 import os
 import sys
+import argparse
+import hashlib
+import json
+from datetime import datetime, timezone
+from importlib.metadata import version
+from pathlib import Path
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)
@@ -14,13 +20,17 @@ from sklearn.metrics import (
 
 from model.intent_classifier import IntentClassifier
 from eval.final_test_cases import FINAL_TEST_CASES
+from model.config import intent_model_path
 
 
-MODEL_PATH = "semantic_classifier_balanced_v2.pkl"
+parser = argparse.ArgumentParser(description='Evaluate the configured text-intent classifier, not medical accuracy.')
+parser.add_argument('--output', type=Path, default=Path(ROOT_DIR) / 'eval/results/intent-evaluation.json')
+args = parser.parse_args()
+MODEL_PATH = intent_model_path()
 
 
 print("=" * 60)
-print("FLAMMA FINAL HELD-OUT SEMANTIC EVALUATION")
+print("FLAMMA REUSED TEXT-INTENT BENCHMARK")
 print("=" * 60)
 
 # Load model
@@ -33,6 +43,8 @@ results = []
 
 print(f"\nModel: {MODEL_PATH}")
 print(f"Test cases: {len(FINAL_TEST_CASES)}")
+print('Scope: text-intent classifier only; this does not measure image or medical accuracy.')
+print('This authored benchmark has been reused for model comparisons; it is not an untouched final test.')
 print("\nRunning evaluation...")
 
 for message, expected in FINAL_TEST_CASES:
@@ -46,7 +58,7 @@ for message, expected in FINAL_TEST_CASES:
             "message": message,
             "expected": expected,
             "predicted": predicted,
-            "confidence": confidence,
+            "confidence": float(confidence),
         }
     )
 
@@ -238,6 +250,22 @@ else:
         )
 
 
+report = {
+    'evaluated_at': datetime.now(timezone.utc).isoformat(),
+    'scope': 'text_intent_classifier_only',
+    'evaluation_role': 'reused_authored_benchmark_not_untouched_final_validation',
+    'model_path': str(MODEL_PATH),
+    'model_sha256': hashlib.sha256(MODEL_PATH.read_bytes()).hexdigest(),
+    'test_cases_sha256': hashlib.sha256(json.dumps(FINAL_TEST_CASES).encode()).hexdigest(),
+    'runtime_versions': {name: version(name) for name in ['scikit-learn', 'sentence-transformers']},
+    'samples': total,
+    'accuracy': float(accuracy),
+    'classification_report': classification_report(y_true, y_pred, labels=labels, output_dict=True, zero_division=0),
+    'results': results,
+}
+args.output.parent.mkdir(parents=True, exist_ok=True)
+args.output.write_text(json.dumps(report, indent=2), encoding='utf-8')
+print(f'\nSaved reproducible evaluation report: {args.output}')
 print("\n" + "=" * 60)
 print("EVALUATION COMPLETE")
 print("=" * 60)

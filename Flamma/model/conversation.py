@@ -11,19 +11,32 @@ class Conversation:
 
         self.data = {
         "symptoms": [],
+        "symptom_updates": [],
+        "denied_symptoms": [],
         "symptoms_unknown": False,
         "location": None,
         "duration": None,
         "severity": None,
         "medication": None,
         "image_uploaded": False,
+        "image_declined": False,
         "classification": None,
         "classification_confidence": None,
+        "classification_image_id": None,
         "image_condition": None,
+        "image_knowledge_key": None,
         "knowledge_disease": None,
+        "knowledge_origin": None,
         "last_reply_intent": None,
         "pending_question": None,
         "last_knowledge_topics": [],
+        "last_management_style": None,
+        "pending_knowledge_choices": [],
+        "pending_knowledge_topics": [],
+        "pending_product_clarification": False,
+        "mentioned_product": None,
+        "pending_medication_report": None,
+        "pending_screening_choices": None,
         "screening_paused": False,
         "last_image_status": None,
         "last_image_feedback": None,
@@ -33,6 +46,17 @@ class Conversation:
     def set(self, key, value):
 
         self.data[key] = value
+
+    def invalidate_image_result(self, feedback):
+        """Earlier photo results remain in history, never as the current result."""
+        self.data.update(
+            image_uploaded=False, classification=None, classification_confidence=None,
+            classification_image_id=None,
+            image_condition=None, image_knowledge_key=None, knowledge_disease=None, knowledge_origin=None, last_knowledge_topics=[], last_management_style=None,
+            pending_knowledge_choices=[], pending_knowledge_topics=[], pending_product_clarification=False,
+            pending_medication_report=None, pending_screening_choices=None,
+            last_image_status="rejected", last_image_feedback=feedback,
+        )
 
     def restore(self, data):
         self.data.update(data)

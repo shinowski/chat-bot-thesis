@@ -12,7 +12,7 @@ print("====================================")
 
 # Load semantic model
 classifier = IntentClassifier()
-classifier.load("semantic_classifier.pkl")
+classifier.load()
 
 # Initialize context components
 context = ContextIntent()

@@ -1,7 +1,10 @@
+import { modelScore } from '../model-score.js';
+
 export default function ChatHeader({ title, lastIntent, lastConfidence, confidenceSource, onMenuClick }) {
+  const score = modelScore(lastConfidence, confidenceSource);
   const pillText =
     lastIntent
-      ? `intent: ${lastIntent}${typeof lastConfidence === 'number' ? ` (${(lastConfidence * 100).toFixed(1)}%)` : ''}`
+      ? score ? `${score.label}: ${score.percent}` : 'Skin information and screening'
       : 'intent: —';
 
   return (
@@ -17,7 +20,7 @@ export default function ChatHeader({ title, lastIntent, lastConfidence, confiden
           <div className="chat-sub">Describe what you're noticing — I'll ask a few follow-ups</div>
         </div>
       </div>
-      <div className="model-pill" title={confidenceSource === 'image_model' ? 'Image model confidence' : 'Text intent; percentages appear only when the model prediction matches the reply intent'}>{pillText}</div>
+      <div className="model-pill" title={score?.explanation || 'Educational information; screening suggestions are not a diagnosis.'}>{pillText}</div>
     </div>
   );
 }

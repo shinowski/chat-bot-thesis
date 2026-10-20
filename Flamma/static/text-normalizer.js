@@ -1,15 +1,18 @@
 import language from './chat-language.json' with { type: 'json' };
 
 export function normalizeMessage(message) {
-  return message.normalize('NFKC').toLowerCase().replaceAll('’', "'").replaceAll('\u200b', '')
-    .replace(/\b(\d+(?:\.\d+)?)\s*-?\s*(weeks?|wks?|weks|days?|dayz|months?|mos?|hours?|hrs?|years?|yrs?|minutes?|mins?)\b/g, '$1 $2')
+  return message.normalize('NFKC').toLowerCase().replaceAll('’', "'").replaceAll('\u2018', "'").replaceAll('\u200b', '')
     .replace(/[a-z]+(?:'[a-z]+)?/g, word => language.word_aliases[word] ?? word)
+    .replace(/\b(\d+(?:\.\d+)?|one|two|three|four|five|six|a|several|few)\s+(weaks?)\b/g,
+      (_, quantity, unit) => `${quantity} ${unit.endsWith('s') ? 'weeks' : 'week'}`)
+    .replace(/\b(\d+(?:\.\d+)?)\s*-?\s*(weeks?|days?|months?|hours?|years?|minutes?)\b/g, '$1 $2')
     .replace(/\bhi{2,}\b/g, 'hi').replace(/\bhe+l{2,}o+\b/g, 'hello').replace(/\bhey+\b/g, 'hey')
     .replace(/\b(can|could|may) i (sent|sending)\b/g, '$1 i send')
     .replace(/\b(want|like|need) to (sent|sending)\b/g, '$1 to send')
     .replace(/\bwhat (this|it|that) mean\b/g, 'what does $1 mean')
     .replace(/\b(cannot|could not) breath\b/g, '$1 breathe')
     .replace(/\bi i do not know\b/g, 'i do not know')
+    .replace(/\b(should|could|can|must) i c (?=(?:a |the )?(?:doctor|dermatologist)\b)/g, '$1 i see ')
     .replace(/\s+/g, ' ').trim();
 }
 

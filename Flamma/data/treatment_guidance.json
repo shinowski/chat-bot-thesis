@@ -1,0 +1,153 @@
+{
+  "source_checked_on": "2026-10-14",
+  "conditions": {
+    "atopic_dermatitis": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Atopic dermatitis can be treated to control symptoms and flare-ups. A dermatologist can help choose a treatment plan.",
+        "curability": "Atopic dermatitis has no current cure, but treatment can control it. Improvement does not necessarily mean it will never flare again."
+      },
+      "self_care": [
+        "Use a gentle, fragrance-free moisturizer and cleanser; be gentle when bathing.",
+        "Identify and avoid personal flare triggers, such as irritating products or fabrics."
+      ],
+      "clinician_options": [
+        "A clinician may prescribe topical corticosteroids or non-steroid anti-inflammatory creams, such as topical calcineurin inhibitors.",
+        "More difficult cases may need supervised light therapy or systemic treatment."
+      ],
+      "seek_care": "Arrange an assessment for persistent or difficult-to-control symptoms. The treatment choice depends on age, body area, severity, and medical history.",
+      "sources": [
+        {"title": "AAD: Atopic dermatitis treatment", "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/treatment"}
+      ]
+    },
+    "contact_dermatitis": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Contact dermatitis can be treated. Identifying and avoiding the substance causing it is a key part of care.",
+        "curability": "Contact dermatitis can clear when its cause is identified and avoided. It can recur with further exposure, so finding the trigger matters."
+      },
+      "self_care": [
+        "Avoid the suspected substance touching your skin; a clinician can help identify the trigger.",
+        "A cool, damp compress can help ease itching."
+      ],
+      "clinician_options": [
+        "A clinician may prescribe a topical corticosteroid to reduce inflammation, with the strength chosen for the body area and severity.",
+        "Patch testing may help identify an allergy; extensive or persistent reactions may need other clinician-supervised treatment."
+      ],
+      "seek_care": "Seek an assessment if the trigger is unclear, the rash keeps returning, or symptoms are extensive or worsening.",
+      "sources": [
+        {"title": "AAD: Contact dermatitis treatment", "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/treatment"},
+        {"title": "NHS: Contact dermatitis treatment", "url": "https://www.nhs.uk/conditions/contact-dermatitis/treatment/"}
+      ]
+    },
+    "lichen_planus": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Lichen planus has treatments that can relieve symptoms or prevent worsening. Some mild skin cases improve without treatment; care depends on the affected area.",
+        "curability": "Lichen planus has no current cure, although it can go away on its own for some people. Treatment can help prevent worsening."
+      },
+      "self_care": [
+        "Use gentle, fragrance-free skin care and avoid rubbing or scratching affected skin.",
+        "A cool compress may ease itching."
+      ],
+      "clinician_options": [
+        "Some mild skin cases need monitoring rather than medication; a clinician should confirm this.",
+        "Treatment may include topical corticosteroids, topical calcineurin inhibitors, or medicine for itching; more extensive skin disease may need light therapy or systemic treatment."
+      ],
+      "seek_care": "Arrange a dermatology assessment. Mouth, genital, scalp, or nail involvement needs care tailored to that site; a skin photo cannot determine that treatment.",
+      "sources": [
+        {"title": "AAD: Lichen planus treatment", "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"},
+        {"title": "AAD: Lichen planus self-care", "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-self-care"},
+        {"title": "AAD: Lichen planus FAQs", "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-overview"}
+      ]
+    },
+    "psoriasis": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Psoriasis can be treated to reduce symptoms and control flare-ups. The appropriate treatment depends on its type, extent, and severity.",
+        "curability": "Psoriasis has no current cure, but treatments can help control it and improve symptoms."
+      },
+      "self_care": [
+        "Follow gentle skin care and use moisturizer to help manage dry skin.",
+        "Identify personal triggers and avoid scratching or picking the affected skin."
+      ],
+      "clinician_options": [
+        "A dermatologist may prescribe topical corticosteroids, vitamin D analogues, or other topical medicines.",
+        "More extensive disease may need supervised phototherapy or systemic medicines, including biologics. Do not use tanning beds as treatment."
+      ],
+      "seek_care": "A dermatologist should confirm the diagnosis and choose treatment for the affected area and severity. Mention joint pain, stiffness, or swelling during your assessment.",
+      "sources": [
+        {"title": "AAD: Psoriasis treatment", "url": "https://www.aad.org/public/diseases/psoriasis/treatment/treatment"},
+        {"title": "AAD: Managing psoriasis", "url": "https://www.aad.org/public/diseases/psoriasis/insider/tips"},
+        {"title": "AAD: Psoriasis treatment benefits", "url": "https://www.aad.org/public/diseases/psoriasis/treatment/medications/treat-my"}
+      ]
+    },
+    "rosacea": {
+      "nonfacial_site_note": "Rosacea mainly affects the face. A concern on the buttocks needs assessment; I cannot assume rosacea is its cause.",
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Rosacea treatment can help control symptoms and reduce flare-ups. A dermatologist can help choose care for the particular signs you have.",
+        "curability": "Rosacea has no current cure, but treatment can help control its symptoms and flare-ups."
+      },
+      "self_care": [
+        "Use a gentle cleanser, moisturizer, and broad-spectrum sunscreen with SPF 30 or higher.",
+        "Identify and limit personal flare triggers, such as overheating or irritating skin products."
+      ],
+      "clinician_options": [
+        "A dermatologist may prescribe topical medicines such as azelaic acid, metronidazole, or ivermectin for acne-like bumps.",
+        "Some cases need oral medicine or laser/light treatment, depending on the signs and medical history."
+      ],
+      "seek_care": "Arrange an assessment to confirm rosacea. Eye irritation needs clinician evaluation; eye pain or changes in vision require prompt medical care.",
+      "sources": [
+        {"title": "AAD: Rosacea treatment", "url": "https://www.aad.org/public/diseases/rosacea/treatment/diagnosis-treat"},
+        {"title": "NHS: Rosacea", "url": "https://www.nhs.uk/conditions/rosacea/"}
+      ]
+    },
+    "dermatitis": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Dermatitis has treatment options. The right approach depends on the type, such as atopic or contact dermatitis; that type has not been confirmed here.",
+        "curability": "Whether dermatitis clears or needs ongoing control depends on its type and cause. Atopic dermatitis has no current cure; contact dermatitis can clear when the trigger is avoided."
+      },
+      "self_care": [
+        "Use gentle, fragrance-free skin care and avoid products that irritate the affected skin."
+      ],
+      "clinician_options": [
+        "A clinician needs to identify the type of dermatitis before selecting medication; atopic and contact dermatitis can need different plans."
+      ],
+      "seek_care": "Ask a dermatologist to confirm the type and cause, especially when symptoms persist or worsen.",
+      "sources": [
+        {"title": "AAD: Atopic dermatitis treatment", "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/treatment"},
+        {"title": "AAD: Contact dermatitis treatment", "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/treatment"}
+      ]
+    },
+    "hives": {
+      "brief_answers_checked_on": "2026-10-15",
+      "brief_answers": {
+        "treatability": "Hives can be treated to reduce itching and new outbreaks. Many cases settle, while recurring or long-lasting hives may need a clinician's treatment plan.",
+        "curability": "Hives can settle, but recurring or long-lasting hives need assessment. The outlook depends on the type and cause."
+      },
+      "self_care": [
+        "Avoid known triggers and use gentle skin care; recurrent hives should be assessed."
+      ],
+      "clinician_options": [
+        "A clinician or pharmacist can assess whether an oral antihistamine is appropriate; persistent hives may need specialist treatment."
+      ],
+      "seek_care": "Seek emergency care for trouble breathing or swallowing, faintness, or swelling of the face, mouth, or throat. Hives are an information topic, not one of this photo model's supported classes.",
+      "sources": [
+        {"title": "AAD: Hives treatment", "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"}
+      ]
+    },
+    "normal_skin": {
+      "self_care": [
+        "General skin care can include gentle cleansing, moisturizer when needed, and sun protection."
+      ],
+      "clinician_options": [],
+      "seek_care": "No disease-specific medication can be selected from this label. A normal-skin match does not prove healthy skin; persistent or worsening symptoms should be assessed.",
+      "sources": [
+        {"title": "AAD: Dry skin care", "url": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin"},
+        {"title": "AAD: Sun protection", "url": "https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/choosing-right-sunscreen"}
+      ]
+    }
+  }
+}

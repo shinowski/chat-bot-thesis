@@ -1,0 +1,22 @@
+[
+  {"name":"score_meaning_and_limits","turns":[
+    {"text":"What do your scores mean?","intent":"bot_identity","contains":["correct message categories","does not measure diagnostic accuracy"]},
+    {"text":"What does 94.6% accuracy mean?","intent":"bot_identity","contains":["not established clinical accuracy"]},
+    {"text":"What does the confidence mean?","intent":"bot_identity","contains":["Neither is your probability"]},
+    {"text":"How accurate is this chatbot?","intent":"bot_identity","contains":["does not measure diagnostic accuracy"]}
+  ]},
+  {"name":"privacy_matches_server_storage","turns":[
+    {"text":"Is my information private?","intent":"bot_identity","contains":["Flamma server","not encrypted","no account sign-in"]},
+    {"text":"Who can access my photos?","intent":"bot_identity","contains":["browser profile","server files"]},
+    {"text":"Are my photos encrypted?","intent":"bot_identity","contains":["not encrypted"]},
+    {"text":"Do you encrypt my data?","intent":"bot_identity","contains":["not encrypted","backups"]}
+  ]},
+  {"name":"explanation_questions_preserve_skin_facts","turns":[
+    {"text":"My rash is on my arm for two weeks","intent":"location"},
+    {"text":"What do your scores mean?","intent":"bot_identity","state":{"location":"My rash is on my arm for two weeks","duration":"My rash is on my arm for two weeks","classification":null}},
+    {"text":"Is my data encrypted?","intent":"bot_identity","state":{"location":"My rash is on my arm for two weeks","duration":"My rash is on my arm for two weeks","medication":null}}
+  ]},
+  {"name":"warnings_override_meta_questions","turns":[
+    {"text":"How accurate is this chatbot? I cannot breathe","intent":"emergency"}
+  ]}
+]
