@@ -1,0 +1,131 @@
+﻿message,expected,predicted
+"hello, can we talk for a moment?",greeting,greeting
+"good day, are you available?",greeting,greeting
+"hi, I have something to ask",greeting,greeting
+"hey there, can we chat?",greeting,greeting
+"morning, I need some assistance",greeting,greeting
+"hello there, could you assist me?",greeting,greeting
+"hi, is the assistant available?",greeting,greeting
+"hey, may I ask something?",greeting,greeting
+"good evening, can we talk?",greeting,greeting
+"hello, I could use some guidance",greeting,greeting
+my skin has become rough and irritated,symptom,symptom
+I noticed several itchy spots on my skin,symptom,symptom
+there are flaky areas appearing on my skin,symptom,symptom
+I've developed some unusual red patches,symptom,symptom
+my skin keeps itching and feels irritated,symptom,symptom
+small raised spots appeared on my skin,symptom,symptom
+I noticed dry patches that keep flaking,symptom,symptom
+there is an irritated patch that keeps itching,symptom,location
+my skin looks unusually red and scaly,symptom,symptom
+I've noticed some new irritated areas,symptom,location
+the affected area is around my left elbow,location,location
+I can see the irritation across my forehead,location,location
+the spots are mostly around both knees,location,location
+the affected skin is behind my neck,location,location
+the irritated area is on my lower back,location,location
+most of the patches are around my ankles,location,location
+the skin issue appears near my right shoulder,location,symptom
+the affected spots are along my upper chest,location,location
+I can see the patches on both hands,location,location
+the irritation is mainly around my scalp,location,location
+this has been happening for nearly four days,duration,duration
+I first noticed it around three weeks back,duration,duration
+the skin issue has lasted roughly six months,duration,duration
+it appeared sometime earlier this week,duration,duration
+I've had the problem for around ten days,duration,duration
+this started approximately five weeks back,duration,duration
+the irritation has been present for several days,duration,symptom
+I noticed it beginning about two months back,duration,duration
+it has stayed like this for almost a week,duration,duration
+the problem began sometime last month,duration,duration
+the discomfort is pretty minor,severity,severity
+I'd describe the irritation as fairly intense,severity,severity
+the itching has become extremely uncomfortable,severity,severity
+it's noticeable but still manageable,severity,severity
+the discomfort feels somewhere in the middle,severity,severity
+the irritation is not very strong,severity,severity
+it's becoming quite painful and difficult to ignore,severity,severity
+I'd say the symptoms are moderately uncomfortable,severity,severity
+the itching is very intense now,severity,severity
+the discomfort is mild enough to tolerate,severity,severity
+"yes, that sounds correct",confirmation,confirmation
+that's what I was trying to say,confirmation,confirmation
+I believe that's correct,confirmation,confirmation
+"yes, you've understood me correctly",confirmation,confirmation
+that seems about right,confirmation,confirmation
+"no, that's not what I meant",confirmation,confirmation
+I don't think that's correct,confirmation,confirmation
+I'm not completely certain about that,confirmation,confirmation
+"maybe, but I'm unsure",confirmation,confirmation
+that is mostly correct,confirmation,confirmation
+I've been applying a moisturizing cream to it,medication,medication
+I used an over-the-counter skin cream yesterday,medication,medication
+I haven't put any medicine on the area,medication,medication
+I've been taking an allergy tablet for the itching,medication,medication
+I applied some ointment to the irritated skin,medication,medication
+I haven't taken anything for the problem,medication,medication
+I've tried using a cream from the pharmacy,medication,medication
+I used a topical lotion on the affected area,medication,medication
+I haven't tried treating it with medicine,medication,medication
+I've already applied a skin ointment today,medication,medication
+my throat is getting tighter and breathing is becoming difficult,emergency,emergency
+I'm suddenly feeling faint while my face is swelling,emergency,emergency
+the swelling around my mouth is increasing and I can't breathe normally,emergency,emergency
+I'm struggling to stay conscious and a rash appeared suddenly,emergency,emergency
+my tongue is getting bigger and swallowing is becoming difficult,emergency,emergency
+I suddenly developed hives and now I'm having difficulty breathing,emergency,emergency
+my skin reaction is spreading rapidly and I feel like I might faint,emergency,emergency
+my lips are swelling quickly and my chest feels very tight,emergency,emergency
+I have a very high fever and the skin reaction is worsening rapidly,emergency,emergency
+the redness from the wound is rapidly streaking upward and I have a fever,emergency,emergency
+I've attached a picture of the affected skin,image_upload,location
+I just submitted a photo of the area,image_upload,image_upload
+here is an image showing the skin problem,image_upload,location
+I've provided a picture for you to examine,image_upload,image_upload
+the photo of the affected area has been uploaded,image_upload,image_upload
+I sent an image showing what the patches look like,image_upload,image_upload
+I've included a photo of the irritation,image_upload,image_upload
+here's the picture I took of my skin,image_upload,image_upload
+I uploaded an image showing the affected spot,image_upload,location
+the skin photo has been attached,image_upload,image_upload
+"I need to head off, catch you later",goodbye,goodbye
+"I'm going to leave now, bye",goodbye,goodbye
+"that's everything for today, goodbye",goodbye,goodbye
+I'll be heading out now,goodbye,goodbye
+"thanks, I'll talk to you later",goodbye,goodbye
+"I'm finished for now, see you later",goodbye,goodbye
+"I have to go now, goodbye",goodbye,goodbye
+"that's all I needed, bye for now",goodbye,goodbye
+I'll come back another time,goodbye,goodbye
+I'm done chatting for today,goodbye,goodbye
+thank you for explaining that clearly,thanks,thanks
+I really appreciate your assistance,thanks,thanks
+thanks for taking the time to help,thanks,thanks
+I appreciate the information you provided,thanks,thanks
+many thanks for your guidance,thanks,thanks
+"that was useful, thank you",thanks,thanks
+I appreciate you helping me understand,thanks,thanks
+"thank you, that cleared things up",thanks,thanks
+thanks a lot for the explanation,thanks,thanks
+I'm grateful for your help,thanks,thanks
+what kind of assistant are you?,bot_identity,bot_identity
+can you explain what Flamma does?,bot_identity,bot_identity
+what is your role in this system?,bot_identity,bot_identity
+are you an automated assistant?,bot_identity,bot_identity
+what were you designed to help with?,bot_identity,bot_identity
+tell me what this chatbot is for,bot_identity,bot_identity
+what exactly can Flamma do?,bot_identity,bot_identity
+are you the Flamma assistant?,bot_identity,bot_identity
+what is the purpose of this chatbot?,bot_identity,bot_identity
+can you tell me about yourself?,bot_identity,bot_identity
+what is the tallest mountain in Europe?,unknown,unknown
+can you solve a quadratic equation for me?,unknown,unknown
+who invented the telephone?,unknown,unknown
+what ingredients do I need for pancakes?,unknown,unknown
+how do I change my computer password?,unknown,unknown
+tell me something about ancient Rome,unknown,unknown
+what is the capital city of Canada?,unknown,unknown
+can you recommend a movie to watch?,unknown,unknown
+how many planets are in the solar system?,unknown,unknown
+what does photosynthesis mean?,unknown,unknown

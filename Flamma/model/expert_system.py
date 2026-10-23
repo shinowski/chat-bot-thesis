@@ -1,4 +1,5 @@
 import json
+from math import isfinite
 
 
 class ExpertSystem:
@@ -83,7 +84,7 @@ class ExpertSystem:
                 "matched_rules": []
             }
 
-        if confidence < 0.0 or confidence > 1.0:
+        if not isfinite(confidence) or confidence < 0.0 or confidence > 1.0:
             return {
                 "success": False,
                 "status": "invalid_confidence",

@@ -10,9 +10,11 @@ from model.flow_manager import FlowManager
 from model.dataset import Dataset
 from model.dialogue import concise, correction_updates, dialogue_act, is_medication_question, is_self_report, is_medication_report, medication_report_parts
 from model.image_classifier import ImageClassifier, ImageClassifierError
-from model.config import intent_model_path
+from model.config import intent_model_path, IMAGE_CONFIDENCE_THRESHOLD
 from model.safety import GENERAL_CARE_GUIDANCE, SAFETY_RESPONSES, is_care_question, safety_intent, safety_response
 from model.chat_support import confirmation_kind
+from model.severity_support import guidance_reply, burden_summary, discussion_alert
+from model.reply_choices import with_reply_choices
 from model.question_clarification import knowledge_choice_index, clarification_request, screening_choice_answer, bare_product_answer
 from model.dialogue import SPECIFIC_MEDICINES, looks_like_question
 from model.text_understanding import (
@@ -58,6 +60,8 @@ class SemanticChatbot:
         if normalized_classification == "lichen_planus":
             normalized_classification = "lichen planus"
 
+        if isinstance(confidence, bool):
+            return {"success": False, "message": "The classification confidence is invalid."}
         try:
             confidence = float(confidence)
         except (TypeError, ValueError):
@@ -70,6 +74,13 @@ class SemanticChatbot:
             return {
                 "success": False,
                 "message": "The classification confidence must be between 0 and 1."
+            }
+
+        if confidence < IMAGE_CONFIDENCE_THRESHOLD:
+            return {
+                "success": False,
+                "reason": "low_confidence",
+                "message": "The image model isn't confident enough to classify this photo. Please try a clearer photo with good lighting.",
             }
 
         self.conversation.set(
@@ -137,6 +148,8 @@ class SemanticChatbot:
                         imageResult={"status": "rejected", "reason": "unavailable"})
         if result["status"] == "rejected":
             reasons = {
+                "too_blurry": "This photo is too blurry to screen. Please retake it in good light, hold the camera steady, and focus on the affected skin before uploading it again.",
+                "too_large": "Please upload an image smaller than 10 MB.",
                 "no_skin_detected": "I couldn't detect enough skin in this image. Please upload a clear, close-up photo of the affected area.",
                 "out_of_scope": "This image falls outside the image model's supported conditions. I couldn't classify it reliably.",
                 "low_confidence": "The image model isn't confident enough to classify this photo. Please try a clearer photo with good lighting.",
@@ -152,6 +165,12 @@ class SemanticChatbot:
                 "imageResult": result,
             }
 
+        if result.get('is_confident') is False:
+            feedback = "The image model isn't confident enough to classify this photo. Please try a clearer photo with good lighting."
+            self.conversation.invalidate_image_result(feedback)
+            return dict(reply=feedback, intent='image_rejected', confidence=None, followUps=[],
+                        imageResult={'status': 'rejected', 'reason': 'low_confidence'})
+
         accepted = self.receive_classification(
             result.get("predicted_class"), result.get("confidence")
         )
@@ -162,7 +181,7 @@ class SemanticChatbot:
                 "intent": "image_rejected",
                 "confidence": None,
                 "followUps": [],
-                "imageResult": {"status": "rejected", "reason": "invalid_classification"},
+                "imageResult": {"status": "rejected", "reason": accepted.get("reason", "invalid_classification")},
             }
 
         disease = accepted["classification"]
@@ -184,6 +203,8 @@ class SemanticChatbot:
         )
         if disease == "normal_skin":
             response += " A normal-skin match does not confirm healthy skin or rule out other conditions. Persistent or worsening symptoms need medical assessment."
+        if (result.get('quality') or {}).get('blur_status') == 'warn':
+            response += "\n\nThis photo is slightly blurry. A sharper, well-focused photo may improve screening."
         response += '\n\n' + self.knowledge.treatment_text(photo_disease)
         if self.flow.get_expected_intent(self.conversation) is not None:
             if self.flow.get_expected_intent(self.conversation) == "symptom":
@@ -272,20 +293,31 @@ class SemanticChatbot:
         return disease or None
 
     def remember_reply(self, result, question=None):
-        if result['intent'] in {'knowledge_question', 'product_information', 'diagnosis_question'}:
+        severity = self.conversation.get('severity_discussion') or {}
+        if getattr(self, '_reply_severity_options', None) is not None:
+            result['choiceContext'] = 'severity'
+        if result['intent'] == 'severity_guidance' and severity.get('active') and severity.get('pending'):
+            field = severity['pending']
+            result['choiceContext'] = ('severity_extent_psoriasis' if field == 'extent' and severity.get('disease') == 'psoriasis'
+                                       else 'severity_' + field if field in {'sites', 'extent', 'impact', 'joints'}
+                                       else 'severity_detail')
+        if result['intent'] in {'knowledge_question', 'product_information', 'diagnosis_question', 'severity_guidance'}:
             info = getattr(self, '_reply_treatment_info', None)
             if info:
                 disease = info['condition_key']
                 result['treatmentInfo'] = info
                 if getattr(self, '_reply_from_photo', False) and disease == self.image_knowledge_disease() and self.conversation.get('classification_image_id'):
                     result['sourceImageId'] = self.conversation.get('classification_image_id')
+        session = self.conversation.get('severity_discussion')
+        if session and result['intent'] not in {'severity_guidance', 'thanks', 'greeting', 'confirmation', 'simple_explanation'} and getattr(self, '_reply_severity_options', None) is None:
+            self.conversation.set('severity_discussion', dict(session, active=False))
         if result["intent"] == "image_explanation" and self.conversation.get("classification_image_id"):
             result["sourceImageId"] = self.conversation.get("classification_image_id")
         self.conversation.set("last_reply_intent", result["intent"])
         self.conversation.set("pending_question", question)
         if result['intent'] == 'image_explanation':
             self.conversation.set('last_knowledge_topics', [])
-        return result
+        return with_reply_choices(result, question)
 
     def conversation_summary(self):
         data = self.conversation.data
@@ -303,6 +335,8 @@ class SemanticChatbot:
             lines.append('Product mentioned (this alone does not mean it was used): ' + data['mentioned_product'])
         if data.get('severity') is not None:
             lines.append(f"Severity (your description): {data['severity']}")
+        if (data.get('severity_discussion') or {}).get('answers'):
+            lines.append(burden_summary(data['severity_discussion']))
         if data.get('classification'):
             lines.append(f"Last classified photo: {data.get('image_condition') or data['classification']} ({data['classification_confidence']:.1%} model confidence). This is a screening result, not a confirmed diagnosis.")
         if data.get('last_image_status') == 'rejected':
@@ -310,6 +344,10 @@ class SemanticChatbot:
         return '\n'.join(lines)
 
     def simple_explanation(self, expected_intent):
+        if self.conversation.get('last_knowledge_topics') == ['severity']:
+            self._reply_severity_options = ['Continue severity questions', 'When should I see a doctor?']
+            session = self.conversation.get('severity_discussion') or {}
+            return "Short version: severity involves how much skin is affected, where it is, and how it affects you. A small patch can still matter. I can record your descriptions, but a clinician needs to assess an overall severity grade." + ('\n\n' + burden_summary(session) if session.get('answers') else '')
         if self.conversation.get('last_reply_intent') == 'diagnosis_question':
             return self.get_diagnosis_response('is this my skin condition?')
         disease = self.conversation.get('knowledge_disease')
@@ -336,15 +374,26 @@ class SemanticChatbot:
 
     def suggested_questions(self):
         if self.conversation.get('knowledge_disease'):
-            return ['Explain simply', 'What can I do next?', 'When should I see a doctor?']
+            disease = self.conversation.get('knowledge_disease')
+            name = self.knowledge.data[disease]['name']
+            topics = self.conversation.get('last_knowledge_topics') or []
+            related = next((prompt for topic, prompt in [
+                ('causes', f'What causes {name}?'),
+                ('symptoms', f'What are the symptoms of {name}?'),
+                ('management', f'Treatment options for {name}'),
+                ('course', f'How long does {name} usually last?'),
+            ] if topic not in topics), f'Treatment options for {name}')
+            return ['Explain simply', related, 'When should I see a doctor?']
         if self.conversation.get('classification'):
             return ['What does this result mean?', 'Summarize our conversation', 'Continue screening']
-        return ['Continue screening', 'Summarize our conversation']
+        return ['Continue screening', 'Can I send a photo?', 'Summarize our conversation']
 
     def reply(self, message, image=None):
         self._reply_screening_question = None
         self._reply_management_style = None
         self._reply_from_photo = False
+        self._reply_treatment_info = None
+        self._reply_severity_options = None
 
         # ==========================================================
         # IMAGE UPLOAD
@@ -371,6 +420,11 @@ class SemanticChatbot:
         safety = safety_intent(message)
         if safety:
             return self.safety_reply(safety, message)
+        alert = discussion_alert(message, self.conversation)
+        if alert:
+            result = self.safety_reply(alert[0], message)
+            result['reply'] = alert[1]
+            return result
         predicted_intent, confidence = self.classifier.predict(normalize_message(message))
 
         # ==========================================================
@@ -446,6 +500,9 @@ class SemanticChatbot:
                 response += "You can ask about your photo result or tell me what changes you've noticed."
             else:
                 response += "What changes, if any, have you noticed on your skin? You can also say 'I'm not sure.'"
+
+        elif final_intent == 'severity_guidance':
+            response = self.get_severity_response(message)
 
         elif final_intent == 'conversation_summary':
             response = self.conversation_summary()
@@ -723,6 +780,8 @@ class SemanticChatbot:
             followups = ['What can I do next?', 'Treatment options for ' + condition, 'When should I see a doctor?']
         if final_intent in {'bot_identity', 'out_of_scope'}:
             followups = ['Continue screening', 'Summarize our conversation']
+        if self._reply_severity_options is not None:
+            followups = self._reply_severity_options
         if final_intent == 'knowledge_question' and not is_care_question(message) and self.conversation.get('knowledge_disease') is None and self.conversation.get('last_image_status') != 'rejected' and self.conversation.get('classification') != 'normal_skin':
             followups = self.knowledge.choices()
         if final_intent == 'invalid_duration' and message.strip().replace('.', '', 1).isdigit():
@@ -944,6 +1003,24 @@ class SemanticChatbot:
         return "I'm Flamma. I can help you describe a skin concern, explain named conditions, discuss general care from my information library, remember details in this conversation, and summarize what you've shared. You can pause or resume screening at any time."
 
 
+    def get_severity_response(self, message, disease=None):
+        named = self.knowledge.detect_disease(message)
+        photo_reference = bool(message_words(message) & PHOTO_REFERENCES)
+        if photo_reference and not named and self.conversation.get('last_image_status') == 'rejected':
+            self.conversation.set('severity_discussion', None)
+            self._reply_treatment_info = None
+            self._reply_severity_options = ['How severe is my skin concern?', 'When should I see a doctor?']
+            return "I couldn't reliably classify the latest photo, so I cannot use it to assess a condition or its severity. You can describe the symptoms and how they affect you, or name a condition for general severity information."
+        disease = named or (self.image_knowledge_disease() if photo_reference else disease or self.conversation.get('knowledge_disease') or self.image_knowledge_disease())
+        from_photo = not named and bool(disease) and disease == self.image_knowledge_disease() and (photo_reference or self.conversation.get('knowledge_origin') == 'photo_screening')
+        if named:
+            self.conversation.set('knowledge_origin', 'named_condition')
+        self._reply_from_photo = from_photo
+        response, info, options = guidance_reply(message, self.conversation, self.knowledge, disease, from_photo)
+        self._reply_treatment_info = info
+        self._reply_severity_options = options
+        return self.photo_topic_note(message, disease) + response if named and photo_reference else response
+
     def get_knowledge_response(self, message, expected_intent):
         self._reply_treatment_info = None
         self._reply_screening_question = None
@@ -1053,6 +1130,9 @@ class SemanticChatbot:
 
         if is_disease_overview_question(message) and topics == ['overview']:
             topics = ['overview', 'symptoms', 'management']
+
+        if 'severity' in topics:
+            return self.get_severity_response(message, disease)
 
         # ----------------------------------------------------------
         # REMEMBER CURRENT KNOWLEDGE DISEASE

@@ -1,0 +1,697 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dermatologist review — not validated</title><style>body{font:15px/1.6 system-ui,sans-serif;max-width:1150px;margin:36px auto;padding:0 24px;color:#192537}h1,h2{color:#913c24}h2{margin-top:32px}table{border-collapse:collapse;width:100%;font-size:12px;margin:20px 0}th,td{padding:8px;border:1px solid #cdd3d9;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#f3e9e5}tr:nth-child(even){background:#fafafa}p,pre{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:11px;background:#f5f6f7;padding:12px}.review{min-height:65px;border:1px solid #bbb;padding:12px}@media print{body{font-size:10pt;margin:0;padding:0}table{font-size:8pt}tr{break-inside:avoid}h2,h3{break-after:avoid}thead{display:table-header-group}@page{size:A4 landscape;margin:13mm}}</style><body><h1>Flamma — dermatologist review source snapshot</h1><p>Status: awaiting actual dermatologist review and signature. All content below is existing implementation material; inclusion is not approval.</p>
+<h2>data/knowledge_base.json</h2><p>SHA-256: 94a3b9126ff7e8eaa66255560ff36b4cb2830a8ed994f98695c64ec7a47124e1</p><pre>{
+    &quot;dermatitis&quot;: {
+        &quot;name&quot;: &quot;Dermatitis&quot;,
+        &quot;aliases&quot;: [&quot;eczema&quot;],
+        &quot;overview&quot;: &quot;Dermatitis is a general term for conditions that cause inflammation of the skin. Different types of dermatitis can have different causes and appearances. One common type is atopic dermatitis, also called eczema, which often causes itchy, dry, and inflamed skin.&quot;,
+        &quot;symptoms&quot;: &quot;Symptoms of dermatitis vary depending on the type. Atopic dermatitis commonly causes itching, dry or scaly skin, a rash, inflammation, scratch marks, and sometimes oozing or crusting areas.&quot;,
+        &quot;causes&quot;: &quot;Dermatitis can have different causes depending on the type. For atopic dermatitis, factors involving the skin barrier, immune system, genes, and environmental exposures may play a role.&quot;,
+        &quot;contagious&quot;: &quot;Atopic dermatitis is not contagious and cannot spread from one person to another. Other forms of dermatitis also need to be distinguished by their specific cause.&quot;,
+        &quot;management&quot;: &quot;Management depends on the type and severity of dermatitis. For atopic dermatitis, keeping the skin moisturized is an important part of care, and a dermatologist may recommend additional treatment based on the person&#x27;s symptoms.&quot;,
+        &quot;referral&quot;: &quot;A dermatologist can evaluate the type and severity of dermatitis and determine an appropriate treatment plan. Professional evaluation is especially useful when symptoms persist, worsen, or are difficult to control.&quot;
+    },
+
+    &quot;atopic_dermatitis&quot;: {
+        &quot;name&quot;: &quot;Atopic Dermatitis&quot;,
+        &quot;aliases&quot;: [&quot;atopic eczema&quot;],
+        &quot;overview&quot;: &quot;Atopic dermatitis is a type of eczema that causes itchy, dry, inflamed skin. It can last a long time and flare up repeatedly. It often starts in childhood, but it can begin at any age.&quot;,
+        &quot;symptoms&quot;: &quot;Common signs include itching, dry skin, and irritated patches. The appearance can vary with skin tone; affected areas may look pink, red, brown, gray, or purple.&quot;,
+        &quot;causes&quot;: &quot;Genes, the immune system, and changes in the skin&#x27;s protective barrier can contribute. The exact cause is complex, and things touching the skin can affect flare-ups.&quot;,
+        &quot;contagious&quot;: &quot;Atopic dermatitis is not contagious; it does not pass from person to person.&quot;,
+        &quot;management&quot;: &quot;Keeping the skin moisturized with a mild, fragrance-free cream or ointment can help. A dermatologist can confirm the condition and recommend a treatment plan suited to the symptoms.&quot;,
+        &quot;referral&quot;: &quot;A dermatologist can assess suspected atopic dermatitis and help control flare-ups. Seek an evaluation when symptoms persist, worsen, or are difficult to manage.&quot;,
+        &quot;sources&quot;: [
+            &quot;https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis&quot;,
+            &quot;https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/causes&quot;
+        ]
+    },
+
+    &quot;contact_dermatitis&quot;: {
+        &quot;name&quot;: &quot;Contact Dermatitis&quot;,
+        &quot;aliases&quot;: [&quot;allergic contact dermatitis&quot;, &quot;irritant contact dermatitis&quot;],
+        &quot;overview&quot;: &quot;Contact dermatitis is skin inflammation caused by something touching the skin. The substance may irritate the skin directly or cause an allergic skin reaction.&quot;,
+        &quot;symptoms&quot;: &quot;Itching followed by a rash is common. Blisters can also occur, and the reaction may appear after exposure to the substance.&quot;,
+        &quot;causes&quot;: &quot;Irritants or allergens can trigger contact dermatitis. Examples include repeated exposure to water, fragrances, and nickel. A dermatologist can help work out the cause.&quot;,
+        &quot;contagious&quot;: &quot;Contact dermatitis is not contagious and cannot be passed to another person.&quot;,
+        &quot;management&quot;: &quot;Identifying and avoiding the substance responsible is an important part of care. A dermatologist can help identify the trigger and treat the itching and rash.&quot;,
+        &quot;referral&quot;: &quot;See a dermatologist if you cannot identify the cause or the rash keeps returning. They can investigate possible triggers and recommend appropriate care.&quot;,
+        &quot;sources&quot;: [&quot;https://www.aad.org/public/diseases/eczema/types/contact-dermatitis&quot;]
+    },
+
+    &quot;hives&quot;: {
+        &quot;name&quot;: &quot;Hives&quot;,
+        &quot;aliases&quot;: [&quot;urticaria&quot;],
+        &quot;overview&quot;: &quot;Hives, also called urticaria, are a skin reaction that produces raised bumps or patches that often itch. They can appear suddenly and come and go.&quot;,
+        &quot;symptoms&quot;: &quot;Itchy, raised bumps or patches are common. Individual hives often fade within a day, but new ones can appear. Their color can vary with skin tone.&quot;,
+        &quot;causes&quot;: &quot;Hives can develop when the body releases histamine. Triggers can include allergies, infections, heat, cold, pressure, or stress; sometimes the cause cannot be identified.&quot;,
+        &quot;contagious&quot;: &quot;Hives themselves are not contagious. An infection that triggers them may be contagious.&quot;,
+        &quot;management&quot;: &quot;Many cases settle on their own. A dermatologist can help assess hives that keep returning and recommend treatment to control flare-ups.&quot;,
+        &quot;referral&quot;: &quot;Get emergency medical help if hives occur with trouble breathing or swallowing, faintness, or swelling of the face, mouth, or throat. Recurrent or persistent hives should be evaluated by a clinician.&quot;,
+        &quot;sources&quot;: [
+            &quot;https://www.aad.org/public/diseases/a-z/hives-overview&quot;,
+            &quot;https://www.aad.org/public/diseases/a-z/hives-causes&quot;
+        ]
+    },
+
+    &quot;normal_skin&quot;: {
+        &quot;name&quot;: &quot;Normal Skin&quot;,
+        &quot;aliases&quot;: [&quot;no condition detected&quot;, &quot;healthy skin&quot;],
+        &quot;overview&quot;: &quot;Normal skin is a screening label, not a disease. It means the photo model&#x27;s closest match was its normal-skin class. This does not confirm that the skin is healthy or rule out conditions outside the model&#x27;s supported classes.&quot;
+    },
+
+    &quot;lichen_planus&quot;: {
+        &quot;name&quot;: &quot;Lichen Planus&quot;,
+        &quot;overview&quot;: &quot;Lichen planus is an inflammatory condition that can affect the skin and may also involve areas such as the mouth, scalp, nails, or genitals. Its appearance and symptoms can differ depending on the affected area.&quot;,
+        &quot;symptoms&quot;: &quot;Lichen planus can cause different symptoms depending on where it develops. On the skin it may cause itchy bumps. It can also cause changes in the mouth, scalp, nails, or genital area.&quot;,
+        &quot;causes&quot;: &quot;The exact cause of lichen planus is not known. It is thought to involve the immune system mistakenly attacking healthy cells, although researchers are still studying why this happens.&quot;,
+        &quot;contagious&quot;: &quot;Lichen planus is not considered a condition that spreads from person to person through ordinary contact.&quot;,
+        &quot;management&quot;: &quot;Management of lichen planus depends on the affected area and the severity of symptoms. Some mild skin cases may improve without treatment, while treatment may be recommended to reduce symptoms such as itching or pain and to prevent worsening.&quot;,
+        &quot;referral&quot;: &quot;A dermatologist can help confirm whether a skin, scalp, nail, or other change is lichen planus and determine whether treatment is needed. Persistent, painful, or worsening symptoms should be professionally evaluated.&quot;
+    },
+
+    &quot;psoriasis&quot;: {
+        &quot;name&quot;: &quot;Psoriasis&quot;,
+        &quot;overview&quot;: &quot;Psoriasis is a chronic inflammatory skin condition in which the body produces new skin cells much faster than usual. These cells can build up on the skin and form visible thick or scaly patches.&quot;,
+        &quot;symptoms&quot;: &quot;Psoriasis commonly causes dry, thick, raised patches of skin that may have scale and may itch. The appearance, location, and symptoms can vary depending on the type of psoriasis and the person&#x27;s skin tone.&quot;,
+        &quot;causes&quot;: &quot;The exact process that causes psoriasis is complex. Research shows that the immune system and genes play important roles, and environmental factors may also contribute to the condition or its flare-ups.&quot;,
+        &quot;contagious&quot;: &quot;Psoriasis is not contagious. You cannot catch psoriasis by touching someone who has it or by ordinary contact with them.&quot;,
+        &quot;management&quot;: &quot;Psoriasis is often a long-term condition, but treatment and skin care can help control symptoms and flare-ups. Management may include identifying triggers, following an appropriate skin-care routine, maintaining healthy habits, and using treatment recommended by a healthcare professional when needed.&quot;,
+        &quot;referral&quot;: &quot;A dermatologist can confirm whether skin changes are psoriasis and recommend treatment based on the type, location, and severity. Professional evaluation is also important because psoriasis can be associated with conditions such as psoriatic arthritis.&quot;
+    },
+
+    &quot;rosacea&quot;: {
+        &quot;name&quot;: &quot;Rosacea&quot;,
+        &quot;overview&quot;: &quot;Rosacea is a chronic skin condition that mainly affects the face. It can cause flushing, persistent changes in facial color, acne-like breakouts, or visible blood vessels, and some people can also develop eye symptoms or thickened skin.&quot;,
+        &quot;symptoms&quot;: &quot;Rosacea may cause frequent flushing, persistent red, violet, or brown facial discoloration depending on skin tone, acne-like bumps, visible blood vessels, warmth, burning or stinging, and sometimes irritated eyes.&quot;,
+        &quot;causes&quot;: &quot;The exact cause of rosacea is not fully understood. Researchers believe several factors may be involved, and different triggers can cause symptoms to flare in different people.&quot;,
+        &quot;contagious&quot;: &quot;Rosacea is not contagious and does not spread from person to person.&quot;,
+        &quot;management&quot;: &quot;Rosacea has no current cure, but treatment can help control symptoms and reduce flare-ups. Management may include gentle skin care, sun protection, identifying and avoiding personal triggers, and treatments recommended by a dermatologist.&quot;,
+        &quot;referral&quot;: &quot;A dermatologist can distinguish rosacea from other conditions that may look similar and recommend an appropriate treatment plan. Evaluation is particularly important when symptoms persist, worsen, or involve the eyes.&quot;
+    }
+}
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div>
+<h2>data/treatment_guidance.json</h2><p>SHA-256: 6a49a5855e66734697c94a64269ed11ec4bd9c9ad0f2e92a9f8a5ee46968d283</p><pre>{
+  &quot;source_checked_on&quot;: &quot;2026-10-14&quot;,
+  &quot;conditions&quot;: {
+    &quot;atopic_dermatitis&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Atopic dermatitis can be treated to control symptoms and flare-ups. A dermatologist can help choose a treatment plan.&quot;,
+        &quot;curability&quot;: &quot;Atopic dermatitis has no current cure, but treatment can control it. Improvement does not necessarily mean it will never flare again.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Use a gentle, fragrance-free moisturizer and cleanser; be gentle when bathing.&quot;,
+        &quot;Identify and avoid personal flare triggers, such as irritating products or fabrics.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A clinician may prescribe topical corticosteroids or non-steroid anti-inflammatory creams, such as topical calcineurin inhibitors.&quot;,
+        &quot;More difficult cases may need supervised light therapy or systemic treatment.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Arrange an assessment for persistent or difficult-to-control symptoms. The treatment choice depends on age, body area, severity, and medical history.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Atopic dermatitis treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/treatment&quot;}
+      ]
+    },
+    &quot;contact_dermatitis&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Contact dermatitis can be treated. Identifying and avoiding the substance causing it is a key part of care.&quot;,
+        &quot;curability&quot;: &quot;Contact dermatitis can clear when its cause is identified and avoided. It can recur with further exposure, so finding the trigger matters.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Avoid the suspected substance touching your skin; a clinician can help identify the trigger.&quot;,
+        &quot;A cool, damp compress can help ease itching.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A clinician may prescribe a topical corticosteroid to reduce inflammation, with the strength chosen for the body area and severity.&quot;,
+        &quot;Patch testing may help identify an allergy; extensive or persistent reactions may need other clinician-supervised treatment.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Seek an assessment if the trigger is unclear, the rash keeps returning, or symptoms are extensive or worsening.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Contact dermatitis treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/treatment&quot;},
+        {&quot;title&quot;: &quot;NHS: Contact dermatitis treatment&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/contact-dermatitis/treatment/&quot;}
+      ]
+    },
+    &quot;lichen_planus&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Lichen planus has treatments that can relieve symptoms or prevent worsening. Some mild skin cases improve without treatment; care depends on the affected area.&quot;,
+        &quot;curability&quot;: &quot;Lichen planus has no current cure, although it can go away on its own for some people. Treatment can help prevent worsening.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Use gentle, fragrance-free skin care and avoid rubbing or scratching affected skin.&quot;,
+        &quot;A cool compress may ease itching.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;Some mild skin cases need monitoring rather than medication; a clinician should confirm this.&quot;,
+        &quot;Treatment may include topical corticosteroids, topical calcineurin inhibitors, or medicine for itching; more extensive skin disease may need light therapy or systemic treatment.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Arrange a dermatology assessment. Mouth, genital, scalp, or nail involvement needs care tailored to that site; a skin photo cannot determine that treatment.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Lichen planus treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/a-z/lichen-planus-treatment&quot;},
+        {&quot;title&quot;: &quot;AAD: Lichen planus self-care&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/a-z/lichen-planus-self-care&quot;},
+        {&quot;title&quot;: &quot;AAD: Lichen planus FAQs&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/a-z/lichen-planus-overview&quot;}
+      ]
+    },
+    &quot;psoriasis&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Psoriasis can be treated to reduce symptoms and control flare-ups. The appropriate treatment depends on its type, extent, and severity.&quot;,
+        &quot;curability&quot;: &quot;Psoriasis has no current cure, but treatments can help control it and improve symptoms.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Follow gentle skin care and use moisturizer to help manage dry skin.&quot;,
+        &quot;Identify personal triggers and avoid scratching or picking the affected skin.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A dermatologist may prescribe topical corticosteroids, vitamin D analogues, or other topical medicines.&quot;,
+        &quot;More extensive disease may need supervised phototherapy or systemic medicines, including biologics. Do not use tanning beds as treatment.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;A dermatologist should confirm the diagnosis and choose treatment for the affected area and severity. Mention joint pain, stiffness, or swelling during your assessment.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Psoriasis treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/psoriasis/treatment/treatment&quot;},
+        {&quot;title&quot;: &quot;AAD: Managing psoriasis&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/psoriasis/insider/tips&quot;},
+        {&quot;title&quot;: &quot;AAD: Psoriasis treatment benefits&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/psoriasis/treatment/medications/treat-my&quot;}
+      ]
+    },
+    &quot;rosacea&quot;: {
+      &quot;nonfacial_site_note&quot;: &quot;Rosacea mainly affects the face. A concern on the buttocks needs assessment; I cannot assume rosacea is its cause.&quot;,
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Rosacea treatment can help control symptoms and reduce flare-ups. A dermatologist can help choose care for the particular signs you have.&quot;,
+        &quot;curability&quot;: &quot;Rosacea has no current cure, but treatment can help control its symptoms and flare-ups.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Use a gentle cleanser, moisturizer, and broad-spectrum sunscreen with SPF 30 or higher.&quot;,
+        &quot;Identify and limit personal flare triggers, such as overheating or irritating skin products.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A dermatologist may prescribe topical medicines such as azelaic acid, metronidazole, or ivermectin for acne-like bumps.&quot;,
+        &quot;Some cases need oral medicine or laser/light treatment, depending on the signs and medical history.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Arrange an assessment to confirm rosacea. Eye irritation needs clinician evaluation; eye pain or changes in vision require prompt medical care.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Rosacea treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/rosacea/treatment/diagnosis-treat&quot;},
+        {&quot;title&quot;: &quot;NHS: Rosacea&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/rosacea/&quot;}
+      ]
+    },
+    &quot;dermatitis&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Dermatitis has treatment options. The right approach depends on the type, such as atopic or contact dermatitis; that type has not been confirmed here.&quot;,
+        &quot;curability&quot;: &quot;Whether dermatitis clears or needs ongoing control depends on its type and cause. Atopic dermatitis has no current cure; contact dermatitis can clear when the trigger is avoided.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Use gentle, fragrance-free skin care and avoid products that irritate the affected skin.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A clinician needs to identify the type of dermatitis before selecting medication; atopic and contact dermatitis can need different plans.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Ask a dermatologist to confirm the type and cause, especially when symptoms persist or worsen.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Atopic dermatitis treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/treatment&quot;},
+        {&quot;title&quot;: &quot;AAD: Contact dermatitis treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/treatment&quot;}
+      ]
+    },
+    &quot;hives&quot;: {
+      &quot;brief_answers_checked_on&quot;: &quot;2026-10-15&quot;,
+      &quot;brief_answers&quot;: {
+        &quot;treatability&quot;: &quot;Hives can be treated to reduce itching and new outbreaks. Many cases settle, while recurring or long-lasting hives may need a clinician&#x27;s treatment plan.&quot;,
+        &quot;curability&quot;: &quot;Hives can settle, but recurring or long-lasting hives need assessment. The outlook depends on the type and cause.&quot;
+      },
+      &quot;self_care&quot;: [
+        &quot;Avoid known triggers and use gentle skin care; recurrent hives should be assessed.&quot;
+      ],
+      &quot;clinician_options&quot;: [
+        &quot;A clinician or pharmacist can assess whether an oral antihistamine is appropriate; persistent hives may need specialist treatment.&quot;
+      ],
+      &quot;seek_care&quot;: &quot;Seek emergency care for trouble breathing or swallowing, faintness, or swelling of the face, mouth, or throat. Hives are an information topic, not one of this photo model&#x27;s supported classes.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Hives treatment&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/diseases/a-z/hives-treatment&quot;}
+      ]
+    },
+    &quot;normal_skin&quot;: {
+      &quot;self_care&quot;: [
+        &quot;General skin care can include gentle cleansing, moisturizer when needed, and sun protection.&quot;
+      ],
+      &quot;clinician_options&quot;: [],
+      &quot;seek_care&quot;: &quot;No disease-specific medication can be selected from this label. A normal-skin match does not prove healthy skin; persistent or worsening symptoms should be assessed.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;AAD: Dry skin care&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin&quot;},
+        {&quot;title&quot;: &quot;AAD: Sun protection&quot;, &quot;url&quot;: &quot;https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/choosing-right-sunscreen&quot;}
+      ]
+    }
+  }
+}
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div>
+<h2>data/course_guidance.json</h2><p>SHA-256: 4e67fb6141c5ea37d51b6b4a16c3c24490d683929c69bd1e8d037cdfefaead0a</p><pre>{
+  &quot;source_checked_on&quot;: &quot;2026-10-16&quot;,
+  &quot;description&quot;: &quot;General condition course, not an individual prognosis or confirmation of a screening label.&quot;,
+  &quot;conditions&quot;: {
+    &quot;contact_dermatitis&quot;: {
+      &quot;text&quot;: &quot;Contact dermatitis can clear over days to weeks once the triggering substance is avoided. Some cases last longer or return with further exposure. This is a general range, not a personal recovery deadline. Get assessed if symptoms persist, worsen, keep returning, or are not responding to treatment.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS 111 Wales: Contact dermatitis course&quot;, &quot;url&quot;: &quot;https://111.wales.nhs.uk/Encyclopaedia/c/article/contactdermatitis&quot;}]
+    },
+    &quot;atopic_dermatitis&quot;: {
+      &quot;text&quot;: &quot;Atopic dermatitis can have flare-ups and periods when symptoms are better. Treatment helps manage it, but there is no single number of days until it is permanently gone. A clinician can assess your symptoms and treatment response; a photo cannot predict your recovery time.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS: Atopic eczema&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/atopic-eczema/&quot;}]
+    },
+    &quot;dermatitis&quot;: {
+      &quot;text&quot;: &quot;Dermatitis includes different types, so there is no single usual duration. Contact dermatitis may settle after its trigger is avoided; atopic dermatitis can flare and improve repeatedly. The type has not been confirmed here. A clinician can help identify it and assess persistent or worsening symptoms.&quot;,
+      &quot;sources&quot;: [
+        {&quot;title&quot;: &quot;NHS: Contact dermatitis&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/contact-dermatitis/&quot;},
+        {&quot;title&quot;: &quot;NHS: Atopic eczema&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/atopic-eczema/&quot;}
+      ]
+    },
+    &quot;psoriasis&quot;: {
+      &quot;text&quot;: &quot;Psoriasis can have flare-ups and periods when symptoms are better. Treatment can help manage symptoms, but it does not have a fixed clearing time or a current cure. A clinician can assess your type of psoriasis and treatment response; a photo cannot predict how long your symptoms will last.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS: Psoriasis&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/psoriasis/&quot;}]
+    },
+    &quot;rosacea&quot;: {
+      &quot;text&quot;: &quot;Rosacea is a long-term condition. Symptoms can come and go, and treatment can help control them. There is no single time until it is permanently gone. A clinician can assess the symptoms and response to treatment; a photo cannot predict an individual recovery date.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS: Rosacea&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/rosacea/&quot;}]
+    },
+    &quot;lichen_planus&quot;: {
+      &quot;text&quot;: &quot;Lichen planus on the skin often improves over about 9 to 18 months, while mouth involvement can last several years. The affected area matters. These are general patterns, not a prediction for your skin; ask a clinician to confirm the condition and assess ongoing symptoms.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS: Lichen planus&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/lichen-planus/&quot;}]
+    },
+    &quot;hives&quot;: {
+      &quot;text&quot;: &quot;Hives often improve within a few days, but they can keep returning. Seek medical advice if they do not improve after two days or keep recurring. This is general information, not a prediction of when your rash will resolve. Trouble breathing or swallowing or sudden mouth or tongue swelling needs emergency care.&quot;,
+      &quot;sources&quot;: [{&quot;title&quot;: &quot;NHS: Hives&quot;, &quot;url&quot;: &quot;https://www.nhs.uk/conditions/hives/&quot;}]
+    },
+    &quot;normal_skin&quot;: {
+      &quot;text&quot;: &quot;A normal-skin screening match cannot identify the cause of symptoms or predict how long they will last. It does not confirm healthy skin. A clinician can assess persistent or worsening symptoms.&quot;,
+      &quot;sources&quot;: []
+    }
+  }
+}
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div>
+<h2>data/expert_rules.json</h2><p>SHA-256: bf27ba5b226238fbe4227efccd2ef214b45b1103101a7568c4a0e2bf1141e1d1</p><pre>{
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;awaiting_dermatologist_validation&quot;,
+    &quot;supported_diseases&quot;: [
+        &quot;dermatitis&quot;,
+        &quot;lichen planus&quot;,
+        &quot;psoriasis&quot;,
+        &quot;rosacea&quot;
+    ],
+    &quot;rules&quot;: []
+}
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div>
+<h2>model/safety.py</h2><p>SHA-256: f80b31e8099ef3aa921cb7b10503bc5e1d1211b6d5c2ee2125aa761662ff57cb</p><pre>&quot;&quot;&quot;Warning-sign routing, not diagnosis or validated triage.
+
+Source: https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101
+These rules and their urgency wording still require clinician review.
+&quot;&quot;&quot;
+
+import re
+
+from model.text_understanding import normalize_message, negation_prefix
+
+
+SAFETY_RESPONSES = {
+    &quot;emergency&quot;: (
+        &quot;Please seek emergency medical care now. Call your local emergency number &quot;
+        &quot;or go to the nearest emergency department. Do not wait for a photo result.&quot;
+    ),
+    &quot;medical_attention&quot;: (
+        &quot;Some symptoms you&#x27;ve described need an in-person medical assessment. &quot;
+        &quot;Please seek medical care promptly; a skin photo or chat cannot rule out a serious problem. &quot;
+        &quot;If you have trouble breathing or swallowing, or swelling of the eyes, lips, mouth, &quot;
+        &quot;or throat, seek emergency care immediately.&quot;
+    ),
+    &quot;safety_information&quot;: (
+        &quot;Trouble breathing or swallowing, or swelling of the eyes, lips, mouth, or throat, &quot;
+        &quot;can need emergency medical care. If this is happening now, seek emergency care immediately. &quot;
+        &quot;A skin photo cannot assess these symptoms.&quot;
+    ),
+    &quot;safety_check&quot;: (
+        &quot;Could you describe what is happening? Are you having trouble breathing or swallowing, &quot;
+        &quot;or swelling of your eyes, lips, mouth, or throat right now? If yes, seek emergency &quot;
+        &quot;medical care immediately. Otherwise, tell me the symptoms you&#x27;re concerned about &quot;
+        &quot;so I can respond more appropriately.&quot;
+    ),
+}
+
+GENERAL_CARE_GUIDANCE = (
+    &quot;See a doctor or dermatologist if you&#x27;re concerned about a rash or need a diagnosis and treatment. &quot;
+    &quot;Seek medical care promptly if a rash covers most of your body, spreads rapidly, is painful, &quot;
+    &quot;blisters or forms open sores, comes with fever or illness, involves the eyes, lips, mouth, &quot;
+    &quot;or genital skin, or has pus or yellow crusts. &quot;
+    &quot;If you have trouble breathing or swallowing, or swelling of the eyes or lips, &quot;
+    &quot;seek emergency care immediately. &quot;
+    &quot;These are signs to watch for; your question alone does not mean you are having an emergency.&quot;
+)
+
+
+def is_care_question(message):
+    &quot;&quot;&quot;Recognize requests about seeking care, rather than reports of danger.&quot;&quot;&quot;
+    text = normalize_message(message)
+    professional = r&quot;(?:doctor|dermatologist|physician|specialist|hospital|clinic|medical (?:care|attention|help))&quot;
+    return bool(re.search(r&quot;\b&quot; + professional + r&quot;\b&quot;, text)) and bool(re.search(
+        r&quot;\b(?:when|should|do i need|do we need|need to|have to|can i|could i|must i|&quot;
+        r&quot;is it time|is it necessary|see|consult|visit|seek|go to|get checked)\b&quot;, text
+    ))
+
+EMERGENCY_PATTERNS = (
+    r&quot;(?:cannot|can not|unable to|not able to|barely) (?:breathe|swallow)&quot;,
+    r&quot;(?:difficulty|trouble|problems?|hard time|hard|struggling) (?:with |to )?(?:breathing|swallowing|breathe|swallow)&quot;,
+    r&quot;(?:breathing|swallowing)\b[^.;!?]{0,28}\b(?:difficult|hard|trouble)&quot;,
+    r&quot;short(?:ness)? of breath&quot;,
+    r&quot;(?:throat|tongue|lips?|eyes?|face|mouth|airway|windpipe)\b[^.;!?]{0,28}\b(?:swelling|swollen|swelled up|getting bigger)&quot;,
+    r&quot;(?:swelling|swollen|swelled up)\b[^.;!?]{0,28}\b(?:throat|tongue|lips?|eyes?|face|mouth|airway|windpipe)&quot;,
+    r&quot;chest (?:feels|is) tight&quot;,
+)
+SKIN_PATTERNS = (
+    r&quot;blisters?|blistering|open sores?|raw skin&quot;,
+    r&quot;pus|(?:yellow|golden) crusts?|unpleasant smell&quot;,
+    r&quot;(?:spreading|spreads) (?:very )?(?:rapidly|quickly|fast)&quot;,
+    r&quot;(?:rapidly|quickly) spreading&quot;,
+    r&quot;fever|feverish|painful|unbearable|very ill&quot;,
+    r&quot;(?:most of|all over) (?:my |the |his |her )?body&quot;,
+)
+
+
+def _negated(clause, match):
+    # Scope negation locally. &quot;Cannot breathe&quot; and &quot;not able to breathe&quot;
+    # are affirmative warning patterns, not negated symptom reports.
+    prefix = negation_prefix(clause[:match.start()])
+    matched = re.sub(r&quot;^not able to\b&quot;, &quot;&quot;, match.group())
+    return bool(re.search(r&quot;\b(?:no|not|never|without)\b&quot;, matched)) or bool(re.search(
+        r&quot;\b(?:no|not|never|without|deny|denies)\b(?:\s+\w+){0,6}\s*$&quot;, prefix
+    )) or bool(re.match(r&quot;\s+(?:is|are)\s+not\b&quot;, clause[match.end():]))
+
+
+def _matches(clauses, patterns):
+    found, denied = False, False
+    for clause in clauses:
+        for pattern in patterns:
+            for match in re.finditer(r&quot;\b(?:&quot; + pattern + r&quot;)\b&quot;, clause):
+                if _negated(clause, match):
+                    denied = True
+                else:
+                    found = True
+    return found, denied
+
+
+def safety_intent(message, predicted_intent=None):
+    text = normalize_message(message)
+    clauses = re.split(
+        r&quot;[.;!?\n]+|\b(?:but|however|although|yet)\b|\band\s+(?=(?:my|i|he|she|his|her|their|the)\b)&quot;, text
+    )
+    emergency, denied_emergency = _matches(clauses, EMERGENCY_PATTERNS)
+    skin_context = bool(re.search(r&quot;\b(?:rash|skin|hives|lesion|blisters?|blistering)\b&quot;, text))
+    medical, _ = _matches(clauses, SKIN_PATTERNS)
+    mouth_rash = any(
+        _matches([clause], (r&quot;eyes?|lips?|mouth|genitals?|genital&quot;,))[0]
+        and _matches([clause], (r&quot;rash|sores?|peeling|blisters?|blistering&quot;,))[0]
+        for clause in clauses
+    )
+
+    # Personal reports such as &quot;Can you help? My lips are swollen&quot; still win.
+    personal = bool(re.search(r&quot;\b(?:my|our|i have|i am|i cannot|he has|she has|child has|baby has)\b&quot;, text))
+    educational = not personal and bool(re.search(
+        r&quot;\b(?:explain|define|what (?:is|are|does)|meaning of|can a|can eczema|can psoriasis|if someone|can(?: \w+){1,3} (?:cause|trigger|lead to))\b&quot;, text
+    ))
+    hypothetical = bool(re.match(r&quot;\s*(?:what (?:should|would) i do |what )?if i (?:get|develop|experience)\b&quot;, text))
+    if (educational or hypothetical) and (emergency or denied_emergency):
+        return &quot;safety_information&quot;
+    if emergency:
+        return &quot;emergency&quot;
+    if not (educational or hypothetical) and skin_context and (medical or mouth_rash):
+        return &quot;medical_attention&quot;
+    if denied_emergency:
+        return &quot;safety_information&quot;
+    if re.search(r&quot;\b(?:breathe|breathing|swallow|swallowing) (?:normally|fine|okay|well|easily)\b&quot;, text):
+        return &quot;safety_information&quot;
+    # A learned label is not evidence that a current emergency is happening.
+    # Ask about warning signs for unfamiliar wording instead of asserting urgency.
+    if predicted_intent == &quot;emergency&quot;:
+        if is_care_question(message):
+            return None
+        return &quot;safety_information&quot; if educational or hypothetical else &quot;safety_check&quot;
+    return None
+
+
+def safety_response(intent, conversation, message=None):
+    &quot;&quot;&quot;Available even before the embedding model has loaded.&quot;&quot;&quot;
+    if intent in {&quot;emergency&quot;, &quot;medical_attention&quot;}:
+        conversation.set(&quot;screening_paused&quot;, True)
+        conversation.set(&quot;last_knowledge_topics&quot;, [])
+        if message:
+            conversation.add_symptom(message)
+    conversation.set(&quot;last_reply_intent&quot;, intent)
+    if intent != &quot;safety_check&quot;:
+        conversation.set(&quot;pending_question&quot;, None)
+    return dict(
+        reply=SAFETY_RESPONSES[intent], intent=intent, confidence=None,
+        confidenceSource=None, modelConfidence=None, predictedIntent=None,
+        followUps=[], action=None,
+    )
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div>
+<h2>model/expert_system.py</h2><p>SHA-256: 6afbffc3bd0fef798c8c67dde95adb4f77dd9f32bf1dde4e25ae443f266df07f</p><pre>import json
+from math import isfinite
+
+
+class ExpertSystem:
+
+    def __init__(self, rules_path=&quot;data/expert_rules.json&quot;):
+
+        with open(rules_path, &quot;r&quot;, encoding=&quot;utf-8&quot;) as file:
+            self.rule_data = json.load(file)
+
+        self.rules = self.rule_data.get(&quot;rules&quot;, [])
+
+        self.supported_diseases = set(
+            self.rule_data.get(&quot;supported_diseases&quot;, [])
+        )
+
+
+    def evaluate(self, conversation_data):
+        &quot;&quot;&quot;
+        Evaluate screening information and the image classification
+        against dermatologist-validated expert rules.
+
+        Clinical rules will be added to expert_rules.json only after
+        validation.
+        &quot;&quot;&quot;
+
+        classification = conversation_data.get(&quot;classification&quot;)
+        confidence = conversation_data.get(
+            &quot;classification_confidence&quot;
+        )
+
+        # ------------------------------------------------------
+        # Require image classification
+        # ------------------------------------------------------
+
+        if classification is None:
+            return {
+                &quot;success&quot;: False,
+                &quot;status&quot;: &quot;awaiting_classification&quot;,
+                &quot;message&quot;: (
+                    &quot;An image classification result is required &quot;
+                    &quot;before expert-system evaluation.&quot;
+                ),
+                &quot;matched_rules&quot;: []
+            }
+
+        # ------------------------------------------------------
+        # Validate disease
+        # ------------------------------------------------------
+
+        normalized_disease = (
+            str(classification)
+            .lower()
+            .strip()
+            .replace(&quot;_&quot;, &quot; &quot;)
+        )
+
+        if normalized_disease not in self.supported_diseases:
+            return {
+                &quot;success&quot;: False,
+                &quot;status&quot;: &quot;unsupported_classification&quot;,
+                &quot;message&quot;: (
+                    &quot;The image classification is not supported &quot;
+                    &quot;by the expert system.&quot;
+                ),
+                &quot;matched_rules&quot;: []
+            }
+
+        # ------------------------------------------------------
+        # Validate classifier confidence
+        # ------------------------------------------------------
+
+        try:
+            confidence = float(confidence)
+
+        except (TypeError, ValueError):
+            return {
+                &quot;success&quot;: False,
+                &quot;status&quot;: &quot;invalid_confidence&quot;,
+                &quot;message&quot;: (
+                    &quot;The image classification confidence is invalid.&quot;
+                ),
+                &quot;matched_rules&quot;: []
+            }
+
+        if not isfinite(confidence) or confidence &lt; 0.0 or confidence &gt; 1.0:
+            return {
+                &quot;success&quot;: False,
+                &quot;status&quot;: &quot;invalid_confidence&quot;,
+                &quot;message&quot;: (
+                    &quot;The image classification confidence must &quot;
+                    &quot;be between 0 and 1.&quot;
+                ),
+                &quot;matched_rules&quot;: []
+            }
+
+        # ------------------------------------------------------
+        # Evaluate available rules
+        # ------------------------------------------------------
+
+        matched_rules = []
+
+        for rule in self.rules:
+
+            if self._matches_rule(
+                rule,
+                conversation_data,
+                normalized_disease
+            ):
+                matched_rules.append(rule)
+
+        # ------------------------------------------------------
+        # No validated rules yet
+        # ------------------------------------------------------
+
+        if not matched_rules:
+            return {
+                &quot;success&quot;: True,
+                &quot;status&quot;: &quot;no_matching_validated_rule&quot;,
+                &quot;disease&quot;: normalized_disease,
+                &quot;classification_confidence&quot;: confidence,
+                &quot;matched_rules&quot;: [],
+                &quot;recommendations&quot;: [],
+                &quot;referral&quot;: None,
+                &quot;message&quot;: (
+                    &quot;The classification was received successfully, &quot;
+                    &quot;but no dermatologist-validated expert rule &quot;
+                    &quot;matched this case.&quot;
+                )
+            }
+
+        # ------------------------------------------------------
+        # Build result from matched rules
+        # ------------------------------------------------------
+
+        recommendations = []
+        referrals = []
+
+        for rule in matched_rules:
+
+            recommendation = rule.get(&quot;recommendation&quot;)
+
+            if (
+                recommendation
+                and recommendation not in recommendations
+            ):
+                recommendations.append(recommendation)
+
+            referral = rule.get(&quot;referral&quot;)
+
+            if referral and referral not in referrals:
+                referrals.append(referral)
+
+        return {
+            &quot;success&quot;: True,
+            &quot;status&quot;: &quot;rules_matched&quot;,
+            &quot;disease&quot;: normalized_disease,
+            &quot;classification_confidence&quot;: confidence,
+            &quot;matched_rules&quot;: [
+                rule.get(&quot;id&quot;)
+                for rule in matched_rules
+            ],
+            &quot;recommendations&quot;: recommendations,
+            &quot;referral&quot;: referrals,
+            &quot;message&quot;: (
+                &quot;The expert-system evaluation completed &quot;
+                &quot;successfully.&quot;
+            )
+        }
+
+
+    def _matches_rule(
+        self,
+        rule,
+        conversation_data,
+        normalized_disease
+    ):
+        &quot;&quot;&quot;
+        Generic rule matcher.
+
+        Only fields explicitly defined inside a rule&#x27;s
+        conditions are checked.
+        &quot;&quot;&quot;
+
+        conditions = rule.get(&quot;conditions&quot;, {})
+
+        # Disease condition
+        disease = conditions.get(&quot;classification&quot;)
+
+        if disease is not None:
+
+            normalized_rule_disease = (
+                str(disease)
+                .lower()
+                .strip()
+                .replace(&quot;_&quot;, &quot; &quot;)
+            )
+
+            if normalized_rule_disease != normalized_disease:
+                return False
+
+        # Severity condition
+        severity = conditions.get(&quot;severity&quot;)
+
+        if severity is not None:
+
+            conversation_severity = conversation_data.get(
+                &quot;severity&quot;
+            )
+
+            if conversation_severity is None:
+                return False
+
+            if (
+                str(conversation_severity).lower().strip()
+                != str(severity).lower().strip()
+            ):
+                return False
+
+        # Medication condition
+        medication = conditions.get(&quot;medication&quot;)
+
+        if medication is not None:
+
+            conversation_medication = conversation_data.get(
+                &quot;medication&quot;
+            )
+
+            if conversation_medication is None:
+                return False
+
+            if (
+                str(conversation_medication).lower().strip()
+                != str(medication).lower().strip()
+            ):
+                return False
+
+        return True
+</pre>
+<div class="review">Decision: acceptable / revise / unsafe / not applicable<br>Clinical comments and required change:<br><br>Reviewer initials / date:</div></body></html>

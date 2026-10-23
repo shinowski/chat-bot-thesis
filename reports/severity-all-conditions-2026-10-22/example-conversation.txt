@@ -1,0 +1,33 @@
+You: how can i know how severe my psoriasis is
+Flamma: For psoriasis: Psoriasis severity depends on more than how a patch looks. A clinician considers how much skin is affected, plaque thickness and scaling, symptoms, and the effect on everyday life. Small patches on the face, scalp, hands, feet, nails or genital skin can still have a major impact.
+
+For a rough description of coverage, your own whole handprint, including palm, fingers and thumb together, represents about 1% of your body surface. This is only an estimate; coverage alone does not determine whether psoriasis is mild, moderate or severe.
+
+I can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.
+
+Which body areas are affected? Include any scalp, face, hands, feet, nails or genital involvement. You can say 'I'm not sure.'
+
+You: Both elbows
+Flamma: I've recorded your description.
+
+About how much skin is affected? For psoriasis, estimate how many of your own whole handprints (palm, fingers and thumb together) would cover all the patches. A rough estimate or 'I'm not sure' is fine.
+
+You: about two handprints
+Flamma: I've recorded your description.
+
+How is it affecting you: is the itch disturbing sleep, work, school or everyday activities? You can also rate the itch from 0 to 10, or say you are not sure.
+
+You: It affects my sleep
+Flamma: I've recorded your description.
+
+Have you noticed any new joint pain, joint swelling or morning stiffness? You can answer yes, no, or 'I'm not sure.'
+
+You: No joint symptoms
+Flamma: Here is your symptom-burden summary (your descriptions, not a clinical severity grade):
+Condition discussed: Psoriasis (not a confirmed diagnosis from this chat).
+Affected areas: Both elbows
+Extent estimate: about two handprints
+Symptoms and daily-life impact: It affects my sleep
+Joint symptoms: No joint symptoms
+You described disruption to sleep or daily activities. Discuss this impact with a clinician, even if the affected area seems small.
+A clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.

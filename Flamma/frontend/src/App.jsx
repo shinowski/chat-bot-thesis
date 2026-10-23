@@ -4,7 +4,6 @@ import ChatHeader from './components/ChatHeader.jsx';
 import MessageList from './components/MessageList.jsx';
 import Composer from './components/Composer.jsx';
 import HistoryDialog from './components/HistoryDialog.jsx';
-import { DEFAULT_FOLLOWUPS } from './intents.js';
 import { fetchJson, RequestTimeoutError } from './request.js';
 import { formatChatExport } from './chat-export.js';
 import { RetryRequests, mergeSavedExchange } from './retry-requests.js';
@@ -18,7 +17,7 @@ async function api(path, options) {
   return data;
 }
 function restoreMessages(messages) {
-  return messages.map((m) => ({ ...m, followUps: m.followUps || DEFAULT_FOLLOWUPS[m.intent] || [] }));
+  return messages.map((m) => ({ ...m, followUps: m.followUps || [] }));
 }
 
 export default function App() {
@@ -134,7 +133,7 @@ export default function App() {
       const bot = { id: crypto.randomUUID(), who: 'bot', text: data.reply, intent: data.intent,
         confidence: data.confidence, confidenceSource: data.confidenceSource, imageResult: data.imageResult,
         treatmentInfo: data.treatmentInfo,
-        action: data.action, followUps: data.followUps || DEFAULT_FOLLOWUPS[data.intent] || [] };
+        action: data.action, choiceContext: data.choiceContext, followUps: data.followUps || [] };
       updateChat(chatId, (c) => ({ ...c, ...data.conversation, saved: !!data.conversation || c.saved,
         messages: data.messages
           ? mergeSavedExchange(c.messages, userMsg.id, data.messages)

@@ -1,0 +1,118 @@
+{
+  "source_checked_on": "2026-10-22",
+  "clinical_review_status": "awaiting_dermatologist_validation",
+  "dermatitis": {
+    "overview": "Dermatitis is an umbrella term, so severity depends on the type as well as the areas involved, itch, cracking or oozing, frequency of flares, and disruption to sleep and everyday activities. A clinician may need to distinguish atopic dermatitis from irritation or an allergic contact reaction before assessing it.",
+    "fields": ["sites", "extent", "impact", "type"],
+    "questions": {
+      "sites": "Which body areas are affected by the dermatitis? You can say you are not sure.",
+      "extent": "Is the dermatitis in a few small patches or across several body areas? Describe the spread, or say you are not sure.",
+      "impact": "How often does the itch bother you, and does it affect sleep, work, school or everyday activities?",
+      "type": "Has a clinician identified the dermatitis type, or have you noticed a possible contact trigger? You can give its name, describe what touched your skin, or say you are not sure."
+    },
+    "sources": [
+      {"title": "AAD: Eczema and dermatitis types", "url": "https://www.aad.org/public/diseases/eczema"},
+      {"title": "AAD: Atopic dermatitis symptoms", "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"}
+    ]
+  },
+  "atopic_dermatitis": {
+    "overview": "For atopic dermatitis, a clinician considers the extent of inflamed skin, itch and scratching, dryness or thickening, flares, and the effect on sleep and daily activities. Skin changes can look different across skin tones; redness alone does not capture the burden. Oozing, crusting or new signs of infection need assessment rather than an automatic severity score.",
+    "fields": ["sites", "extent", "impact", "flares"],
+    "questions": {
+      "sites": "Which body areas are affected by the atopic dermatitis, including any face, eyelid or skin-fold areas?",
+      "extent": "Are the patches limited to a few areas or spread across several body areas? A rough description is enough.",
+      "impact": "How much do itching and scratching affect sleep and everyday activities? You may describe the itch or rate it from 0 to 10.",
+      "flares": "Do symptoms come and go in flares, recur on most days, or stay present between flares? Describe the pattern, or say you are not sure."
+    },
+    "sources": [
+      {"title": "AAD: Atopic dermatitis symptoms", "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"},
+      {"title": "AAD: Eczema care and assessment", "url": "https://www.aad.org/public/diseases/eczema"}
+    ]
+  },
+  "contact_dermatitis": {
+    "overview": "For contact dermatitis, severity involves the spread of the reaction, itch or burning, dryness and cracking, and how it affects daily tasks. Blisters, open skin or infection signs need medical assessment. It also matters whether contact with a possible irritant or allergen is continuing; the chatbot cannot identify the trigger from the rash alone.",
+    "fields": ["sites", "extent", "impact", "exposure"],
+    "questions": {
+      "sites": "Which body areas have the contact dermatitis reaction? Include areas that touched a product, material or substance if known.",
+      "extent": "Is the reaction limited to the contact area or present on other body areas as well?",
+      "impact": "How much do itch, burning or cracking interfere with sleep or everyday tasks such as washing and using your hands?",
+      "exposure": "Did a new product, soap, glove, metal, plant or work material touch the area, and is that contact continuing? You can say no known exposure or that you are not sure."
+    },
+    "sources": [
+      {"title": "AAD: Contact dermatitis symptoms", "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"},
+      {"title": "AAD: Contact dermatitis and finding triggers", "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"}
+    ]
+  },
+  "lichen_planus": {
+    "overview": "For lichen planus, a clinician looks at which tissues are involved as well as itch, soreness and effects on daily life. Mouth or genital involvement, nail damage and scalp hair loss can matter even when little skin is affected. Scalp and nail disease can cause lasting damage, so small coverage should not be treated as proof of mild disease.",
+    "fields": ["sites", "extent", "impact", "special_sites"],
+    "questions": {
+      "sites": "Where is the lichen planus affecting you: skin, mouth, genitals, scalp or nails? You can name more than one area.",
+      "extent": "Is it limited to one area, or are several skin or mouth, genital, scalp or nail areas involved?",
+      "impact": "Does itching or soreness affect sleep, eating, drinking, intimate activity or other daily activities?",
+      "special_sites": "Have you noticed mouth or genital soreness, new scalp hair loss, or splitting or lifting nails? Say which changes you noticed, no such changes, or that you are not sure."
+    },
+    "sources": [
+      {"title": "AAD: Lichen planus signs by body site", "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"},
+      {"title": "AAD: Lichen planus assessment and treatment", "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"}
+    ]
+  },
+  "rosacea": {
+    "overview": "For rosacea, severity involves persistent flushing or color changes, bumps, burning or stinging, skin thickening, and effects on everyday life. Eye involvement is assessed separately; a small facial area does not show how much the eyes are affected. New eye symptoms need medical attention. Eye pain, blurred vision or light sensitivity warrant urgent medical advice.",
+    "fields": ["sites", "extent", "impact", "eyes"],
+    "questions": {
+      "sites": "Which areas are affected by rosacea, such as cheeks, nose, chin or forehead?",
+      "extent": "Are the changes confined to a few small patches or spread over several facial areas? Describe any persistent flushing, bumps or skin thickening.",
+      "impact": "How much do flushing, burning, stinging or discomfort interfere with everyday activities or wellbeing?",
+      "eyes": "Do you have dry, gritty or irritated eyes, or any eye pain, blurred vision or light sensitivity? You can say no eye symptoms or that you are not sure. Seek urgent medical advice for eye pain, blurred vision or light sensitivity."
+    },
+    "sources": [
+      {"title": "AAD: Rosacea and eye involvement", "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"},
+      {"title": "NHS: Rosacea symptoms and urgent eye advice", "url": "https://www.nhs.uk/conditions/rosacea/"}
+    ]
+  },
+  "hives": {
+    "overview": "For hives, discuss how widespread the welts are, itch, swelling, how often they return and their effect on sleep or daily activities. A clinician also considers how long each welt lasts and whether episodes continue over weeks. Hives with breathing or swallowing difficulty, mouth or throat swelling, or feeling faint require immediate medical care; do not wait to finish these questions.",
+    "fields": ["sites", "extent", "impact", "pattern"],
+    "questions": {
+      "sites": "Where do the hives or welts appear, and do they move to different body areas?",
+      "extent": "Are there a few small welts or patches, or do they involve several body areas?",
+      "impact": "How much does the itching affect sleep or daily activities? Describe any discomfort without trying to assign a clinical severity grade.",
+      "pattern": "About how long does one welt last before fading, and for how many days or weeks have new welts kept appearing? It is fine not to know."
+    },
+    "sources": [
+      {"title": "AAD: Hives, recurrence and when to seek care", "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"}
+    ]
+  },
+  "normal_skin": {
+    "overview": "Normal skin is a photo-screening label, not a disease severity grade. It does not confirm that the skin is healthy or rule out a condition. If symptoms persist, worsen or interfere with daily life, those symptoms still need assessment regardless of the photo label.",
+    "fields": ["sites", "extent", "impact"],
+    "questions": {
+      "sites": "Despite the normal-skin screening label, where do you notice symptoms or skin changes? You can also say no symptoms.",
+      "extent": "Are the symptoms limited to one small area or noticeable in several areas? You can say no visible changes or that you are not sure.",
+      "impact": "Do any symptoms affect sleep or everyday activities, or are you having no symptoms?"
+    },
+    "sources": [
+      {"title": "AAD: Symptoms that need a skin assessment", "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"}
+    ]
+  },
+  "psoriasis": {
+    "fields": ["sites", "extent", "impact", "joints"],
+    "overview": "Psoriasis severity depends on more than how a patch looks. A clinician considers how much skin is affected, plaque thickness and scaling, symptoms, and the effect on everyday life. Small patches on the face, scalp, hands, feet, nails or genital skin can still have a major impact.",
+    "extent_note": "For a rough description of coverage, your own whole handprint, including palm, fingers and thumb together, represents about 1% of your body surface. This is only an estimate; coverage alone does not determine whether psoriasis is mild, moderate or severe.",
+    "impact_note": "Tell your clinician if itching disrupts sleep, work, school, movement or emotional wellbeing, or if your current treatment is not controlling the problem.",
+    "joint_note": "New joint pain, swelling or morning stiffness should be discussed with a clinician because psoriasis can be associated with psoriatic arthritis. Skin coverage does not predict joint involvement; a chat cannot diagnose arthritis.",
+    "sources": [
+      {"title": "AAD: Psoriasis severity assessment", "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"},
+      {"title": "NPF: Estimating affected body surface", "url": "https://www.psoriasis.org/treat-to-target/"},
+      {"title": "NPF: High-impact psoriasis locations", "url": "https://www.psoriasis.org/about-psoriasis/"},
+      {"title": "NPF: Joint symptoms and psoriatic arthritis", "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"}
+    ]
+  },
+  "general": {
+    "overview": "To discuss how much a skin condition is affecting you, describe the areas involved, how widespread it is, the symptoms, and how it affects sleep and everyday activities. The relevant severity measures depend on the condition; psoriasis criteria should not be applied to every rash.",
+    "sources": [
+      {"title": "AAD: Rash warning signs and getting assessed", "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"}
+    ]
+  }
+}

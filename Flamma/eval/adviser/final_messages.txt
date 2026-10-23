@@ -1,0 +1,273 @@
+[greeting]
+Heya Flamma, are you around this evening?
+Good afternoon there, skin helper.
+Hullo bot, I'd like to begin a chat.
+Hiya, nice to meet you here.
+Morning Flamma, anyone online?
+Hellooo there, just saying hi.
+Greetings to you, Flamma assistant.
+Hey hey, first time opening this chat.
+Hi Flamma :) ready to talk?
+G'day skin assistant, hello!
+Good eve, Flamma.
+Helo there little chatbot.
+Howdy Flamma, how's your day going?
+Hello again, I'm back at the keyboard.
+A pleasant morning to you, bot.
+Heyyy Flamma!
+Hiya there 👋
+Hii bot, good afternoon to you.
+Just dropping in to say hello, Flamma.
+Greetings, skin information assistant!
+[symptom]
+My skin has little rough flakes that catch on clothing.
+I keep noticing a prickly itchy sensation without a clear pattern.
+Some newly raised specks feel rough when I touch them.
+There are dry reddish islands of skin that keep flaking off.
+The surface feels tight and scratchy after washing.
+I noticed a cluster of pink bumps with tiny scales.
+Skin keeps peeling in thin strips and feels irritated.
+An uneven patch has started to sting whenever it gets wet.
+There's a persistent itch with a grainy texture to the skin.
+New little welts keep appearing and then fading away.
+I see flaky dots and the skin feels uncomfortable.
+My skin looks blotchy and feels like it is burning lightly.
+Red rough patches, that's what I'm seeing.
+Itchyy little bumbs are showing up on my skin.
+The rash feels scratchier after I get sweaty.
+A scaly patch is shedding small white flakes.
+My skin is becoming cracked and rough to the touch.
+I can feel small itchy ridges even without looking.
+Dryness and a prickling feeling are the changes I've noticed.
+There are tiny reddish pimples surrounded by flaky skin.
+[location]
+The affected strip follows the crease behind my left knee.
+It's concentrated along the outer edge of my right palm.
+The area involved is just below my left collarbone.
+Only the skin between my second and third toes is affected.
+The mark sits beside my right eyebrow rather than on my eyelid.
+It shows up where my left wrist meets the base of my hand.
+The affected skin lies under my jaw on the left side.
+It's along my right shoulder blade close to the spine.
+The trouble is limited to the front of my left shin.
+Near the heel of my right foot, just underneath.
+Both earlobes, especially their lower edges.
+The patch is on the back of my right thumb.
+Around my bellybutton, forming a small ring.
+The skin on my upper left thigh is the bit I mean.
+Left forarm, near the wrist crease.
+Right ankel, above the sock line.
+The affected place is the left side of my forehead.
+The fold beneath my right armpit is where it is.
+Along my hairline at the back of my neck.
+It's the outer part of my left elbow that's affected.
+[duration]
+This particular skin change began about seventeen days ago.
+I've had this issue for roughly thirty-six hours altogether.
+The first change was eleven nights back.
+It's been there since the morning before yesterday.
+I noticed its start around six and a half weeks ago.
+The rash first appeared about forty days before today.
+The skin problem has lasted nine full days so far.
+Its onset was approximately fourteen weeks back.
+It started during the weekend before last.
+I've been dealing with this since early September.
+Around nineteen days, give or take a day.
+It has persisted for nearly four and a half months.
+Noticed it sixteen hours ago, still present.
+The change has been around since Tuesday evening.
+Started 13 dyas ago and never fully went away.
+About 7 weks since the first skin change.
+I first saw it at the beginning of last month.
+Five nights have passed since it showed up.
+This started a little less than three months ago.
+Only about forty-five minutes since I noticed the rash.
+[severity]
+I'd rate the discomfort as mild rather than moderate.
+The itch feels moderately intense, not severe.
+It's severe enough to disrupt what I'm doing.
+The irritation is quite mild at the moment.
+My current severity rating would be moderate.
+The discomfort is extremely intense, I would say severe.
+It's barely bothersome, so mild is the best description.
+Moderate discomfort, somewhere in the middle.
+The itch is very strong and I'd call it severe.
+I'd pick mild on your severity scale.
+I'd put it in the moderate category today.
+Severe is the closest description of how intense it feels.
+The level is mild, although I notice it.
+Moderately irritating but still manageable.
+It's a sevre level of discomfort.
+I'd describe the itch as modrate.
+Mild intensity, just a little annoying.
+My rating for the intensity is severe.
+Somewhere around moderate, certainly beyond mild.
+The discomfort is mild overall this evening.
+[confirmation]
+Yep, you've understood that correctly.
+That's right, the details you repeated are accurate.
+Correct, that's what I was trying to say.
+Affirmative, I agree with that summary.
+Yup, that matches what I told you.
+Exactly so, you got the details right.
+Yes indeed, that's the one I meant.
+Absolutely, that interpretation is correct.
+Right you are, I confirm that.
+Indeed yes, that's accurate.
+You understood me properly, yes.
+That's a correct restatement of it.
+Yes, I can confirm those details.
+Yeh, precisely what I meant.
+Yess, you've got it.
+Agreed, the summary matches.
+Spot on, that is correct.
+I confirm that what you wrote is right.
+Yes exactly, no correction needed there.
+Yep yep, accurate.
+[medication]
+I dabbed a fragrance-free moisturizer onto it after washing.
+I've already tried a small amount of hydrocortisone cream.
+I'm applying an emollient ointment before going to bed.
+I took an antihistamine tablet for the itching yesterday.
+A pharmacist's recommended lotion is what I have used.
+I've used petroleum jelly on the dry patch.
+I washed it and then applied a prescribed steroid cream.
+I have been putting an antibiotic ointment on it.
+The only product I've applied is plain moisturizer.
+I've tried a cooling gel on the irritated skin.
+I used a prescription cream left over from an earlier visit.
+I have not applied any cream or taken any medicine for it.
+No products at all have been used on this rash.
+I used calamine lotion after the itch began.
+Been aplying moisturiser before bed.
+Tried an oinment from the pharmacy already.
+I've been taking the tablets the doctor prescribed.
+I have already used a steroid lotion on the patch.
+So far I've only applied a mild barrier cream.
+I put an unscented skin cream on the affected area.
+[emergency]
+My tongue is swelling and now it's getting hard to swallow.
+The rash is accompanied by trouble breathing right now.
+My lips suddenly swelled and I can barely breathe.
+My throat feels swollen and I am unable to swallow.
+Breathing has become difficult and my face is swelling.
+I cannot swallow properly because my tongue is getting bigger.
+I'm struggling to breathe while my mouth is swollen.
+My airway feels tight and I cannot breathe normally.
+There's swelling around my eyes and lips happening now.
+I'm short of breath and my throat is swelling up.
+I am having difficulty swallowing with swollen lips.
+My face suddenly swelled and breathing is hard.
+Right now my tongue is swollen and I can't breathe well.
+I have trouble swallowing and my mouth is swelling.
+My thorat is swolen and breathing feels difficult.
+Cant brethe properly, my lips are getting bigger.
+My chest feels tight and I'm struggling with breathing.
+I am unable to breathe and my tongue is swollen.
+Swelling in my throat is making it hard to swallow now.
+My lips and eyes are swelling and I feel short of breath.
+[image_upload]
+Could I attach a close-up photograph for the screening?
+I would like to submit a skin snapshot in this chat.
+I'm ready to share a photo of the patch with you.
+Where should I attach my picture of the irritated skin?
+Let me send a photograph rather than describe the texture.
+I'd like to upload a JPEG of the affected skin now.
+I have a close-up photo ready to send for screening.
+Can I share a picture from my phone's camera roll?
+I'd prefer to show you an image of the patch.
+Please let me attach the skin photograph I took today.
+I'm sending a photo so you can run the image model.
+Can you give me the option to upload a skin picture?
+I'd like to add a photograph to this conversation.
+Could we use the photo upload for my skin concern?
+Wanna uplod a close-up pic of this patch.
+Can I attatch my skin pictur here please?
+I want to share the image I've saved on my device.
+I'd like to submit a PNG photo for the image screening.
+Here comes a picture I'd like you to screen.
+Please help me send a clear skin photo from my gallery.
+[goodbye]
+I'll end this conversation here, goodbye Flamma.
+I'm signing off for the evening, take care.
+That's all for today, bye for now bot.
+I'm heading out now, see you another day.
+Goodnight Flamma, I'm closing the chat.
+I'll leave the conversation now, farewell.
+Time for me to go, goodbye skin helper.
+I'm done chatting today, see you later.
+Catch you next time, Flamma, bye.
+I'll be leaving now, have a good evening.
+I'm closing this tab, goodbye for today.
+See you around, I'm off now.
+Farewell assistant, that ends my visit.
+I'll talk to you another time, goodnight.
+Byee Flamma, gotta go now.
+See ya bot, signing out.
+I'll stop the conversation now, take care.
+Until the next chat, goodbye.
+I'm going offline now, bye assistant.
+That will be my last message today, farewell.
+[thanks]
+Many thanks for putting that into plain language.
+I appreciate you helping me organize these details.
+Thank you for explaining the score so clearly.
+That explanation was useful, thanks a bunch.
+I'm grateful for your patience with my questions.
+Thanks for keeping track of the details I gave.
+Much appreciated, that answered my question.
+Thank you kindly for taking the time to explain.
+Cheers for clearing up that confusion.
+I appreciate that response, thank you Flamma.
+Thanks a million for walking me through it.
+Your explanation helped me understand, thank you.
+Grateful for the information you've shared.
+Big thanks for the careful explanation.
+Thnks for explaining that bit, bot.
+Thankss Flamma, appreciate the help.
+I'm thankful for the clarification you gave.
+That was helpful to read, many thanks.
+Thanks for answering without making it complicated.
+I appreciate the help with this conversation.
+[bot_identity]
+Which parts of this screening are you able to help with?
+Are you a trained clinician or a software assistant?
+What sort of information does Flamma provide?
+Can you explain what powers this chatbot's replies?
+Are your answers generated by a doctor in real time?
+What are the limits of your skin screening abilities?
+Does saving my chat also retrain your text classifier?
+Who is able to access the photos I leave in this chat?
+Can you explain the difference between your score and a diagnosis?
+Is Flamma designed to replace a dermatologist's visit?
+How do you remember details from earlier in our chat?
+What does your confidence percentage actually describe?
+Are you able to prescribe a personal medicine dose?
+Where is my conversation stored after I close this tab?
+Wat kind of assistant is Flamma meant to be?
+Do u learn new facts from every chat message?
+What model do you use to recognize my message intent?
+Who made you a skin information assistant?
+Are the replies from a local information library?
+What can this prototype reliably claim about its accuracy?
+[unknown]
+Is that one the other thing I mentioned somewhere?
+Would the same apply to it, whatever it was?
+Should I do that now or perhaps the opposite?
+Which of those things are you talking about exactly?
+It might be this, or it might not, I can't decide.
+Can you do the thing with the stuff from before?
+What about the second thing if there wasn't a first one?
+Could that work for this without knowing what this is?
+What does that refer to when I haven't sent anything?
+The thing is different in a way I can't describe.
+Maybe that, maybe something else entirely.
+Is it okay though, whatever it is?
+Would you say so about that thing?
+What am I supposed to mean by this?
+Uhh whut abt that other thing tho?
+That bit? which bit exactly?
+Does this count as that or is that this?
+I have a question but haven't decided what it is.
+Perhaps yes, perhaps no, I need to clarify the question.
+Something about it doesn't quite make sense to me yet.

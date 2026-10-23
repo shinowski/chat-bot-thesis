@@ -1,0 +1,5710 @@
+{
+  "evaluated_at": "2026-10-22T12:57:09.544977+00:00",
+  "scope": "New authored single-turn final intent evaluation; not clinical validation or independent human annotation.",
+  "final_set_sha256": "d275d85d5913b6fc6f210e0780cf524061c160d80596af7887c3ed7245ae6549",
+  "candidate_lock_sha256": "8d15d050fee2b0e9b39c0d38ab8f8f6debd480d2454048b3ff9f6b0768041559",
+  "frozen_before_candidate_training": true,
+  "final_not_used_for_training_or_selection": true,
+  "no_post_final_tuning_permitted": true,
+  "models": [
+    {
+      "model": "intent_v5.pkl",
+      "sha256": "8ab43bc8f8442887e1bcae6c4f9f35ca52b7b0246e8a9753e928dbcdf65eccb7",
+      "samples": 260,
+      "correct": 236,
+      "accuracy": 0.9076923076923077,
+      "classification_report": {
+        "bot_identity": {
+          "precision": 0.8636363636363636,
+          "recall": 0.95,
+          "f1-score": 0.9047619047619048,
+          "support": 20.0
+        },
+        "confirmation": {
+          "precision": 0.6896551724137931,
+          "recall": 1.0,
+          "f1-score": 0.8163265306122449,
+          "support": 20.0
+        },
+        "duration": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "emergency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "goodbye": {
+          "precision": 0.8695652173913043,
+          "recall": 1.0,
+          "f1-score": 0.9302325581395349,
+          "support": 20.0
+        },
+        "greeting": {
+          "precision": 1.0,
+          "recall": 0.85,
+          "f1-score": 0.918918918918919,
+          "support": 20.0
+        },
+        "image_upload": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "location": {
+          "precision": 0.8636363636363636,
+          "recall": 0.95,
+          "f1-score": 0.9047619047619048,
+          "support": 20.0
+        },
+        "medication": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1-score": 0.9523809523809523,
+          "support": 20.0
+        },
+        "severity": {
+          "precision": 0.9523809523809523,
+          "recall": 1.0,
+          "f1-score": 0.975609756097561,
+          "support": 20.0
+        },
+        "symptom": {
+          "precision": 0.9523809523809523,
+          "recall": 1.0,
+          "f1-score": 0.975609756097561,
+          "support": 20.0
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 0.85,
+          "f1-score": 0.918918918918919,
+          "support": 20.0
+        },
+        "unknown": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2,
+          "f1-score": 0.3076923076923077,
+          "support": 20.0
+        },
+        "accuracy": 0.9076923076923077,
+        "macro avg": {
+          "precision": 0.9051548151997927,
+          "recall": 0.9076923076923076,
+          "f1-score": 0.8927087314139854,
+          "support": 260.0
+        },
+        "weighted avg": {
+          "precision": 0.9051548151997927,
+          "recall": 0.9076923076923077,
+          "f1-score": 0.8927087314139852,
+          "support": 260.0
+        }
+      },
+      "training_exact_overlap": 0,
+      "training_template_group_overlap": 1,
+      "confusion_labels": [
+        "bot_identity",
+        "confirmation",
+        "duration",
+        "emergency",
+        "goodbye",
+        "greeting",
+        "image_upload",
+        "location",
+        "medication",
+        "severity",
+        "symptom",
+        "thanks",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          2
+        ],
+        [
+          1,
+          9,
+          0,
+          0,
+          1,
+          0,
+          0,
+          3,
+          1,
+          1,
+          0,
+          0,
+          4
+        ]
+      ],
+      "predictions": [
+        {
+          "id": "F001",
+          "text": "Heya Flamma, are you around this evening?",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F002",
+          "text": "Good afternoon there, skin helper.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F003",
+          "text": "Hullo bot, I'd like to begin a chat.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F004",
+          "text": "Hiya, nice to meet you here.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F005",
+          "text": "Morning Flamma, anyone online?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F006",
+          "text": "Hellooo there, just saying hi.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F007",
+          "text": "Greetings to you, Flamma assistant.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F008",
+          "text": "Hey hey, first time opening this chat.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F009",
+          "text": "Hi Flamma :) ready to talk?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F010",
+          "text": "G'day skin assistant, hello!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F011",
+          "text": "Good eve, Flamma.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F012",
+          "text": "Helo there little chatbot.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F013",
+          "text": "Howdy Flamma, how's your day going?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F014",
+          "text": "Hello again, I'm back at the keyboard.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F015",
+          "text": "A pleasant morning to you, bot.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F016",
+          "text": "Heyyy Flamma!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F017",
+          "text": "Hiya there ðŸ‘‹",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F018",
+          "text": "Hii bot, good afternoon to you.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F019",
+          "text": "Just dropping in to say hello, Flamma.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F020",
+          "text": "Greetings, skin information assistant!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F021",
+          "text": "My skin has little rough flakes that catch on clothing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F022",
+          "text": "I keep noticing a prickly itchy sensation without a clear pattern.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F023",
+          "text": "Some newly raised specks feel rough when I touch them.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F024",
+          "text": "There are dry reddish islands of skin that keep flaking off.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F025",
+          "text": "The surface feels tight and scratchy after washing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F026",
+          "text": "I noticed a cluster of pink bumps with tiny scales.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F027",
+          "text": "Skin keeps peeling in thin strips and feels irritated.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F028",
+          "text": "An uneven patch has started to sting whenever it gets wet.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F029",
+          "text": "There's a persistent itch with a grainy texture to the skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F030",
+          "text": "New little welts keep appearing and then fading away.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F031",
+          "text": "I see flaky dots and the skin feels uncomfortable.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F032",
+          "text": "My skin looks blotchy and feels like it is burning lightly.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F033",
+          "text": "Red rough patches, that's what I'm seeing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F034",
+          "text": "Itchyy little bumbs are showing up on my skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F035",
+          "text": "The rash feels scratchier after I get sweaty.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F036",
+          "text": "A scaly patch is shedding small white flakes.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F037",
+          "text": "My skin is becoming cracked and rough to the touch.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F038",
+          "text": "I can feel small itchy ridges even without looking.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F039",
+          "text": "Dryness and a prickling feeling are the changes I've noticed.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F040",
+          "text": "There are tiny reddish pimples surrounded by flaky skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F041",
+          "text": "The affected strip follows the crease behind my left knee.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F042",
+          "text": "It's concentrated along the outer edge of my right palm.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F043",
+          "text": "The area involved is just below my left collarbone.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F044",
+          "text": "Only the skin between my second and third toes is affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": false
+        },
+        {
+          "id": "F045",
+          "text": "The mark sits beside my right eyebrow rather than on my eyelid.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F046",
+          "text": "It shows up where my left wrist meets the base of my hand.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F047",
+          "text": "The affected skin lies under my jaw on the left side.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F048",
+          "text": "It's along my right shoulder blade close to the spine.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F049",
+          "text": "The trouble is limited to the front of my left shin.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F050",
+          "text": "Near the heel of my right foot, just underneath.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F051",
+          "text": "Both earlobes, especially their lower edges.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F052",
+          "text": "The patch is on the back of my right thumb.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F053",
+          "text": "Around my bellybutton, forming a small ring.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F054",
+          "text": "The skin on my upper left thigh is the bit I mean.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F055",
+          "text": "Left forarm, near the wrist crease.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F056",
+          "text": "Right ankel, above the sock line.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F057",
+          "text": "The affected place is the left side of my forehead.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F058",
+          "text": "The fold beneath my right armpit is where it is.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F059",
+          "text": "Along my hairline at the back of my neck.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F060",
+          "text": "It's the outer part of my left elbow that's affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F061",
+          "text": "This particular skin change began about seventeen days ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F062",
+          "text": "I've had this issue for roughly thirty-six hours altogether.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F063",
+          "text": "The first change was eleven nights back.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F064",
+          "text": "It's been there since the morning before yesterday.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F065",
+          "text": "I noticed its start around six and a half weeks ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F066",
+          "text": "The rash first appeared about forty days before today.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F067",
+          "text": "The skin problem has lasted nine full days so far.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F068",
+          "text": "Its onset was approximately fourteen weeks back.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F069",
+          "text": "It started during the weekend before last.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F070",
+          "text": "I've been dealing with this since early September.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F071",
+          "text": "Around nineteen days, give or take a day.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F072",
+          "text": "It has persisted for nearly four and a half months.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F073",
+          "text": "Noticed it sixteen hours ago, still present.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F074",
+          "text": "The change has been around since Tuesday evening.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F075",
+          "text": "Started 13 dyas ago and never fully went away.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F076",
+          "text": "About 7 weks since the first skin change.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F077",
+          "text": "I first saw it at the beginning of last month.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F078",
+          "text": "Five nights have passed since it showed up.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F079",
+          "text": "This started a little less than three months ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F080",
+          "text": "Only about forty-five minutes since I noticed the rash.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F081",
+          "text": "I'd rate the discomfort as mild rather than moderate.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F082",
+          "text": "The itch feels moderately intense, not severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F083",
+          "text": "It's severe enough to disrupt what I'm doing.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F084",
+          "text": "The irritation is quite mild at the moment.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F085",
+          "text": "My current severity rating would be moderate.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F086",
+          "text": "The discomfort is extremely intense, I would say severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F087",
+          "text": "It's barely bothersome, so mild is the best description.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F088",
+          "text": "Moderate discomfort, somewhere in the middle.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F089",
+          "text": "The itch is very strong and I'd call it severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F090",
+          "text": "I'd pick mild on your severity scale.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F091",
+          "text": "I'd put it in the moderate category today.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F092",
+          "text": "Severe is the closest description of how intense it feels.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F093",
+          "text": "The level is mild, although I notice it.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F094",
+          "text": "Moderately irritating but still manageable.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F095",
+          "text": "It's a sevre level of discomfort.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F096",
+          "text": "I'd describe the itch as modrate.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F097",
+          "text": "Mild intensity, just a little annoying.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F098",
+          "text": "My rating for the intensity is severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F099",
+          "text": "Somewhere around moderate, certainly beyond mild.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F100",
+          "text": "The discomfort is mild overall this evening.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F101",
+          "text": "Yep, you've understood that correctly.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F102",
+          "text": "That's right, the details you repeated are accurate.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F103",
+          "text": "Correct, that's what I was trying to say.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F104",
+          "text": "Affirmative, I agree with that summary.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F105",
+          "text": "Yup, that matches what I told you.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F106",
+          "text": "Exactly so, you got the details right.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F107",
+          "text": "Yes indeed, that's the one I meant.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F108",
+          "text": "Absolutely, that interpretation is correct.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F109",
+          "text": "Right you are, I confirm that.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F110",
+          "text": "Indeed yes, that's accurate.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F111",
+          "text": "You understood me properly, yes.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F112",
+          "text": "That's a correct restatement of it.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F113",
+          "text": "Yes, I can confirm those details.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F114",
+          "text": "Yeh, precisely what I meant.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F115",
+          "text": "Yess, you've got it.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F116",
+          "text": "Agreed, the summary matches.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F117",
+          "text": "Spot on, that is correct.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F118",
+          "text": "I confirm that what you wrote is right.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F119",
+          "text": "Yes exactly, no correction needed there.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F120",
+          "text": "Yep yep, accurate.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F121",
+          "text": "I dabbed a fragrance-free moisturizer onto it after washing.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F122",
+          "text": "I've already tried a small amount of hydrocortisone cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F123",
+          "text": "I'm applying an emollient ointment before going to bed.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F124",
+          "text": "I took an antihistamine tablet for the itching yesterday.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F125",
+          "text": "A pharmacist's recommended lotion is what I have used.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F126",
+          "text": "I've used petroleum jelly on the dry patch.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F127",
+          "text": "I washed it and then applied a prescribed steroid cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F128",
+          "text": "I have been putting an antibiotic ointment on it.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F129",
+          "text": "The only product I've applied is plain moisturizer.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F130",
+          "text": "I've tried a cooling gel on the irritated skin.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F131",
+          "text": "I used a prescription cream left over from an earlier visit.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F132",
+          "text": "I have not applied any cream or taken any medicine for it.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F133",
+          "text": "No products at all have been used on this rash.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F134",
+          "text": "I used calamine lotion after the itch began.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F135",
+          "text": "Been aplying moisturiser before bed.",
+          "expected": "medication",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F136",
+          "text": "Tried an oinment from the pharmacy already.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F137",
+          "text": "I've been taking the tablets the doctor prescribed.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F138",
+          "text": "I have already used a steroid lotion on the patch.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F139",
+          "text": "So far I've only applied a mild barrier cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F140",
+          "text": "I put an unscented skin cream on the affected area.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F141",
+          "text": "My tongue is swelling and now it's getting hard to swallow.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F142",
+          "text": "The rash is accompanied by trouble breathing right now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F143",
+          "text": "My lips suddenly swelled and I can barely breathe.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F144",
+          "text": "My throat feels swollen and I am unable to swallow.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F145",
+          "text": "Breathing has become difficult and my face is swelling.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F146",
+          "text": "I cannot swallow properly because my tongue is getting bigger.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F147",
+          "text": "I'm struggling to breathe while my mouth is swollen.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F148",
+          "text": "My airway feels tight and I cannot breathe normally.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F149",
+          "text": "There's swelling around my eyes and lips happening now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F150",
+          "text": "I'm short of breath and my throat is swelling up.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F151",
+          "text": "I am having difficulty swallowing with swollen lips.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F152",
+          "text": "My face suddenly swelled and breathing is hard.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F153",
+          "text": "Right now my tongue is swollen and I can't breathe well.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F154",
+          "text": "I have trouble swallowing and my mouth is swelling.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F155",
+          "text": "My thorat is swolen and breathing feels difficult.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F156",
+          "text": "Cant brethe properly, my lips are getting bigger.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F157",
+          "text": "My chest feels tight and I'm struggling with breathing.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F158",
+          "text": "I am unable to breathe and my tongue is swollen.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F159",
+          "text": "Swelling in my throat is making it hard to swallow now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F160",
+          "text": "My lips and eyes are swelling and I feel short of breath.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F161",
+          "text": "Could I attach a close-up photograph for the screening?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F162",
+          "text": "I would like to submit a skin snapshot in this chat.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F163",
+          "text": "I'm ready to share a photo of the patch with you.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F164",
+          "text": "Where should I attach my picture of the irritated skin?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F165",
+          "text": "Let me send a photograph rather than describe the texture.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F166",
+          "text": "I'd like to upload a JPEG of the affected skin now.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F167",
+          "text": "I have a close-up photo ready to send for screening.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F168",
+          "text": "Can I share a picture from my phone's camera roll?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F169",
+          "text": "I'd prefer to show you an image of the patch.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F170",
+          "text": "Please let me attach the skin photograph I took today.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F171",
+          "text": "I'm sending a photo so you can run the image model.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F172",
+          "text": "Can you give me the option to upload a skin picture?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F173",
+          "text": "I'd like to add a photograph to this conversation.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F174",
+          "text": "Could we use the photo upload for my skin concern?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F175",
+          "text": "Wanna uplod a close-up pic of this patch.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F176",
+          "text": "Can I attatch my skin pictur here please?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F177",
+          "text": "I want to share the image I've saved on my device.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F178",
+          "text": "I'd like to submit a PNG photo for the image screening.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F179",
+          "text": "Here comes a picture I'd like you to screen.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F180",
+          "text": "Please help me send a clear skin photo from my gallery.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F181",
+          "text": "I'll end this conversation here, goodbye Flamma.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F182",
+          "text": "I'm signing off for the evening, take care.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F183",
+          "text": "That's all for today, bye for now bot.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F184",
+          "text": "I'm heading out now, see you another day.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F185",
+          "text": "Goodnight Flamma, I'm closing the chat.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F186",
+          "text": "I'll leave the conversation now, farewell.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F187",
+          "text": "Time for me to go, goodbye skin helper.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F188",
+          "text": "I'm done chatting today, see you later.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F189",
+          "text": "Catch you next time, Flamma, bye.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F190",
+          "text": "I'll be leaving now, have a good evening.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F191",
+          "text": "I'm closing this tab, goodbye for today.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F192",
+          "text": "See you around, I'm off now.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F193",
+          "text": "Farewell assistant, that ends my visit.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F194",
+          "text": "I'll talk to you another time, goodnight.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F195",
+          "text": "Byee Flamma, gotta go now.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F196",
+          "text": "See ya bot, signing out.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F197",
+          "text": "I'll stop the conversation now, take care.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F198",
+          "text": "Until the next chat, goodbye.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F199",
+          "text": "I'm going offline now, bye assistant.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F200",
+          "text": "That will be my last message today, farewell.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F201",
+          "text": "Many thanks for putting that into plain language.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F202",
+          "text": "I appreciate you helping me organize these details.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F203",
+          "text": "Thank you for explaining the score so clearly.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F204",
+          "text": "That explanation was useful, thanks a bunch.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F205",
+          "text": "I'm grateful for your patience with my questions.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F206",
+          "text": "Thanks for keeping track of the details I gave.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F207",
+          "text": "Much appreciated, that answered my question.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F208",
+          "text": "Thank you kindly for taking the time to explain.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F209",
+          "text": "Cheers for clearing up that confusion.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F210",
+          "text": "I appreciate that response, thank you Flamma.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F211",
+          "text": "Thanks a million for walking me through it.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F212",
+          "text": "Your explanation helped me understand, thank you.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F213",
+          "text": "Grateful for the information you've shared.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F214",
+          "text": "Big thanks for the careful explanation.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F215",
+          "text": "Thnks for explaining that bit, bot.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F216",
+          "text": "Thankss Flamma, appreciate the help.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F217",
+          "text": "I'm thankful for the clarification you gave.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F218",
+          "text": "That was helpful to read, many thanks.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F219",
+          "text": "Thanks for answering without making it complicated.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F220",
+          "text": "I appreciate the help with this conversation.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F221",
+          "text": "Which parts of this screening are you able to help with?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F222",
+          "text": "Are you a trained clinician or a software assistant?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F223",
+          "text": "What sort of information does Flamma provide?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F224",
+          "text": "Can you explain what powers this chatbot's replies?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F225",
+          "text": "Are your answers generated by a doctor in real time?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F226",
+          "text": "What are the limits of your skin screening abilities?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F227",
+          "text": "Does saving my chat also retrain your text classifier?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F228",
+          "text": "Who is able to access the photos I leave in this chat?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F229",
+          "text": "Can you explain the difference between your score and a diagnosis?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F230",
+          "text": "Is Flamma designed to replace a dermatologist's visit?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F231",
+          "text": "How do you remember details from earlier in our chat?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F232",
+          "text": "What does your confidence percentage actually describe?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F233",
+          "text": "Are you able to prescribe a personal medicine dose?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F234",
+          "text": "Where is my conversation stored after I close this tab?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F235",
+          "text": "Wat kind of assistant is Flamma meant to be?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F236",
+          "text": "Do u learn new facts from every chat message?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F237",
+          "text": "What model do you use to recognize my message intent?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F238",
+          "text": "Who made you a skin information assistant?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F239",
+          "text": "Are the replies from a local information library?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F240",
+          "text": "What can this prototype reliably claim about its accuracy?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F241",
+          "text": "Is that one the other thing I mentioned somewhere?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F242",
+          "text": "Would the same apply to it, whatever it was?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F243",
+          "text": "Should I do that now or perhaps the opposite?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F244",
+          "text": "Which of those things are you talking about exactly?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F245",
+          "text": "It might be this, or it might not, I can't decide.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F246",
+          "text": "Can you do the thing with the stuff from before?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F247",
+          "text": "What about the second thing if there wasn't a first one?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F248",
+          "text": "Could that work for this without knowing what this is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F249",
+          "text": "What does that refer to when I haven't sent anything?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F250",
+          "text": "The thing is different in a way I can't describe.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "severity",
+          "correct": false
+        },
+        {
+          "id": "F251",
+          "text": "Maybe that, maybe something else entirely.",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F252",
+          "text": "Is it okay though, whatever it is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F253",
+          "text": "Would you say so about that thing?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F254",
+          "text": "What am I supposed to mean by this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F255",
+          "text": "Uhh whut abt that other thing tho?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F256",
+          "text": "That bit? which bit exactly?",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F257",
+          "text": "Does this count as that or is that this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F258",
+          "text": "I have a question but haven't decided what it is.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F259",
+          "text": "Perhaps yes, perhaps no, I need to clarify the question.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F260",
+          "text": "Something about it doesn't quite make sense to me yet.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        }
+      ],
+      "failures": [
+        {
+          "id": "F007",
+          "text": "Greetings to you, Flamma assistant.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F014",
+          "text": "Hello again, I'm back at the keyboard.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F020",
+          "text": "Greetings, skin information assistant!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F044",
+          "text": "Only the skin between my second and third toes is affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": false
+        },
+        {
+          "id": "F203",
+          "text": "Thank you for explaining the score so clearly.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F211",
+          "text": "Thanks a million for walking me through it.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F215",
+          "text": "Thnks for explaining that bit, bot.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F233",
+          "text": "Are you able to prescribe a personal medicine dose?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F241",
+          "text": "Is that one the other thing I mentioned somewhere?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F242",
+          "text": "Would the same apply to it, whatever it was?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F243",
+          "text": "Should I do that now or perhaps the opposite?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F244",
+          "text": "Which of those things are you talking about exactly?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F246",
+          "text": "Can you do the thing with the stuff from before?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F247",
+          "text": "What about the second thing if there wasn't a first one?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F248",
+          "text": "Could that work for this without knowing what this is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F250",
+          "text": "The thing is different in a way I can't describe.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "severity",
+          "correct": false
+        },
+        {
+          "id": "F251",
+          "text": "Maybe that, maybe something else entirely.",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F252",
+          "text": "Is it okay though, whatever it is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F253",
+          "text": "Would you say so about that thing?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F255",
+          "text": "Uhh whut abt that other thing tho?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F256",
+          "text": "That bit? which bit exactly?",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F257",
+          "text": "Does this count as that or is that this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F258",
+          "text": "I have a question but haven't decided what it is.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F259",
+          "text": "Perhaps yes, perhaps no, I need to clarify the question.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "model": "intent_v7.pkl",
+      "sha256": "6433f9949491d0e13a3c76e97afe99ebaef3660dd2600ee2eac00b7e44263e0e",
+      "samples": 260,
+      "correct": 242,
+      "accuracy": 0.9307692307692308,
+      "classification_report": {
+        "bot_identity": {
+          "precision": 0.8571428571428571,
+          "recall": 0.9,
+          "f1-score": 0.8780487804878049,
+          "support": 20.0
+        },
+        "confirmation": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1-score": 0.8837209302325582,
+          "support": 20.0
+        },
+        "duration": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "emergency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "goodbye": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1-score": 0.9523809523809523,
+          "support": 20.0
+        },
+        "greeting": {
+          "precision": 1.0,
+          "recall": 0.85,
+          "f1-score": 0.918918918918919,
+          "support": 20.0
+        },
+        "image_upload": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "location": {
+          "precision": 0.95,
+          "recall": 0.95,
+          "f1-score": 0.95,
+          "support": 20.0
+        },
+        "medication": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1-score": 0.9523809523809523,
+          "support": 20.0
+        },
+        "severity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "symptom": {
+          "precision": 0.9523809523809523,
+          "recall": 1.0,
+          "f1-score": 0.975609756097561,
+          "support": 20.0
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 20.0
+        },
+        "unknown": {
+          "precision": 0.7222222222222222,
+          "recall": 0.65,
+          "f1-score": 0.6842105263157895,
+          "support": 20.0
+        },
+        "accuracy": 0.9307692307692308,
+        "macro avg": {
+          "precision": 0.9327703697268913,
+          "recall": 0.9307692307692309,
+          "f1-score": 0.9295507465925712,
+          "support": 260.0
+        },
+        "weighted avg": {
+          "precision": 0.9327703697268915,
+          "recall": 0.9307692307692308,
+          "f1-score": 0.9295507465925712,
+          "support": 260.0
+        }
+      },
+      "training_exact_overlap": 0,
+      "training_template_group_overlap": 1,
+      "confusion_labels": [
+        "bot_identity",
+        "confirmation",
+        "duration",
+        "emergency",
+        "goodbye",
+        "greeting",
+        "image_upload",
+        "location",
+        "medication",
+        "severity",
+        "symptom",
+        "thanks",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          3
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          13
+        ]
+      ],
+      "predictions": [
+        {
+          "id": "F001",
+          "text": "Heya Flamma, are you around this evening?",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F002",
+          "text": "Good afternoon there, skin helper.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F003",
+          "text": "Hullo bot, I'd like to begin a chat.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F004",
+          "text": "Hiya, nice to meet you here.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F005",
+          "text": "Morning Flamma, anyone online?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F006",
+          "text": "Hellooo there, just saying hi.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F007",
+          "text": "Greetings to you, Flamma assistant.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F008",
+          "text": "Hey hey, first time opening this chat.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F009",
+          "text": "Hi Flamma :) ready to talk?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F010",
+          "text": "G'day skin assistant, hello!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F011",
+          "text": "Good eve, Flamma.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F012",
+          "text": "Helo there little chatbot.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F013",
+          "text": "Howdy Flamma, how's your day going?",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F014",
+          "text": "Hello again, I'm back at the keyboard.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F015",
+          "text": "A pleasant morning to you, bot.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F016",
+          "text": "Heyyy Flamma!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F017",
+          "text": "Hiya there ðŸ‘‹",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F018",
+          "text": "Hii bot, good afternoon to you.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F019",
+          "text": "Just dropping in to say hello, Flamma.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "greeting",
+          "correct": true
+        },
+        {
+          "id": "F020",
+          "text": "Greetings, skin information assistant!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F021",
+          "text": "My skin has little rough flakes that catch on clothing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F022",
+          "text": "I keep noticing a prickly itchy sensation without a clear pattern.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F023",
+          "text": "Some newly raised specks feel rough when I touch them.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F024",
+          "text": "There are dry reddish islands of skin that keep flaking off.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F025",
+          "text": "The surface feels tight and scratchy after washing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F026",
+          "text": "I noticed a cluster of pink bumps with tiny scales.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F027",
+          "text": "Skin keeps peeling in thin strips and feels irritated.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F028",
+          "text": "An uneven patch has started to sting whenever it gets wet.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F029",
+          "text": "There's a persistent itch with a grainy texture to the skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F030",
+          "text": "New little welts keep appearing and then fading away.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F031",
+          "text": "I see flaky dots and the skin feels uncomfortable.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F032",
+          "text": "My skin looks blotchy and feels like it is burning lightly.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F033",
+          "text": "Red rough patches, that's what I'm seeing.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F034",
+          "text": "Itchyy little bumbs are showing up on my skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F035",
+          "text": "The rash feels scratchier after I get sweaty.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F036",
+          "text": "A scaly patch is shedding small white flakes.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F037",
+          "text": "My skin is becoming cracked and rough to the touch.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F038",
+          "text": "I can feel small itchy ridges even without looking.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F039",
+          "text": "Dryness and a prickling feeling are the changes I've noticed.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F040",
+          "text": "There are tiny reddish pimples surrounded by flaky skin.",
+          "expected": "symptom",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": true
+        },
+        {
+          "id": "F041",
+          "text": "The affected strip follows the crease behind my left knee.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F042",
+          "text": "It's concentrated along the outer edge of my right palm.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F043",
+          "text": "The area involved is just below my left collarbone.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F044",
+          "text": "Only the skin between my second and third toes is affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": false
+        },
+        {
+          "id": "F045",
+          "text": "The mark sits beside my right eyebrow rather than on my eyelid.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F046",
+          "text": "It shows up where my left wrist meets the base of my hand.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F047",
+          "text": "The affected skin lies under my jaw on the left side.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F048",
+          "text": "It's along my right shoulder blade close to the spine.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F049",
+          "text": "The trouble is limited to the front of my left shin.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F050",
+          "text": "Near the heel of my right foot, just underneath.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F051",
+          "text": "Both earlobes, especially their lower edges.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F052",
+          "text": "The patch is on the back of my right thumb.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F053",
+          "text": "Around my bellybutton, forming a small ring.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F054",
+          "text": "The skin on my upper left thigh is the bit I mean.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F055",
+          "text": "Left forarm, near the wrist crease.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F056",
+          "text": "Right ankel, above the sock line.",
+          "expected": "location",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F057",
+          "text": "The affected place is the left side of my forehead.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F058",
+          "text": "The fold beneath my right armpit is where it is.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F059",
+          "text": "Along my hairline at the back of my neck.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F060",
+          "text": "It's the outer part of my left elbow that's affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "location",
+          "correct": true
+        },
+        {
+          "id": "F061",
+          "text": "This particular skin change began about seventeen days ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F062",
+          "text": "I've had this issue for roughly thirty-six hours altogether.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F063",
+          "text": "The first change was eleven nights back.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F064",
+          "text": "It's been there since the morning before yesterday.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F065",
+          "text": "I noticed its start around six and a half weeks ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F066",
+          "text": "The rash first appeared about forty days before today.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F067",
+          "text": "The skin problem has lasted nine full days so far.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F068",
+          "text": "Its onset was approximately fourteen weeks back.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F069",
+          "text": "It started during the weekend before last.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F070",
+          "text": "I've been dealing with this since early September.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F071",
+          "text": "Around nineteen days, give or take a day.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F072",
+          "text": "It has persisted for nearly four and a half months.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F073",
+          "text": "Noticed it sixteen hours ago, still present.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F074",
+          "text": "The change has been around since Tuesday evening.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F075",
+          "text": "Started 13 dyas ago and never fully went away.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F076",
+          "text": "About 7 weks since the first skin change.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F077",
+          "text": "I first saw it at the beginning of last month.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F078",
+          "text": "Five nights have passed since it showed up.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F079",
+          "text": "This started a little less than three months ago.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F080",
+          "text": "Only about forty-five minutes since I noticed the rash.",
+          "expected": "duration",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "duration",
+          "correct": true
+        },
+        {
+          "id": "F081",
+          "text": "I'd rate the discomfort as mild rather than moderate.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F082",
+          "text": "The itch feels moderately intense, not severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F083",
+          "text": "It's severe enough to disrupt what I'm doing.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F084",
+          "text": "The irritation is quite mild at the moment.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F085",
+          "text": "My current severity rating would be moderate.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F086",
+          "text": "The discomfort is extremely intense, I would say severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F087",
+          "text": "It's barely bothersome, so mild is the best description.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F088",
+          "text": "Moderate discomfort, somewhere in the middle.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F089",
+          "text": "The itch is very strong and I'd call it severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F090",
+          "text": "I'd pick mild on your severity scale.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F091",
+          "text": "I'd put it in the moderate category today.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F092",
+          "text": "Severe is the closest description of how intense it feels.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F093",
+          "text": "The level is mild, although I notice it.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F094",
+          "text": "Moderately irritating but still manageable.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F095",
+          "text": "It's a sevre level of discomfort.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F096",
+          "text": "I'd describe the itch as modrate.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F097",
+          "text": "Mild intensity, just a little annoying.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F098",
+          "text": "My rating for the intensity is severe.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F099",
+          "text": "Somewhere around moderate, certainly beyond mild.",
+          "expected": "severity",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F100",
+          "text": "The discomfort is mild overall this evening.",
+          "expected": "severity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "severity",
+          "correct": true
+        },
+        {
+          "id": "F101",
+          "text": "Yep, you've understood that correctly.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F102",
+          "text": "That's right, the details you repeated are accurate.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F103",
+          "text": "Correct, that's what I was trying to say.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F104",
+          "text": "Affirmative, I agree with that summary.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F105",
+          "text": "Yup, that matches what I told you.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F106",
+          "text": "Exactly so, you got the details right.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F107",
+          "text": "Yes indeed, that's the one I meant.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F108",
+          "text": "Absolutely, that interpretation is correct.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F109",
+          "text": "Right you are, I confirm that.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F110",
+          "text": "Indeed yes, that's accurate.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F111",
+          "text": "You understood me properly, yes.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F112",
+          "text": "That's a correct restatement of it.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F113",
+          "text": "Yes, I can confirm those details.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F114",
+          "text": "Yeh, precisely what I meant.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F115",
+          "text": "Yess, you've got it.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F116",
+          "text": "Agreed, the summary matches.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F117",
+          "text": "Spot on, that is correct.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F118",
+          "text": "I confirm that what you wrote is right.",
+          "expected": "confirmation",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F119",
+          "text": "Yes exactly, no correction needed there.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F120",
+          "text": "Yep yep, accurate.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "confirmation",
+          "correct": true
+        },
+        {
+          "id": "F121",
+          "text": "I dabbed a fragrance-free moisturizer onto it after washing.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F122",
+          "text": "I've already tried a small amount of hydrocortisone cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F123",
+          "text": "I'm applying an emollient ointment before going to bed.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F124",
+          "text": "I took an antihistamine tablet for the itching yesterday.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F125",
+          "text": "A pharmacist's recommended lotion is what I have used.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F126",
+          "text": "I've used petroleum jelly on the dry patch.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F127",
+          "text": "I washed it and then applied a prescribed steroid cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F128",
+          "text": "I have been putting an antibiotic ointment on it.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F129",
+          "text": "The only product I've applied is plain moisturizer.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F130",
+          "text": "I've tried a cooling gel on the irritated skin.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F131",
+          "text": "I used a prescription cream left over from an earlier visit.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F132",
+          "text": "I have not applied any cream or taken any medicine for it.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F133",
+          "text": "No products at all have been used on this rash.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F134",
+          "text": "I used calamine lotion after the itch began.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F135",
+          "text": "Been aplying moisturiser before bed.",
+          "expected": "medication",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F136",
+          "text": "Tried an oinment from the pharmacy already.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F137",
+          "text": "I've been taking the tablets the doctor prescribed.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F138",
+          "text": "I have already used a steroid lotion on the patch.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F139",
+          "text": "So far I've only applied a mild barrier cream.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F140",
+          "text": "I put an unscented skin cream on the affected area.",
+          "expected": "medication",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": true
+        },
+        {
+          "id": "F141",
+          "text": "My tongue is swelling and now it's getting hard to swallow.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F142",
+          "text": "The rash is accompanied by trouble breathing right now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F143",
+          "text": "My lips suddenly swelled and I can barely breathe.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F144",
+          "text": "My throat feels swollen and I am unable to swallow.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F145",
+          "text": "Breathing has become difficult and my face is swelling.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F146",
+          "text": "I cannot swallow properly because my tongue is getting bigger.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F147",
+          "text": "I'm struggling to breathe while my mouth is swollen.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F148",
+          "text": "My airway feels tight and I cannot breathe normally.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F149",
+          "text": "There's swelling around my eyes and lips happening now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F150",
+          "text": "I'm short of breath and my throat is swelling up.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F151",
+          "text": "I am having difficulty swallowing with swollen lips.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F152",
+          "text": "My face suddenly swelled and breathing is hard.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F153",
+          "text": "Right now my tongue is swollen and I can't breathe well.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F154",
+          "text": "I have trouble swallowing and my mouth is swelling.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F155",
+          "text": "My thorat is swolen and breathing feels difficult.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F156",
+          "text": "Cant brethe properly, my lips are getting bigger.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F157",
+          "text": "My chest feels tight and I'm struggling with breathing.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F158",
+          "text": "I am unable to breathe and my tongue is swollen.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F159",
+          "text": "Swelling in my throat is making it hard to swallow now.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F160",
+          "text": "My lips and eyes are swelling and I feel short of breath.",
+          "expected": "emergency",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "emergency",
+          "correct": true
+        },
+        {
+          "id": "F161",
+          "text": "Could I attach a close-up photograph for the screening?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F162",
+          "text": "I would like to submit a skin snapshot in this chat.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F163",
+          "text": "I'm ready to share a photo of the patch with you.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F164",
+          "text": "Where should I attach my picture of the irritated skin?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F165",
+          "text": "Let me send a photograph rather than describe the texture.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F166",
+          "text": "I'd like to upload a JPEG of the affected skin now.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F167",
+          "text": "I have a close-up photo ready to send for screening.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F168",
+          "text": "Can I share a picture from my phone's camera roll?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F169",
+          "text": "I'd prefer to show you an image of the patch.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F170",
+          "text": "Please let me attach the skin photograph I took today.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F171",
+          "text": "I'm sending a photo so you can run the image model.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F172",
+          "text": "Can you give me the option to upload a skin picture?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F173",
+          "text": "I'd like to add a photograph to this conversation.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F174",
+          "text": "Could we use the photo upload for my skin concern?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F175",
+          "text": "Wanna uplod a close-up pic of this patch.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F176",
+          "text": "Can I attatch my skin pictur here please?",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F177",
+          "text": "I want to share the image I've saved on my device.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F178",
+          "text": "I'd like to submit a PNG photo for the image screening.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F179",
+          "text": "Here comes a picture I'd like you to screen.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F180",
+          "text": "Please help me send a clear skin photo from my gallery.",
+          "expected": "image_upload",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "image_upload",
+          "correct": true
+        },
+        {
+          "id": "F181",
+          "text": "I'll end this conversation here, goodbye Flamma.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F182",
+          "text": "I'm signing off for the evening, take care.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F183",
+          "text": "That's all for today, bye for now bot.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F184",
+          "text": "I'm heading out now, see you another day.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F185",
+          "text": "Goodnight Flamma, I'm closing the chat.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F186",
+          "text": "I'll leave the conversation now, farewell.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F187",
+          "text": "Time for me to go, goodbye skin helper.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F188",
+          "text": "I'm done chatting today, see you later.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F189",
+          "text": "Catch you next time, Flamma, bye.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F190",
+          "text": "I'll be leaving now, have a good evening.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F191",
+          "text": "I'm closing this tab, goodbye for today.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F192",
+          "text": "See you around, I'm off now.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F193",
+          "text": "Farewell assistant, that ends my visit.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F194",
+          "text": "I'll talk to you another time, goodnight.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F195",
+          "text": "Byee Flamma, gotta go now.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F196",
+          "text": "See ya bot, signing out.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F197",
+          "text": "I'll stop the conversation now, take care.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F198",
+          "text": "Until the next chat, goodbye.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F199",
+          "text": "I'm going offline now, bye assistant.",
+          "expected": "goodbye",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F200",
+          "text": "That will be my last message today, farewell.",
+          "expected": "goodbye",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": true
+        },
+        {
+          "id": "F201",
+          "text": "Many thanks for putting that into plain language.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F202",
+          "text": "I appreciate you helping me organize these details.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F203",
+          "text": "Thank you for explaining the score so clearly.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F204",
+          "text": "That explanation was useful, thanks a bunch.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F205",
+          "text": "I'm grateful for your patience with my questions.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F206",
+          "text": "Thanks for keeping track of the details I gave.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F207",
+          "text": "Much appreciated, that answered my question.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F208",
+          "text": "Thank you kindly for taking the time to explain.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F209",
+          "text": "Cheers for clearing up that confusion.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F210",
+          "text": "I appreciate that response, thank you Flamma.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F211",
+          "text": "Thanks a million for walking me through it.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F212",
+          "text": "Your explanation helped me understand, thank you.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F213",
+          "text": "Grateful for the information you've shared.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F214",
+          "text": "Big thanks for the careful explanation.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F215",
+          "text": "Thnks for explaining that bit, bot.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F216",
+          "text": "Thankss Flamma, appreciate the help.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F217",
+          "text": "I'm thankful for the clarification you gave.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F218",
+          "text": "That was helpful to read, many thanks.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F219",
+          "text": "Thanks for answering without making it complicated.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F220",
+          "text": "I appreciate the help with this conversation.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "thanks",
+          "correct": true
+        },
+        {
+          "id": "F221",
+          "text": "Which parts of this screening are you able to help with?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F222",
+          "text": "Are you a trained clinician or a software assistant?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F223",
+          "text": "What sort of information does Flamma provide?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F224",
+          "text": "Can you explain what powers this chatbot's replies?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F225",
+          "text": "Are your answers generated by a doctor in real time?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F226",
+          "text": "What are the limits of your skin screening abilities?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F227",
+          "text": "Does saving my chat also retrain your text classifier?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F228",
+          "text": "Who is able to access the photos I leave in this chat?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F229",
+          "text": "Can you explain the difference between your score and a diagnosis?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F230",
+          "text": "Is Flamma designed to replace a dermatologist's visit?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F231",
+          "text": "How do you remember details from earlier in our chat?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F232",
+          "text": "What does your confidence percentage actually describe?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F233",
+          "text": "Are you able to prescribe a personal medicine dose?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F234",
+          "text": "Where is my conversation stored after I close this tab?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F235",
+          "text": "Wat kind of assistant is Flamma meant to be?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F236",
+          "text": "Do u learn new facts from every chat message?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F237",
+          "text": "What model do you use to recognize my message intent?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F238",
+          "text": "Who made you a skin information assistant?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F239",
+          "text": "Are the replies from a local information library?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": true
+        },
+        {
+          "id": "F240",
+          "text": "What can this prototype reliably claim about its accuracy?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F241",
+          "text": "Is that one the other thing I mentioned somewhere?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F242",
+          "text": "Would the same apply to it, whatever it was?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F243",
+          "text": "Should I do that now or perhaps the opposite?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F244",
+          "text": "Which of those things are you talking about exactly?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F245",
+          "text": "It might be this, or it might not, I can't decide.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F246",
+          "text": "Can you do the thing with the stuff from before?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F247",
+          "text": "What about the second thing if there wasn't a first one?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F248",
+          "text": "Could that work for this without knowing what this is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F249",
+          "text": "What does that refer to when I haven't sent anything?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F250",
+          "text": "The thing is different in a way I can't describe.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F251",
+          "text": "Maybe that, maybe something else entirely.",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F252",
+          "text": "Is it okay though, whatever it is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F253",
+          "text": "Would you say so about that thing?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F254",
+          "text": "What am I supposed to mean by this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F255",
+          "text": "Uhh whut abt that other thing tho?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F256",
+          "text": "That bit? which bit exactly?",
+          "expected": "unknown",
+          "short_reply": true,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F257",
+          "text": "Does this count as that or is that this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F258",
+          "text": "I have a question but haven't decided what it is.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        },
+        {
+          "id": "F259",
+          "text": "Perhaps yes, perhaps no, I need to clarify the question.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F260",
+          "text": "Something about it doesn't quite make sense to me yet.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "unknown",
+          "correct": true
+        }
+      ],
+      "failures": [
+        {
+          "id": "F007",
+          "text": "Greetings to you, Flamma assistant.",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F014",
+          "text": "Hello again, I'm back at the keyboard.",
+          "expected": "greeting",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F020",
+          "text": "Greetings, skin information assistant!",
+          "expected": "greeting",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F044",
+          "text": "Only the skin between my second and third toes is affected.",
+          "expected": "location",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "symptom",
+          "correct": false
+        },
+        {
+          "id": "F114",
+          "text": "Yeh, precisely what I meant.",
+          "expected": "confirmation",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F201",
+          "text": "Many thanks for putting that into plain language.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F203",
+          "text": "Thank you for explaining the score so clearly.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F211",
+          "text": "Thanks a million for walking me through it.",
+          "expected": "thanks",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "goodbye",
+          "correct": false
+        },
+        {
+          "id": "F215",
+          "text": "Thnks for explaining that bit, bot.",
+          "expected": "thanks",
+          "short_reply": true,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F233",
+          "text": "Are you able to prescribe a personal medicine dose?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F240",
+          "text": "What can this prototype reliably claim about its accuracy?",
+          "expected": "bot_identity",
+          "short_reply": false,
+          "ambiguous": false,
+          "predicted": "unknown",
+          "correct": false
+        },
+        {
+          "id": "F242",
+          "text": "Would the same apply to it, whatever it was?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "location",
+          "correct": false
+        },
+        {
+          "id": "F246",
+          "text": "Can you do the thing with the stuff from before?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "medication",
+          "correct": false
+        },
+        {
+          "id": "F248",
+          "text": "Could that work for this without knowing what this is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "bot_identity",
+          "correct": false
+        },
+        {
+          "id": "F252",
+          "text": "Is it okay though, whatever it is?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F253",
+          "text": "Would you say so about that thing?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F257",
+          "text": "Does this count as that or is that this?",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        },
+        {
+          "id": "F259",
+          "text": "Perhaps yes, perhaps no, I need to clarify the question.",
+          "expected": "unknown",
+          "short_reply": false,
+          "ambiguous": true,
+          "predicted": "confirmation",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Labels authored by the coding assistant; independent human adjudication pending.",
+    "Exact deduplication does not guarantee semantic novelty; template overlap disclosed.",
+    "Balanced authored categories do not represent real-user prevalence."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "evaluated_at": "2026-10-23T18:11:03.493121+00:00",
+  "scope": "Active image model through HTTP adapter and chatbot response mapping, using synthetic pixel images. These are not labeled clinical images; no accuracy measured.",
+  "model": {
+    "checkpoint": "resnet50_skin_finale_oe.pth",
+    "sha256": "78f89d65779cdff077b9a4476b09f15ec5d1677fb9a6464f32457fa2361c5814",
+    "classes": [
+      "contact_dermatitis",
+      "lichen_planus",
+      "normal_skin",
+      "psoriasis",
+      "rosacea",
+      "atopic_dermatitis"
+    ],
+    "confidence_threshold": 0.55,
+    "ood_method": "entropy",
+    "ood_threshold": 1.492835283279419,
+    "skin_crops": 5,
+    "normal_gate_enabled": true,
+    "normal_min_confidence": 0.8,
+    "normal_crop_veto_probability": 0.5,
+    "heatmap": "Grad-CAM++"
+  },
+  "checkpoint_sha256": "78f89d65779cdff077b9a4476b09f15ec5d1677fb9a6464f32457fa2361c5814",
+  "startup_seconds_including_imports": 6.28925580001669,
+  "samples": 12,
+  "median_seconds": 0.014267999998992309,
+  "p95_seconds": 0.1719457950093783,
+  "timing_scope": "HTTP upload, blur/skin checks, crop-averaged classifier, OOD/normal gates and Grad-CAM++ when accepted, chatbot mapping. No text-model inference or browser rendering.",
+  "accepted": 0,
+  "successful": true,
+  "results": [
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.0509582000086084,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "inconclusive",
+      "seconds": 0.2153237999882549,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.010518600000068545,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.014190000016242266,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.00924230000237003,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "inconclusive",
+      "seconds": 0.13645470002666116,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.009748999960720539,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.014345999981742352,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.011507500021252781,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "inconclusive",
+      "seconds": 0.1269223999697715,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "too_blurry",
+      "seconds": 0.010570899990852922,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.01671410002745688,
+      "passed": true
+    }
+  ]
+}

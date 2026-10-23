@@ -224,6 +224,8 @@
     cursor:pointer;
   }
   .follow-up:hover{ background:#D9E6E1; }
+  .follow-up:focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
+  .follow-up:disabled{ opacity:.55; cursor:default; }
 
   .typing{
     display:flex; gap:4px; padding:12px 14px;

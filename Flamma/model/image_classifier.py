@@ -41,7 +41,7 @@ class ImageClassifier:
                 response = urlopen(request, timeout=self.timeout)
             except HTTPError as error:
                 # The image API uses 400 for rejected images, which is a normal result.
-                if error.code != 400:
+                if error.code not in {400, 413}:
                     raise ImageClassifierError("The image service returned an error.") from error
                 response = error
             with response:

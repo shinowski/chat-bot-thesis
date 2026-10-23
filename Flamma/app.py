@@ -13,6 +13,7 @@ from flask import Flask, Response, jsonify, render_template, request, send_from_
 
 from model.image_classifier import ImageClassifierError
 from model.chat_history import ChatHistory
+from model.reply_choices import with_reply_choices
 from model.request_locks import OwnerLocks
 from model.conversation import Conversation
 from model.safety import safety_intent, safety_response
@@ -99,6 +100,10 @@ def create_app(chatbot=None, history_path=None):
 
     @app.after_request
     def private_responses(response):
+        if response.is_json:
+            payload = response.get_json(silent=True)
+            if isinstance(payload, dict) and isinstance(payload.get('reply'), str):
+                response.set_data(app.json.dumps(with_reply_choices(payload)))
         if request.path.startswith("/api/") or request.path == "/predict":
             response.headers["Cache-Control"] = "no-store"
             response.headers["X-Content-Type-Options"] = "nosniff"

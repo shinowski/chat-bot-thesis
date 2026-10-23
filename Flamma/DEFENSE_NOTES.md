@@ -1,5 +1,21 @@
 # Flamma: evidence and limitations for a panel defense
 
+Updated 22 October 2026: the manifest now selects **intent v7**, chosen and
+locked using development evidence before the new 260-message final evaluation.
+See the [current adviser evaluation](../reports/adviser-evaluation-2026-10-22/ADVISER_EVALUATION.md)
+and its [printable version](../reports/adviser-evaluation-2026-10-22/ADVISER_EVALUATION.html).
+On that new authored test, v5 scored 236/260 (90.77%, macro F1 0.8927), and
+v7 scored 242/260 (93.08%, macro F1 0.9296). All 18 v7 failures are retained;
+the set must not be reused for tuning. Independent human label review is pending.
+v7 fixes the original seven development errors but has one different severity
+error on the older 130-message benchmark (129/130). References to v5's 94.6%
+below describe that historical reused benchmark, not the new final result.
+
+The actual v10-1 image integration smoke accepted flat and noisy skin-colored
+synthetic inputs. This exposes a gate limitation; successful transport checks
+do not establish reliable unsupported-image rejection. Held-out image accuracy,
+dermatologist approval, and participant usability results remain pending.
+
 ## A claim supported by this implementation
 
 Flamma is an English-first educational skin-information and screening prototype.
@@ -15,7 +31,7 @@ prescribe an individualized medicine or dose, or provide validated clinical tria
 | Does 94.6% mean skin-diagnosis accuracy? | No. v5 correctly categorized 123 of 130 authored text messages. Macro F1 was 0.948. These are raw text-intent results, separate from image accuracy, disease prevalence, clinical outcomes, and end-to-end conversation results. |
 | Is this an independent final test? | No. The 130-message benchmark was excluded from fitting but reused across versions. It supports engineering comparisons and carries selection-bias risk. A fresh, independently authored final evaluation is still needed. |
 | What does grouped validation mean here? | Similar template variations are grouped by body area, symptom, timeframe, severity, and product. Parameter selection used fold 0 of a five-way stratified grouped split. The reported validation result is one fold, not an average across all five folds. |
-| What data was used? | v5 used 6,405 unique fictional English examples, including 524 new broader English examples. The report records source checksums, duplicates, conflicts, package versions, and selected regularization. Saved chats and photos were not used for this training. |
+| What data was used? | v5 used 6,405 unique fictional English examples. Current v7 uses 6,735, adding 330 development patterns addressing known error families. The new 260 final messages were excluded from fitting and candidate selection. Reports preserve source checksums, duplicates, conflicts, runtime versions and selected regularization. Saved chats and photos were not training sources. |
 | Does a 97% reply score mean 97% medically correct? | No. Message intent and photo model scores have different meanings. Neither is a measured probability that the person has a disease. Clinical score calibration has not been established here. The interface now labels each score's source visibly. |
 | Does the bot learn while people chat? | No. Conversations persist as records. Model training is a separate explicit process. |
 | What happens with unsupported diseases or rejected photos? | Rejection invalidates the current photo result and its condition-specific care context. A later named condition can receive general information without being treated as a diagnosis. Supported-class screening cannot rule out diseases outside its labels. |
@@ -23,10 +39,13 @@ prescribe an individualized medicine or dose, or provide validated clinical tria
 | Are medicine questions treated as medication use? | They are tracked separately. Named products and questions do not establish use; explicit use reports are required. Tests cover unknown products, actual usage, and separation of rash onset from treatment duration. |
 | Is the storage private or encrypted? | Records are stored in SQLite on the Flamma server and isolated by browser session. There is no account sign-in or application-level encryption. Shared-profile users and server-file access remain risks. This is not a claim of production privacy readiness. |
 | What does deletion do? | It removes that browser session's application records, including messages, photos, and associated request receipts. Exported text, backups, and older logs are separate copies. Do not claim certified secure erasure. |
-| How do you know the demo uses the evaluated model? | Compare `/health`'s `intent_model` and `intent_model_sha256` with `artifacts/active_intent_model.json` and `artifacts/intent_v5.metadata.json`. Startup refuses a selected artifact whose checksum differs from the manifest. This detects file/report mismatch, not malicious modification of both files. |
+| How do you know the demo uses the evaluated model? | Compare `/health`'s `intent_model` and `intent_model_sha256` with `artifacts/active_intent_model.json`, `artifacts/intent_v7.metadata.json`, and the current final-text-results.json. Startup refuses a selected artifact whose checksum differs from the manifest. This detects file/report mismatch, not malicious modification of both files. |
 | Did passing conversation tests prove medical safety? | No. Authored regression tests demonstrate specified software behavior. Image fixtures simulate classifications and do not test image recognition. Warning rules still need clinician review and prospective safety evaluation. |
 
 ## Evidence to show
+
+- `../reports/adviser-evaluation-2026-10-22/`: current checklist, frozen-test results, confusion matrices, remaining failures, software/browser/performance evidence, and prepared clinical review materials.
+- `eval/adviser/final-set.lock.json` and `eval/adviser/candidate.lock.json`: final-set freeze and pre-final candidate selection/source hashes. The older v5 evidence below remains available for historical comparison.
 
 - `artifacts/intent_v5.metadata.json`: training provenance, validation, reused benchmark results, baseline and candidate artifact hashes.
 - `eval/results/intent-v5-generalization.json`: 65 additional authored text-intent examples, with no exact or grouped-template overlap found against the training corpus. This remains a small authored evaluation, not clinical validation.

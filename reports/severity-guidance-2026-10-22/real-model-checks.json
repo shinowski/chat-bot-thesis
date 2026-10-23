@@ -1,0 +1,11 @@
+{
+  "tests_run": 20,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "scope": "Actual configured text classifier; simulated photo outputs; not clinical validation.",
+  "model": "C:\\flamma chatbot\\Flamma\\artifacts\\intent_v7.pkl",
+  "model_sha256": "6433f9949491d0e13a3c76e97afe99ebaef3660dd2600ee2eac00b7e44263e0e",
+  "evaluated_at": "2026-10-22T13:25:49.444161+00:00"
+}

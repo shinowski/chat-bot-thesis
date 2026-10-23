@@ -1,0 +1,196 @@
+[
+  {
+    "user": "how can i know how severe my psoriasis is",
+    "reply": "For psoriasis: Psoriasis severity depends on more than how a patch looks. A clinician considers how much skin is affected, plaque thickness and scaling, symptoms, and the effect on everyday life. Small patches on the face, scalp, hands, feet, nails or genital skin can still have a major impact.\n\nFor a rough description of coverage, your own whole handprint, including palm, fingers and thumb together, represents about 1% of your body surface. This is only an estimate; coverage alone does not determine whether psoriasis is mild, moderate or severe.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich body areas are affected? Include any scalp, face, hands, feet, nails or genital involvement. You can say 'I'm not sure.'",
+    "intent": "severity_guidance",
+    "confidence": null,
+    "confidenceSource": null,
+    "predictedIntent": "emergency",
+    "modelConfidence": 0.2831301689147949,
+    "action": null,
+    "followUps": [
+      "I'm not sure",
+      "Stop severity questions"
+    ],
+    "treatmentInfo": {
+      "condition_key": "psoriasis",
+      "condition": "Psoriasis",
+      "topic": "severity",
+      "sources": [
+        {
+          "title": "AAD: Psoriasis severity assessment",
+          "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+        },
+        {
+          "title": "NPF: Estimating affected body surface",
+          "url": "https://www.psoriasis.org/treat-to-target/"
+        },
+        {
+          "title": "NPF: High-impact psoriasis locations",
+          "url": "https://www.psoriasis.org/about-psoriasis/"
+        },
+        {
+          "title": "NPF: Joint symptoms and psoriatic arthritis",
+          "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+        }
+      ],
+      "source_checked_on": "2026-10-22"
+    }
+  },
+  {
+    "user": "Both elbows",
+    "reply": "I've recorded your description.\n\nAbout how much skin is affected? For psoriasis, estimate how many of your own whole handprints (palm, fingers and thumb together) would cover all the patches. A rough estimate or 'I'm not sure' is fine.",
+    "intent": "severity_guidance",
+    "confidence": null,
+    "confidenceSource": null,
+    "predictedIntent": "location",
+    "modelConfidence": 0.9021586775779724,
+    "action": null,
+    "followUps": [
+      "I'm not sure",
+      "Stop severity questions"
+    ],
+    "treatmentInfo": {
+      "condition_key": "psoriasis",
+      "condition": "Psoriasis",
+      "topic": "severity",
+      "sources": [
+        {
+          "title": "AAD: Psoriasis severity assessment",
+          "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+        },
+        {
+          "title": "NPF: Estimating affected body surface",
+          "url": "https://www.psoriasis.org/treat-to-target/"
+        },
+        {
+          "title": "NPF: High-impact psoriasis locations",
+          "url": "https://www.psoriasis.org/about-psoriasis/"
+        },
+        {
+          "title": "NPF: Joint symptoms and psoriatic arthritis",
+          "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+        }
+      ],
+      "source_checked_on": "2026-10-22"
+    }
+  },
+  {
+    "user": "about two handprints",
+    "reply": "I've recorded your description.\n\nHow is it affecting you: is the itch disturbing sleep, work, school or everyday activities? You can also rate the itch from 0 to 10, or say you are not sure.",
+    "intent": "severity_guidance",
+    "confidence": null,
+    "confidenceSource": null,
+    "predictedIntent": "unknown",
+    "modelConfidence": 0.7174700498580933,
+    "action": null,
+    "followUps": [
+      "It affects my sleep",
+      "No effect on daily activities",
+      "I'm not sure",
+      "Stop severity questions"
+    ],
+    "treatmentInfo": {
+      "condition_key": "psoriasis",
+      "condition": "Psoriasis",
+      "topic": "severity",
+      "sources": [
+        {
+          "title": "AAD: Psoriasis severity assessment",
+          "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+        },
+        {
+          "title": "NPF: Estimating affected body surface",
+          "url": "https://www.psoriasis.org/treat-to-target/"
+        },
+        {
+          "title": "NPF: High-impact psoriasis locations",
+          "url": "https://www.psoriasis.org/about-psoriasis/"
+        },
+        {
+          "title": "NPF: Joint symptoms and psoriatic arthritis",
+          "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+        }
+      ],
+      "source_checked_on": "2026-10-22"
+    }
+  },
+  {
+    "user": "It affects my sleep",
+    "reply": "I've recorded your description.\n\nHave you noticed any new joint pain, joint swelling or morning stiffness? You can answer yes, no, or 'I'm not sure.'",
+    "intent": "severity_guidance",
+    "confidence": null,
+    "confidenceSource": null,
+    "predictedIntent": "severity",
+    "modelConfidence": 0.5348943471908569,
+    "action": null,
+    "followUps": [
+      "Yes, new joint stiffness",
+      "No joint symptoms",
+      "I'm not sure",
+      "Stop severity questions"
+    ],
+    "treatmentInfo": {
+      "condition_key": "psoriasis",
+      "condition": "Psoriasis",
+      "topic": "severity",
+      "sources": [
+        {
+          "title": "AAD: Psoriasis severity assessment",
+          "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+        },
+        {
+          "title": "NPF: Estimating affected body surface",
+          "url": "https://www.psoriasis.org/treat-to-target/"
+        },
+        {
+          "title": "NPF: High-impact psoriasis locations",
+          "url": "https://www.psoriasis.org/about-psoriasis/"
+        },
+        {
+          "title": "NPF: Joint symptoms and psoriatic arthritis",
+          "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+        }
+      ],
+      "source_checked_on": "2026-10-22"
+    }
+  },
+  {
+    "user": "No joint symptoms",
+    "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nAffected areas: Both elbows\nExtent estimate: about two handprints\nSymptoms and daily-life impact: It affects my sleep\nJoint symptoms: No joint symptoms\nYou described disruption to sleep or daily activities. Discuss this impact with a clinician, even if the affected area seems small.\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+    "intent": "severity_guidance",
+    "confidence": null,
+    "confidenceSource": null,
+    "predictedIntent": "symptom",
+    "modelConfidence": 0.7894997000694275,
+    "action": null,
+    "followUps": [
+      "When should I see a doctor?",
+      "Summarize our conversation"
+    ],
+    "treatmentInfo": {
+      "condition_key": "psoriasis",
+      "condition": "Psoriasis",
+      "topic": "severity",
+      "sources": [
+        {
+          "title": "AAD: Psoriasis severity assessment",
+          "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+        },
+        {
+          "title": "NPF: Estimating affected body surface",
+          "url": "https://www.psoriasis.org/treat-to-target/"
+        },
+        {
+          "title": "NPF: High-impact psoriasis locations",
+          "url": "https://www.psoriasis.org/about-psoriasis/"
+        },
+        {
+          "title": "NPF: Joint symptoms and psoriatic arthritis",
+          "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+        }
+      ],
+      "source_checked_on": "2026-10-22"
+    }
+  }
+]

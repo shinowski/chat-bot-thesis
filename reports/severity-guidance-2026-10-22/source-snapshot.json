@@ -1,0 +1,14 @@
+{
+  "scope": "New severity feature snapshot; earlier adviser reports remain historical evidence for the earlier application source.",
+  "consumed_final_set_reused": false,
+  "sources": {
+    "model\\severity_support.py": "5e0c42b6e2cec5442b478580c30360284007b0c08602ecc798f75c3dcace6ab5",
+    "model\\knowledge_base.py": "120048e85958e05ea22e3006fa209eb49942d60c5d7de1ade2a78458ffed5485",
+    "model\\semantic_chatbot.py": "ea3bd7f36c38feb2bd14bd9572a76c6fe74d57231d339b2b2bac32c95d802e61",
+    "model\\context_intent.py": "e13f053b7ca061af07fc1240c8dd86efa1ef75f27aaf33ca04eeebfcca3904f6",
+    "model\\conversation.py": "a487d461e61be23fa8b0c62c69f0fd0cb47a29736443695f60a6087aa4a8b8c3",
+    "model\\safety.py": "6f25493b32721e24e89165a11e8866f7be2d083020048aa834448b801ee80440",
+    "data\\severity_guidance.json": "e5cb340050a419c934c65323ef0097ddca009ba274de15b6d7a6bb8bd7c30877",
+    "frontend\\src\\intents.js": "a0ec5f73ea0aba859f35eafdef1889617e3883f53727eaa0d1488b23a2225c9a"
+  }
+}

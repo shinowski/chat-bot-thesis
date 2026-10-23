@@ -1,0 +1,1385 @@
+{
+  "trained_at": "2026-10-22T12:48:21.622376+00:00",
+  "scope": "english_text_intent_classification_only",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "embedding_cache_key": "8468a45c220caa2d06e02bca062ef12f2d89d5e87d782f9cb7cbb7b3317a711f",
+  "python_version": "3.14.4",
+  "runtime_versions": {
+    "scikit-learn": "1.9.1",
+    "sentence-transformers": "6.1.0",
+    "torch": "2.14.0",
+    "numpy": "2.5.3"
+  },
+  "model_path": "C:\\flamma chatbot\\Flamma\\artifacts\\intent_v7.pkl",
+  "model_sha256": "6433f9949491d0e13a3c76e97afe99ebaef3660dd2600ee2eac00b7e44263e0e",
+  "baseline_path": "C:\\flamma chatbot\\Flamma\\artifacts\\intent_v5.pkl",
+  "baseline_sha256": "8ab43bc8f8442887e1bcae6c4f9f35ca52b7b0246e8a9753e928dbcdf65eccb7",
+  "training_audit": {
+    "sources": [
+      {
+        "path": "C:\\flamma chatbot\\Flamma\\data\\intents.json",
+        "sha256": "c176cbbe1100eadcc47a4fc4c97cce459423fd61e05ed638653706d9c3fea67a"
+      },
+      {
+        "path": "C:\\flamma chatbot\\Flamma\\data\\training_supplement.json",
+        "sha256": "8a15d8409df3ffdd12099216fcb15590e4c6bf00976ba49b6acc5271a2f20386"
+      },
+      {
+        "path": "data\\english_location_supplement.json",
+        "sha256": "cb0d7777375a43fbf7daa1501b5b12f460213215f99440b6894dd14ca79d0a1d"
+      },
+      {
+        "path": "data\\english_intent_supplement.json",
+        "sha256": "c2cc013df71caa9be967164c992fadb74e286596c5c0ca43c908e953ee34fdb6"
+      },
+      {
+        "path": "eval\\adviser\\development-supplement-v2.json",
+        "sha256": "0a144756672bdecd7720c6e8b8e3f5ae440760c599d0a6f0efcede4d68f9b9bd"
+      }
+    ],
+    "input_examples": 6814,
+    "unique_examples": 6735,
+    "duplicates_removed": 79,
+    "conflicts_excluded": [],
+    "class_counts": {
+      "greeting": 110,
+      "symptom": 3200,
+      "location": 1134,
+      "duration": 511,
+      "severity": 195,
+      "confirmation": 144,
+      "medication": 501,
+      "emergency": 196,
+      "image_upload": 212,
+      "goodbye": 134,
+      "thanks": 125,
+      "bot_identity": 108,
+      "unknown": 165
+    },
+    "template_groups": 2076
+  },
+  "validation": {
+    "method": "StratifiedGroupKFold, fold 0 of 5",
+    "seed": 42,
+    "grouping": "normalized_templates_with_area_symptom_duration_severity_product_slots_v2",
+    "train_examples": 5383,
+    "validation_examples": 1352,
+    "train_class_counts": {
+      "greeting": 88,
+      "symptom": 2560,
+      "location": 908,
+      "duration": 399,
+      "severity": 157,
+      "confirmation": 116,
+      "medication": 401,
+      "emergency": 157,
+      "image_upload": 170,
+      "goodbye": 108,
+      "thanks": 100,
+      "bot_identity": 87,
+      "unknown": 132
+    },
+    "validation_class_counts": {
+      "greeting": 22,
+      "symptom": 640,
+      "location": 226,
+      "duration": 112,
+      "severity": 38,
+      "confirmation": 28,
+      "medication": 100,
+      "emergency": 39,
+      "image_upload": 42,
+      "goodbye": 26,
+      "thanks": 25,
+      "bot_identity": 21,
+      "unknown": 33
+    },
+    "overlapping_groups": 0,
+    "candidates": [
+      {
+        "C": 0.5,
+        "metrics": {
+          "accuracy": 0.9467455621301775,
+          "macro_f1": 0.9381447048914596,
+          "per_intent": {
+            "bot_identity": {
+              "precision": 1.0,
+              "recall": 0.9047619047619048,
+              "f1-score": 0.95,
+              "support": 21.0
+            },
+            "confirmation": {
+              "precision": 0.9230769230769231,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8888888888888888,
+              "support": 28.0
+            },
+            "duration": {
+              "precision": 0.9911504424778761,
+              "recall": 1.0,
+              "f1-score": 0.9955555555555555,
+              "support": 112.0
+            },
+            "emergency": {
+              "precision": 0.78,
+              "recall": 1.0,
+              "f1-score": 0.8764044943820225,
+              "support": 39.0
+            },
+            "goodbye": {
+              "precision": 0.9629629629629629,
+              "recall": 1.0,
+              "f1-score": 0.9811320754716981,
+              "support": 26.0
+            },
+            "greeting": {
+              "precision": 0.9523809523809523,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.9302325581395349,
+              "support": 22.0
+            },
+            "image_upload": {
+              "precision": 0.9767441860465116,
+              "recall": 1.0,
+              "f1-score": 0.9882352941176471,
+              "support": 42.0
+            },
+            "location": {
+              "precision": 0.9512195121951219,
+              "recall": 0.8628318584070797,
+              "f1-score": 0.9048723897911833,
+              "support": 226.0
+            },
+            "medication": {
+              "precision": 0.9803921568627451,
+              "recall": 1.0,
+              "f1-score": 0.9900990099009901,
+              "support": 100.0
+            },
+            "severity": {
+              "precision": 0.9047619047619048,
+              "recall": 1.0,
+              "f1-score": 0.95,
+              "support": 38.0
+            },
+            "symptom": {
+              "precision": 0.9504643962848297,
+              "recall": 0.959375,
+              "f1-score": 0.9548989113530326,
+              "support": 640.0
+            },
+            "thanks": {
+              "precision": 1.0,
+              "recall": 0.96,
+              "f1-score": 0.9795918367346939,
+              "support": 25.0
+            },
+            "unknown": {
+              "precision": 0.7941176470588235,
+              "recall": 0.8181818181818182,
+              "f1-score": 0.8059701492537313,
+              "support": 33.0
+            },
+            "accuracy": 0.9467455621301775,
+            "macro avg": {
+              "precision": 0.9359439295468194,
+              "recall": 0.9439526421218898,
+              "f1-score": 0.9381447048914596,
+              "support": 1352.0
+            },
+            "weighted avg": {
+              "precision": 0.9483628335840267,
+              "recall": 0.9467455621301775,
+              "f1-score": 0.9466231465820065,
+              "support": 1352.0
+            }
+          }
+        }
+      },
+      {
+        "C": 1.0,
+        "metrics": {
+          "accuracy": 0.9534023668639053,
+          "macro_f1": 0.945451107195926,
+          "per_intent": {
+            "bot_identity": {
+              "precision": 1.0,
+              "recall": 0.9047619047619048,
+              "f1-score": 0.95,
+              "support": 21.0
+            },
+            "confirmation": {
+              "precision": 0.9230769230769231,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8888888888888888,
+              "support": 28.0
+            },
+            "duration": {
+              "precision": 0.9911504424778761,
+              "recall": 1.0,
+              "f1-score": 0.9955555555555555,
+              "support": 112.0
+            },
+            "emergency": {
+              "precision": 0.8297872340425532,
+              "recall": 1.0,
+              "f1-score": 0.9069767441860465,
+              "support": 39.0
+            },
+            "goodbye": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 26.0
+            },
+            "greeting": {
+              "precision": 0.9523809523809523,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.9302325581395349,
+              "support": 22.0
+            },
+            "image_upload": {
+              "precision": 0.9767441860465116,
+              "recall": 1.0,
+              "f1-score": 0.9882352941176471,
+              "support": 42.0
+            },
+            "location": {
+              "precision": 0.9565217391304348,
+              "recall": 0.8761061946902655,
+              "f1-score": 0.9145496535796767,
+              "support": 226.0
+            },
+            "medication": {
+              "precision": 0.9803921568627451,
+              "recall": 1.0,
+              "f1-score": 0.9900990099009901,
+              "support": 100.0
+            },
+            "severity": {
+              "precision": 0.926829268292683,
+              "recall": 1.0,
+              "f1-score": 0.9620253164556962,
+              "support": 38.0
+            },
+            "symptom": {
+              "precision": 0.9552469135802469,
+              "recall": 0.9671875,
+              "f1-score": 0.9611801242236024,
+              "support": 640.0
+            },
+            "thanks": {
+              "precision": 1.0,
+              "recall": 0.96,
+              "f1-score": 0.9795918367346939,
+              "support": 25.0
+            },
+            "unknown": {
+              "precision": 0.8,
+              "recall": 0.8484848484848485,
+              "f1-score": 0.8235294117647058,
+              "support": 33.0
+            },
+            "accuracy": 0.9534023668639053,
+            "macro avg": {
+              "precision": 0.9455484473762252,
+              "recall": 0.9479057087823681,
+              "f1-score": 0.945451107195926,
+              "support": 1352.0
+            },
+            "weighted avg": {
+              "precision": 0.9544253017114667,
+              "recall": 0.9534023668639053,
+              "f1-score": 0.953225468565465,
+              "support": 1352.0
+            }
+          }
+        }
+      },
+      {
+        "C": 2.0,
+        "metrics": {
+          "accuracy": 0.9615384615384616,
+          "macro_f1": 0.9546066645597336,
+          "per_intent": {
+            "bot_identity": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 21.0
+            },
+            "confirmation": {
+              "precision": 0.9230769230769231,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8888888888888888,
+              "support": 28.0
+            },
+            "duration": {
+              "precision": 0.9911504424778761,
+              "recall": 1.0,
+              "f1-score": 0.9955555555555555,
+              "support": 112.0
+            },
+            "emergency": {
+              "precision": 0.9285714285714286,
+              "recall": 1.0,
+              "f1-score": 0.9629629629629629,
+              "support": 39.0
+            },
+            "goodbye": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 26.0
+            },
+            "greeting": {
+              "precision": 0.9523809523809523,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.9302325581395349,
+              "support": 22.0
+            },
+            "image_upload": {
+              "precision": 0.9767441860465116,
+              "recall": 1.0,
+              "f1-score": 0.9882352941176471,
+              "support": 42.0
+            },
+            "location": {
+              "precision": 0.985,
+              "recall": 0.8716814159292036,
+              "f1-score": 0.9248826291079812,
+              "support": 226.0
+            },
+            "medication": {
+              "precision": 0.9803921568627451,
+              "recall": 1.0,
+              "f1-score": 0.9900990099009901,
+              "support": 100.0
+            },
+            "severity": {
+              "precision": 0.926829268292683,
+              "recall": 1.0,
+              "f1-score": 0.9620253164556962,
+              "support": 38.0
+            },
+            "symptom": {
+              "precision": 0.9545454545454546,
+              "recall": 0.984375,
+              "f1-score": 0.9692307692307692,
+              "support": 640.0
+            },
+            "thanks": {
+              "precision": 1.0,
+              "recall": 0.96,
+              "f1-score": 0.9795918367346939,
+              "support": 25.0
+            },
+            "unknown": {
+              "precision": 0.8181818181818182,
+              "recall": 0.8181818181818182,
+              "f1-score": 0.8181818181818182,
+              "support": 33.0
+            },
+            "accuracy": 0.9615384615384616,
+            "macro avg": {
+              "precision": 0.9566825100335687,
+              "recall": 0.9538824615649838,
+              "f1-score": 0.9546066645597336,
+              "support": 1352.0
+            },
+            "weighted avg": {
+              "precision": 0.9621470004991004,
+              "recall": 0.9615384615384616,
+              "f1-score": 0.9610247712415358,
+              "support": 1352.0
+            }
+          }
+        }
+      }
+    ],
+    "selected_C": 2.0
+  },
+  "frozen_test": {
+    "evaluation_role": "reused_authored_benchmark_not_untouched_final_validation",
+    "examples": 130,
+    "training_overlap": 0,
+    "test_sha256": "85ecd04445fb4af9ac16a733924df67bac9e93bc4765f757547f4feefa930ff3",
+    "baseline": {
+      "accuracy": 0.9461538461538461,
+      "macro_f1": 0.9477613717551798,
+      "per_intent": {
+        "bot_identity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "confirmation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "duration": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1-score": 0.9473684210526315,
+          "support": 10.0
+        },
+        "emergency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "goodbye": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "greeting": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "image_upload": {
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1-score": 0.8235294117647058,
+          "support": 10.0
+        },
+        "location": {
+          "precision": 0.6428571428571429,
+          "recall": 0.9,
+          "f1-score": 0.75,
+          "support": 10.0
+        },
+        "medication": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "severity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "symptom": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 10.0
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "accuracy": 0.9461538461538461,
+        "macro avg": {
+          "precision": 0.9571428571428572,
+          "recall": 0.9461538461538462,
+          "f1-score": 0.9477613717551798,
+          "support": 130.0
+        },
+        "weighted avg": {
+          "precision": 0.9571428571428572,
+          "recall": 0.9461538461538461,
+          "f1-score": 0.9477613717551798,
+          "support": 130.0
+        }
+      }
+    },
+    "candidate": {
+      "accuracy": 0.9923076923076923,
+      "macro_f1": 0.992288413341045,
+      "per_intent": {
+        "bot_identity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "confirmation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "duration": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "emergency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "goodbye": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "greeting": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "image_upload": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "location": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "medication": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "severity": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1-score": 0.9473684210526315,
+          "support": 10.0
+        },
+        "symptom": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1-score": 0.9523809523809523,
+          "support": 10.0
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "accuracy": 0.9923076923076923,
+        "macro avg": {
+          "precision": 0.9930069930069929,
+          "recall": 0.9923076923076923,
+          "f1-score": 0.992288413341045,
+          "support": 130.0
+        },
+        "weighted avg": {
+          "precision": 0.993006993006993,
+          "recall": 0.9923076923076923,
+          "f1-score": 0.9922884133410448,
+          "support": 130.0
+        }
+      }
+    },
+    "predictions": [
+      {
+        "text": "hello, can we talk for a moment?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "good day, are you available?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hi, I have something to ask",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hey there, can we chat?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "morning, I need some assistance",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hello there, could you assist me?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hi, is the assistant available?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hey, may I ask something?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "good evening, can we talk?",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "hello, I could use some guidance",
+        "expected": "greeting",
+        "baseline": "greeting",
+        "candidate": "greeting"
+      },
+      {
+        "text": "my skin has become rough and irritated",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "I noticed several itchy spots on my skin",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "there are flaky areas appearing on my skin",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "I've developed some unusual red patches",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "my skin keeps itching and feels irritated",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "small raised spots appeared on my skin",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "I noticed dry patches that keep flaking",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "there is an irritated patch that keeps itching",
+        "expected": "symptom",
+        "baseline": "location",
+        "candidate": "symptom"
+      },
+      {
+        "text": "my skin looks unusually red and scaly",
+        "expected": "symptom",
+        "baseline": "symptom",
+        "candidate": "symptom"
+      },
+      {
+        "text": "I've noticed some new irritated areas",
+        "expected": "symptom",
+        "baseline": "location",
+        "candidate": "symptom"
+      },
+      {
+        "text": "the affected area is around my left elbow",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "I can see the irritation across my forehead",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "the spots are mostly around both knees",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "the affected skin is behind my neck",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "the irritated area is on my lower back",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "most of the patches are around my ankles",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "the skin issue appears near my right shoulder",
+        "expected": "location",
+        "baseline": "symptom",
+        "candidate": "location"
+      },
+      {
+        "text": "the affected spots are along my upper chest",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "I can see the patches on both hands",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "the irritation is mainly around my scalp",
+        "expected": "location",
+        "baseline": "location",
+        "candidate": "location"
+      },
+      {
+        "text": "this has been happening for nearly four days",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "I first noticed it around three weeks back",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "the skin issue has lasted roughly six months",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "it appeared sometime earlier this week",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "I've had the problem for around ten days",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "this started approximately five weeks back",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "the irritation has been present for several days",
+        "expected": "duration",
+        "baseline": "symptom",
+        "candidate": "duration"
+      },
+      {
+        "text": "I noticed it beginning about two months back",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "it has stayed like this for almost a week",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "the problem began sometime last month",
+        "expected": "duration",
+        "baseline": "duration",
+        "candidate": "duration"
+      },
+      {
+        "text": "the discomfort is pretty minor",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "I'd describe the irritation as fairly intense",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "the itching has become extremely uncomfortable",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "symptom"
+      },
+      {
+        "text": "it's noticeable but still manageable",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "the discomfort feels somewhere in the middle",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "the irritation is not very strong",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "it's becoming quite painful and difficult to ignore",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "I'd say the symptoms are moderately uncomfortable",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "the itching is very intense now",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "the discomfort is mild enough to tolerate",
+        "expected": "severity",
+        "baseline": "severity",
+        "candidate": "severity"
+      },
+      {
+        "text": "yes, that sounds correct",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "that's what I was trying to say",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "I believe that's correct",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "yes, you've understood me correctly",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "that seems about right",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "no, that's not what I meant",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "I don't think that's correct",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "I'm not completely certain about that",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "maybe, but I'm unsure",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "that is mostly correct",
+        "expected": "confirmation",
+        "baseline": "confirmation",
+        "candidate": "confirmation"
+      },
+      {
+        "text": "I've been applying a moisturizing cream to it",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I used an over-the-counter skin cream yesterday",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I haven't put any medicine on the area",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I've been taking an allergy tablet for the itching",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I applied some ointment to the irritated skin",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I haven't taken anything for the problem",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I've tried using a cream from the pharmacy",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I used a topical lotion on the affected area",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I haven't tried treating it with medicine",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "I've already applied a skin ointment today",
+        "expected": "medication",
+        "baseline": "medication",
+        "candidate": "medication"
+      },
+      {
+        "text": "my throat is getting tighter and breathing is becoming difficult",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "I'm suddenly feeling faint while my face is swelling",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "the swelling around my mouth is increasing and I can't breathe normally",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "I'm struggling to stay conscious and a rash appeared suddenly",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "my tongue is getting bigger and swallowing is becoming difficult",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "I suddenly developed hives and now I'm having difficulty breathing",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "my skin reaction is spreading rapidly and I feel like I might faint",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "my lips are swelling quickly and my chest feels very tight",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "I have a very high fever and the skin reaction is worsening rapidly",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "the redness from the wound is rapidly streaking upward and I have a fever",
+        "expected": "emergency",
+        "baseline": "emergency",
+        "candidate": "emergency"
+      },
+      {
+        "text": "I've attached a picture of the affected skin",
+        "expected": "image_upload",
+        "baseline": "location",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I just submitted a photo of the area",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "here is an image showing the skin problem",
+        "expected": "image_upload",
+        "baseline": "location",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I've provided a picture for you to examine",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "the photo of the affected area has been uploaded",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I sent an image showing what the patches look like",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I've included a photo of the irritation",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "here's the picture I took of my skin",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I uploaded an image showing the affected spot",
+        "expected": "image_upload",
+        "baseline": "location",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "the skin photo has been attached",
+        "expected": "image_upload",
+        "baseline": "image_upload",
+        "candidate": "image_upload"
+      },
+      {
+        "text": "I need to head off, catch you later",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I'm going to leave now, bye",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "that's everything for today, goodbye",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I'll be heading out now",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "thanks, I'll talk to you later",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I'm finished for now, see you later",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I have to go now, goodbye",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "that's all I needed, bye for now",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I'll come back another time",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "I'm done chatting for today",
+        "expected": "goodbye",
+        "baseline": "goodbye",
+        "candidate": "goodbye"
+      },
+      {
+        "text": "thank you for explaining that clearly",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "I really appreciate your assistance",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "thanks for taking the time to help",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "I appreciate the information you provided",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "many thanks for your guidance",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "that was useful, thank you",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "I appreciate you helping me understand",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "thank you, that cleared things up",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "thanks a lot for the explanation",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "I'm grateful for your help",
+        "expected": "thanks",
+        "baseline": "thanks",
+        "candidate": "thanks"
+      },
+      {
+        "text": "what kind of assistant are you?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "can you explain what Flamma does?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "what is your role in this system?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "are you an automated assistant?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "what were you designed to help with?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "tell me what this chatbot is for",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "what exactly can Flamma do?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "are you the Flamma assistant?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "what is the purpose of this chatbot?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "can you tell me about yourself?",
+        "expected": "bot_identity",
+        "baseline": "bot_identity",
+        "candidate": "bot_identity"
+      },
+      {
+        "text": "what is the tallest mountain in Europe?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "can you solve a quadratic equation for me?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "who invented the telephone?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "what ingredients do I need for pancakes?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "how do I change my computer password?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "tell me something about ancient Rome",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "what is the capital city of Canada?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "can you recommend a movie to watch?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "how many planets are in the solar system?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      },
+      {
+        "text": "what does photosynthesis mean?",
+        "expected": "unknown",
+        "baseline": "unknown",
+        "candidate": "unknown"
+      }
+    ]
+  },
+  "quality_gate_passed": true
+}

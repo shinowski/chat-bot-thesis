@@ -1,0 +1,9 @@
+﻿item,status,evidence_or_remaining_work
+1. New Intent v5 dataset,Completed with annotation limitation,260 newly authored messages; v5 and locked v7 tested once. Independent human label review remains pending.
+2. Seven original intent errors,Fixed; further errors reported,"v7 fixes all original seven. Old development benchmark 129/130; one different severity error. New final set has 18 v7 errors, retained without tuning."
+3. Active image held-out metrics,Pending data,Test dataset and split provenance not confirmed. Evaluator and manifest requirements prepared. No new disease accuracy claimed.
+4. Dermatologist expert-system validation,Pending reviewer,Review form and source bundle prepared. Expert rules remain empty and awaiting validation. No clinical sign-off claimed.
+5. Complete conversations,Automated checks completed,"106 authored scenarios / 289 turns passed using real v7; browser checks cover follow-up, reload persistence, reset and fallback."
+6. Image/chatbot integration,Automated checks completed,All six label mappings and rejection checked with fixtures; 12 real-model HTTP smoke uploads checked with synthetic pixels. Image recognition accuracy remains unmeasured.
+7. Safety and uncertainty,Software fixes/checks completed; image-gate limitation open,Low-confidence success payloads and explicit uncertainty now rejected. Nonfinite expert-system scores rejected. Emergency/negation tests pass. Synthetic flat/noisy skin colors were accepted by image gate; clinical validation pending.
+8. Usability and performance,Automated portion completed; human study pending,"Four browser viewports and local timings recorded. No participant task-success rate, satisfaction or SUS score exists."

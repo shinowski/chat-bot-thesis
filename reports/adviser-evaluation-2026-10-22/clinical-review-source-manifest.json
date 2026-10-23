@@ -1,0 +1,29 @@
+{
+  "status": "awaiting_dermatologist_validation",
+  "files": [
+    {
+      "path": "data/knowledge_base.json",
+      "sha256": "94a3b9126ff7e8eaa66255560ff36b4cb2830a8ed994f98695c64ec7a47124e1"
+    },
+    {
+      "path": "data/treatment_guidance.json",
+      "sha256": "6a49a5855e66734697c94a64269ed11ec4bd9c9ad0f2e92a9f8a5ee46968d283"
+    },
+    {
+      "path": "data/course_guidance.json",
+      "sha256": "4e67fb6141c5ea37d51b6b4a16c3c24490d683929c69bd1e8d037cdfefaead0a"
+    },
+    {
+      "path": "data/expert_rules.json",
+      "sha256": "bf27ba5b226238fbe4227efccd2ef214b45b1103101a7568c4a0e2bf1141e1d1"
+    },
+    {
+      "path": "model/safety.py",
+      "sha256": "f80b31e8099ef3aa921cb7b10503bc5e1d1211b6d5c2ee2125aa761662ff57cb"
+    },
+    {
+      "path": "model/expert_system.py",
+      "sha256": "6afbffc3bd0fef798c8c67dde95adb4f77dd9f32bf1dde4e25ae443f266df07f"
+    }
+  ]
+}

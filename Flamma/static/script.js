@@ -1,4 +1,6 @@
 
+import { getReplyChoices, PHOTO_CHOICE } from './reply-choices.js';
+
 // ---------------------------------------------------------------
 // Minimal in-memory "intent classifier" — a stand-in for Phase 5/6
 // (tokenizer -> vocabulary -> LSTM). Swap this function's internals
@@ -97,6 +99,7 @@ function renderHistory(){
 }
 
 function bubbleRow(who, text, intent, followUps, image, imageResult, action){
+  followUps = getReplyChoices({ who, text, intent, followUps, action });
   const row = document.createElement('div');
   row.className = 'row ' + who;
 
@@ -121,13 +124,6 @@ function bubbleRow(who, text, intent, followUps, image, imageResult, action){
     bubble.style.setProperty('--intent-color', INTENTS[intent] ? INTENTS[intent].color : '#0F5C56');
   }
   wrap.appendChild(bubble);
-  if (who === 'bot' && action === 'upload_image') {
-    const choosePhoto = document.createElement('button');
-    choosePhoto.className = 'follow-up';
-    choosePhoto.textContent = 'Choose photo';
-    choosePhoto.onclick = () => { if (!sending) imageInput.click(); };
-    wrap.appendChild(choosePhoto);
-  }
   if (imageResult?.status === 'ok' && imageResult.gradcam?.startsWith('data:image/png;base64,')) {
     const heatmap = document.createElement('img');
     heatmap.className = 'message-image';
@@ -147,11 +143,15 @@ function bubbleRow(who, text, intent, followUps, image, imageResult, action){
   if (followUps && followUps.length){
     const fu = document.createElement('div');
     fu.className = 'follow-ups';
+    fu.setAttribute('role', 'group');
+    fu.setAttribute('aria-label', 'Suggested replies');
     followUps.forEach(f => {
       const btn = document.createElement('button');
       btn.className = 'follow-up';
       btn.textContent = f;
-      btn.onclick = () => sendMessage(f);
+      btn.type = 'button';
+      btn.disabled = sending;
+      btn.onclick = () => { if (sending) return; if (f === PHOTO_CHOICE) imageInput.click(); else sendMessage(f); };
       fu.appendChild(btn);
     });
     wrap.appendChild(fu);

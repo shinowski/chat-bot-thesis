@@ -10,6 +10,7 @@ from model.safety import is_care_question, safety_intent
 from model.chat_support import unrelated_request, support_intent, emotional_only
 from model.question_clarification import clarification_request, bare_product_answer, knowledge_choice_index, screening_choice_answer, explicit_fact_replacement
 from model.conversation_language import uncertainty_detail, is_symptom_update
+from model.severity_support import discussion_route
 
 
 class ContextIntent:
@@ -133,6 +134,8 @@ class ContextIntent:
 
         act = dialogue_act(message)
         named_disease = self.knowledge.detect_disease(message)
+        if act is None and len(self.knowledge.detect_diseases(message)) <= 1 and discussion_route(message, conversation):
+            return 'severity_guidance'
         if act is not None:
             if act == 'simple_explanation' and (topic_requests(message) or named_disease):
                 return 'knowledge_question'

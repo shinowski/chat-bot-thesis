@@ -2,12 +2,40 @@
 
 Chat about your skin concern, upload a photo, and see the image model's result.
 
+The [adviser evaluation dated 22 October 2026](reports/adviser-evaluation-2026-10-22/ADVISER_EVALUATION.md)
+includes the new 260-message test, current intent v7 results, safety fixes,
+conversation/browser checks, local performance, and remaining image/clinical
+validation work. A [printable report](reports/adviser-evaluation-2026-10-22/ADVISER_EVALUATION.html)
+and dermatologist review materials are available in the same folder.
+
+Ask **How can I know how severe my psoriasis is?** to discuss severity factors
+instead of receiving a condition overview. Flamma explains coverage, affected
+sites and everyday impact, then asks optional follow-up questions. For psoriasis,
+it also asks about new joint symptoms. It summarizes your descriptions without
+assigning a clinical severity grade or treating a photo match as a diagnosis.
+Say **I'm not sure**, **Stop severity questions**, or **reset** as needed.
+The guidance includes AAD/NPF source links; the new content still requires the
+dermatologist review described in the adviser checklist. An
+[example conversation](reports/severity-guidance-2026-10-22/example-conversation.txt)
+and separate feature verification are saved under `reports/severity-guidance-2026-10-22`.
+Earlier adviser reports describe their recorded application snapshot; the
+consumed 260-message final set was not reused for this feature.
+
+Severity discussions now have specific guidance for **dermatitis, atopic
+dermatitis, contact dermatitis, lichen planus, psoriasis, rosacea and hives**.
+Questions cover each condition's relevant symptoms and daily-life effects,
+including flare patterns, possible contact exposures, mouth/scalp/nail changes,
+eye symptoms or recurring welts as appropriate. The **normal-skin** photo label
+has a separate symptom discussion and never establishes that a condition is
+absent. [All-condition examples and verification](reports/severity-all-conditions-2026-10-22/README.md)
+are saved separately from the earlier psoriasis feature snapshot.
+
 ## Open Flamma online
 
 <!-- flamma-sharing:start -->
-**[Open Flamma](https://simpson-susan-punch-extension.trycloudflare.com)**
+**[Open Flamma](https://introduction-adjustable-hunter-walked.trycloudflare.com)**
 
-Current online address: [https://simpson-susan-punch-extension.trycloudflare.com](https://simpson-susan-punch-extension.trycloudflare.com)
+Current online address: [https://introduction-adjustable-hunter-walked.trycloudflare.com](https://introduction-adjustable-hunter-walked.trycloudflare.com)
 
 **Sharing is running.** This temporary link works while the host computer and sharing service are running.
 <!-- flamma-sharing:end -->
@@ -114,6 +142,12 @@ it initializes; `/health` reports `loading` until the model is ready.
 Press **Enter** to send, or **Shift + Enter** for a new line. The text box stays
 ready while Flamma replies so you can type your next message without clicking
 it again. Send becomes available when the current reply arrives.
+
+Every chatbot reply has at least **three related choices** underneath it.
+Click a suggested answer or question to send it, or keep typing your own
+message. Choices follow the question being asked, the condition being
+discussed, or the latest photo result. **Choose photo** opens the file picker
+only when you click it. Saved conversations also show these choices.
 
 After uploading a photo, you can ask **What do you think about that image?**
 or **What are your thoughts about it?** The chatbot explains the saved result;
@@ -355,23 +389,27 @@ original request ID, or reload the conversation to check for a saved reply.
 ## If something goes wrong
 
 The image backend has been updated to commit
-[`267ae33`](https://github.com/jrjrspnl/thesis-backend/commit/267ae33).
-Flamma continues to use its local chatbot. Normal startup and photo screening
-do not need a Gemini API key.
+[`b064ee0`](https://github.com/jrjrspnl/thesis-backend/commit/b064ee0).
+It now uses **resnet50_skin_finale_oe.pth**, checks photo blur, crops skin
+regions, and stitches Grad-CAM++ heatmaps onto the image. A very blurry photo
+is rejected with retaking instructions. Slight blur is shown as a warning.
+The updated classifier also applies a stricter gate before returning a
+normal-skin screening match. These checks do not establish clinical accuracy.
 
-The backend also includes an optional `/api/chat` endpoint for Gemini. It is
-not used by the current chat interface. To configure that endpoint later,
-install its optional dependencies:
+Flamma continues to use its local chatbot, including related reply choices.
+No Gemini API key is required. Your partner removed the optional `/api/chat`
+endpoint from this image backend; the Flamma chat interface uses its own
+`/predict` endpoint and continues working.
+
+After pulling an image-backend update, restart the services with `stop.ps1`
+and `start.ps1`. To confirm the actual model loaded by the image process:
 
 ```powershell
-cd "C:\flamma chatbot"
-.\Flamma\venv\Scripts\python.exe -m pip install -r .\Image\thesis-backend\requirements-chat.txt
+Invoke-RestMethod http://127.0.0.1:8000/health | ConvertTo-Json -Depth 4
 ```
 
-Configure `GEMINI_API_KEY` locally in the environment before restarting the
-image service. `GEMINI_MODEL` can override its default model. Follow
-[Google's Gemini API setup instructions](https://ai.google.dev/gemini-api/docs/api-key)
-for the key; keep it out of source code and Git.
+Look for `model.checkpoint` and `model.sha256`. A downloaded model does not
+take effect until its image service has restarted.
 
 ### Evaluate the text model used by the app
 

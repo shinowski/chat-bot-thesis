@@ -9,7 +9,7 @@ class QuestionClarificationTests(unittest.TestCase):
         bot = make_bot()
         result = bot.reply('Could it be eczema or psoriasis? How do I treat it?')
         self.assertEqual(result['intent'], 'condition_clarification')
-        self.assertEqual(result['followUps'], ['Dermatitis', 'Psoriasis'])
+        self.assertEqual(result['followUps'], ['Dermatitis', 'Psoriasis', 'Summarize our conversation'])
         self.assertIsNone(bot.conversation.get('knowledge_disease'))
         self.assertIsNone(bot.conversation.get('classification'))
         self.assertNotIn('treatmentInfo', result)
@@ -39,7 +39,7 @@ class QuestionClarificationTests(unittest.TestCase):
         self.assertIsNone(bot.conversation.get('classification'))
         result = bot.reply('and treatment?')
         self.assertEqual(result['intent'], 'condition_clarification')
-        self.assertEqual(result['followUps'], ['Dermatitis', 'Psoriasis'])
+        self.assertEqual(result['followUps'], ['Dermatitis', 'Psoriasis', 'Summarize our conversation'])
 
     def test_unnamed_product_question_and_answer_are_not_medication_reports(self):
         bot = make_bot()

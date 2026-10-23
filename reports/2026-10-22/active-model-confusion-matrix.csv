@@ -1,0 +1,14 @@
+﻿expected,bot_identity,confirmation,duration,emergency,goodbye,greeting,image_upload,location,medication,severity,symptom,thanks,unknown
+bot_identity,10,0,0,0,0,0,0,0,0,0,0,0,0
+confirmation,0,10,0,0,0,0,0,0,0,0,0,0,0
+duration,0,0,9,0,0,0,0,0,0,0,1,0,0
+emergency,0,0,0,10,0,0,0,0,0,0,0,0,0
+goodbye,0,0,0,0,10,0,0,0,0,0,0,0,0
+greeting,0,0,0,0,0,10,0,0,0,0,0,0,0
+image_upload,0,0,0,0,0,0,7,3,0,0,0,0,0
+location,0,0,0,0,0,0,0,9,0,0,1,0,0
+medication,0,0,0,0,0,0,0,0,10,0,0,0,0
+severity,0,0,0,0,0,0,0,0,0,10,0,0,0
+symptom,0,0,0,0,0,0,0,2,0,0,8,0,0
+thanks,0,0,0,0,0,0,0,0,0,0,0,10,0
+unknown,0,0,0,0,0,0,0,0,0,0,0,0,10

@@ -1,3 +1,0 @@
-# Optional Gemini chat dependencies; image screening does not need these.
-google-genai
-sentence-transformers

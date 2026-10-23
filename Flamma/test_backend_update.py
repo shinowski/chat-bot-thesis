@@ -1,4 +1,4 @@
-"""Verify the upstream image API contract without loading CNN weights or Gemini."""
+"""Verify the partner image API, quality gates, and Flamma integration contract."""
 
 import importlib.util
 import io
@@ -18,9 +18,13 @@ class BackendUpdateTests(unittest.TestCase):
         cls.backend_dir = Path(__file__).resolve().parents[1] / 'Image/thesis-backend'
         classifier = ModuleType('inference.classifier')
         classifier.predict = Mock()
-        detector = ModuleType('skin_detector')
+        classifier.MODEL_INFO = {'checkpoint': 'fixture.pth', 'sha256': 'a' * 64}
+        detector = ModuleType('inference.skin_detector')
         detector.looks_like_skin = Mock(return_value=True)
-        with patch.dict(sys.modules, {'inference.classifier': classifier, 'skin_detector': detector}), patch.object(sys, 'path', [str(cls.backend_dir), *sys.path]):
+        blur = ModuleType('inference.blur_check')
+        blur.blur_status = Mock(return_value=('ok', 42.0))
+        with patch.dict(sys.modules, {'inference.classifier': classifier, 'inference.skin_detector': detector,
+                                      'inference.blur_check': blur}), patch.object(sys, 'path', [str(cls.backend_dir), *sys.path]):
             spec = importlib.util.spec_from_file_location('flamma_image_backend_test', cls.backend_dir / 'app.py')
             cls.backend = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(cls.backend)
@@ -35,6 +39,8 @@ class BackendUpdateTests(unittest.TestCase):
             'gradcam': 'data:image/png;base64,fixture',
         }
         self.backend.looks_like_skin.return_value = True
+        self.backend.blur_status.reset_mock()
+        self.backend.blur_status.return_value = ('ok', 42.0)
 
     def upload(self):
         photo = io.BytesIO()
@@ -47,8 +53,10 @@ class BackendUpdateTests(unittest.TestCase):
         self.assertEqual(data['service'], 'flamma-image')
         self.assertEqual(data['pid'], os.getpid())
         self.assertEqual(Path(data['app_path']), self.backend_dir / 'app.py')
+        self.assertEqual(data['model']['checkpoint'], 'fixture.pth')
+        self.assertEqual(data['model']['sha256'], 'a' * 64)
 
-    def test_prediction_without_gemini_keeps_scores_heatmap_and_upload_greeting(self):
+    def test_prediction_without_api_keys_keeps_scores_heatmap_and_quality(self):
         with patch.dict(os.environ, {}, clear=True):
             result = self.upload()
         self.assertEqual(result.status_code, 200)
@@ -57,13 +65,50 @@ class BackendUpdateTests(unittest.TestCase):
         self.assertEqual(data['predicted_class'], 'psoriasis')
         self.assertEqual(data['all_probabilities'], {'psoriasis': .88})
         self.assertTrue(data['gradcam'].startswith('data:image/png;base64,'))
-        self.assertIn('not a diagnosis', data['chat_greeting'])
+        self.assertEqual(data['quality'], {'blur_status': 'ok', 'blur_score': 42.0})
 
     def test_normal_skin_upload_greeting_does_not_clear_the_patient(self):
         self.backend.predict.return_value.update(predicted_class='normal_skin')
         data = self.upload().get_json()
         self.assertEqual(data['condition'], 'No Supported Condition Detected')
-        self.assertIn("isn't a clinical clearance", data['chat_greeting'])
+        self.assertIn('not a clearance', data['description'])
+
+    def test_blurry_photo_is_rejected_before_skin_check_or_model_inference(self):
+        self.backend.blur_status.return_value = ('blocked', 1.2)
+        with patch.object(self.backend, 'looks_like_skin') as skin_check:
+            response = self.upload()
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.get_json()['reason'], 'too_blurry')
+        self.assertEqual(response.get_json()['quality']['blur_score'], 1.2)
+        self.backend.predict.assert_not_called()
+        skin_check.assert_not_called()
+
+    def test_blur_warning_is_visible_without_blocking_an_accepted_result(self):
+        self.backend.blur_status.return_value = ('warn', 10.1234)
+        response = self.upload()
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()['status'], 'ok')
+        self.assertEqual(response.get_json()['quality'], {'blur_status': 'warn', 'blur_score': 10.12})
+
+    def test_image_orientation_is_normalized_before_all_pipeline_stages(self):
+        photo = io.BytesIO()
+        image = Image.new('RGB', (12, 8), '#cc9980')
+        exif = image.getexif()
+        exif[274] = 6
+        image.save(photo, format='JPEG', exif=exif)
+        photo.seek(0)
+        self.client.post('/api/predict', data={'image': (photo, 'portrait.jpg')})
+        self.assertEqual(self.backend.blur_status.call_args.args[0].size, (8, 12))
+        self.assertEqual(self.backend.predict.call_args.args[0].size, (8, 12))
+
+    def test_invalid_or_missing_upload_does_not_run_the_model(self):
+        for body in [{}, {'image': (io.BytesIO(b'not an image'), 'invalid.jpg')},
+                     {'image': (io.BytesIO(b'anything'), 'payload.txt')}]:
+            with self.subTest(body=list(body)):
+                response = self.client.post('/api/predict', data=body)
+                self.assertEqual(response.status_code, 400)
+                self.assertEqual(response.get_json()['status'], 'rejected')
+        self.backend.predict.assert_not_called()
 
     def test_skin_rejection_does_not_call_the_model(self):
         self.backend.looks_like_skin.return_value = False
@@ -92,36 +137,11 @@ class BackendUpdateTests(unittest.TestCase):
         self.addCleanup(result.request.environ['wsgi.input'].close)
         self.addCleanup(result.close)
         self.assertEqual(result.status_code, 413)
+        self.assertEqual(result.get_json()['reason'], 'too_large')
         self.backend.predict.assert_not_called()
 
-    def test_optional_chat_returns_503_without_a_key_and_does_not_generate(self):
-        with patch.dict(os.environ, {}, clear=True), patch.object(self.backend, 'handle_chat') as generate:
-            result = self.client.post('/api/chat', json={'question': 'What causes psoriasis?'})
-        self.assertEqual(result.status_code, 503)
-        self.assertIn('local chat', result.get_json()['error'])
-        generate.assert_not_called()
-
-    def test_chat_validates_json_question_and_cnn_result(self):
-        for payload in [[], 'question', {}, {'question': 123}, {'question': ' '},
-                        {'question': 'Help', 'cnn_result': []},
-                        {'question': 'Help', 'cnn_result': {'label': []}},
-                        {'question': 'Help', 'cnn_result': {'label': 'banana', 'confidence': .8}},
-                        {'question': 'Help', 'cnn_result': {'label': 'psoriasis', 'confidence': 2}},
-                        {'question': 'Help', 'cnn_result': {'label': 'psoriasis', 'confidence': True}}]:
-            with self.subTest(payload=payload):
-                self.assertEqual(self.client.post('/api/chat', json=payload).status_code, 400)
-
-    def test_chat_passes_valid_question_and_cnn_context_when_configured(self):
-        context = {'label': 'contact_dermatitis', 'confidence': .75}
-        with patch.dict(os.environ, {'GEMINI_API_KEY': 'test-key'}), patch.object(self.backend, 'handle_chat', return_value='Fixture answer.') as generate:
-            result = self.client.post('/api/chat', json={'question': ' What does it mean? ', 'cnn_result': context})
-        self.assertEqual(result.get_json(), {'response': 'Fixture answer.'})
-        generate.assert_called_once_with(user_question='What does it mean?', cnn_result=context)
-
-    def test_import_does_not_initialize_optional_models_or_google_sdk(self):
-        namespace = self.backend.handle_chat.__globals__
-        self.assertIsNone(namespace['retrieve'].__globals__['_model'])
-        self.assertIsNone(namespace['generate_response'].__globals__['_client'])
+    def test_image_backend_no_longer_exposes_the_removed_cloud_chat_endpoint(self):
+        self.assertEqual(self.client.post('/api/chat', json={'question': 'Hello'}).status_code, 404)
 
 
 if __name__ == '__main__':

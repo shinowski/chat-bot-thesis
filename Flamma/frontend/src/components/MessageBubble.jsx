@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { intentMeta } from '../intents.js';
 import { modelScore, formatModelPercent } from '../model-score.js';
+import { getReplyChoices, PHOTO_CHOICE } from '../../../static/reply-choices.js';
 
 export default function MessageBubble({ message, onFollowUp, onImageUpload, uploadDisabled }) {
-  const { who, text, intent, confidence, confidenceSource, followUps, image, imageResult, action } = message;
+  const { who, text, intent, confidence, confidenceSource, image, imageResult } = message;
   const [copied, setCopied] = useState(false);
   const meta = intentMeta(intent);
   const score = modelScore(confidence, confidenceSource);
+  const choices = who === 'bot' ? getReplyChoices(message) : [];
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(text).then(() => {
@@ -77,12 +79,6 @@ export default function MessageBubble({ message, onFollowUp, onImageUpload, uplo
           </div>
         )}
 
-        {who === 'bot' && action === 'upload_image' && (
-          <button className="follow-up" onClick={onImageUpload} disabled={uploadDisabled}>
-            Choose photo
-          </button>
-        )}
-
         {who === 'bot' && message.treatmentInfo?.sources?.length > 0 && (
           <div className="care-sources">
             <span>Care information sources:</span>
@@ -93,10 +89,11 @@ export default function MessageBubble({ message, onFollowUp, onImageUpload, uplo
           </div>
         )}
 
-        {who === 'bot' && followUps && followUps.length > 0 && (
-          <div className="follow-ups">
-            {followUps.map((f, i) => (
-              <button key={i} className="follow-up" disabled={uploadDisabled} onClick={() => onFollowUp(f)}>
+        {who === 'bot' && choices.length > 0 && (
+          <div className="follow-ups" role="group" aria-label="Suggested replies">
+            {choices.map((f) => (
+              <button key={f} type="button" className="follow-up" disabled={uploadDisabled}
+                onClick={() => f === PHOTO_CHOICE ? onImageUpload() : onFollowUp(f)}>
                 {f}
               </button>
             ))}

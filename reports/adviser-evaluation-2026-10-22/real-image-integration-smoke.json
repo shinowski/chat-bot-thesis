@@ -1,0 +1,110 @@
+{
+  "evaluated_at": "2026-10-22T12:56:35.848840+00:00",
+  "scope": "Actual v10-1 model through HTTP adapter and chatbot response mapping, using synthetic pixel images. These are not labeled clinical images; no accuracy measured.",
+  "checkpoint_sha256": "739d28be9a69edca8c20d1fc4aa84a6899403f1c94cb314d323760d3b1c30a02",
+  "startup_seconds_including_imports": 5.556609699997352,
+  "samples": 12,
+  "median_seconds": 0.2695566499896813,
+  "p95_seconds": 0.573868145016604,
+  "timing_scope": "HTTP upload, skin gate, actual classifier/OOD and Grad-CAM when accepted, chatbot mapping. No text-model inference or browser rendering.",
+  "accepted": 6,
+  "successful": true,
+  "results": [
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 0,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.6324476000154391,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 0,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.42867749999277294,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.00882590000401251,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 0,
+      "intent": "image_rejected",
+      "reason": "out_of_scope",
+      "seconds": 0.11432510000304319,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 1,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.42095429997425526,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 1,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.43163360000471584,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.006091999995987862,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 1,
+      "intent": "image_rejected",
+      "reason": "out_of_scope",
+      "seconds": 0.11199320000014268,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_flat",
+      "repeat": 2,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.5259395000175573,
+      "passed": true
+    },
+    {
+      "fixture": "skin_color_noise",
+      "repeat": 2,
+      "intent": "image_classification",
+      "reason": null,
+      "seconds": 0.47247259999858215,
+      "passed": true
+    },
+    {
+      "fixture": "blue_flat",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "no_skin_detected",
+      "seconds": 0.006380900013027713,
+      "passed": true
+    },
+    {
+      "fixture": "random_pixels",
+      "repeat": 2,
+      "intent": "image_rejected",
+      "reason": "out_of_scope",
+      "seconds": 0.11815900000510737,
+      "passed": true
+    }
+  ]
+}

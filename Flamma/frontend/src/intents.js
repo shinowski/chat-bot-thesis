@@ -1,5 +1,6 @@
 // Display metadata. The backend resolves intent and supplies follow-up choices.
 export const INTENTS = {
+  severity_guidance: { color: '#2E7D8C', label: 'severity discussion' },
   greeting:     { color: '#0F5C56', label: 'greeting' },
   symptom:      { color: '#E8592A', label: 'symptom' },
   symptom_denial: { color: '#2E7D8C', label: 'symptoms absent' },
@@ -40,13 +41,6 @@ export const INTENTS = {
   out_of_scope: { color: '#9A9188', label: 'outside chat scope' },
   emotional_support: { color: '#2E7D8C', label: 'support' },
   unknown:      { color: '#9A9188', label: 'unknown' },
-};
-
-export const DEFAULT_FOLLOWUPS = {
-  symptom: ["It's on my arm", "It's on my face", "It's been a few days", "It's very itchy"],
-  answer: ['Yes', 'No', "It's getting worse"],
-  medication: ['Intact skin', 'Broken / weeping'],
-  unknown: ["It's a rash", "It's itchy", "It's painful"],
 };
 
 export function intentMeta(intent) {

@@ -1,0 +1,1210 @@
+{
+  "dermatitis": [
+    {
+      "user": "How severe is my Dermatitis?",
+      "reply": "For dermatitis: Dermatitis is an umbrella term, so severity depends on the type as well as the areas involved, itch, cracking or oozing, frequency of flares, and disruption to sleep and everyday activities. A clinician may need to distinguish atopic dermatitis from irritation or an allergic contact reaction before assessing it.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich body areas are affected by the dermatitis? You can say you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.5212675929069519,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "dermatitis",
+        "condition": "Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Eczema and dermatitis types",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          },
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nIs the dermatitis in a few small patches or across several body areas? Describe the spread, or say you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "dermatitis",
+        "condition": "Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Eczema and dermatitis types",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          },
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow often does the itch bother you, and does it affect sleep, work, school or everyday activities?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "dermatitis",
+        "condition": "Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Eczema and dermatitis types",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          },
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nHas a clinician identified the dermatitis type, or have you noticed a possible contact trigger? You can give its name, describe what touched your skin, or say you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "dermatitis",
+        "condition": "Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Eczema and dermatitis types",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          },
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No known type or trigger",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Dermatitis (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nReported dermatitis type or trigger: No known type or trigger\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "unknown",
+      "modelConfidence": 0.8820645213127136,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "dermatitis",
+        "condition": "Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Eczema and dermatitis types",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          },
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "atopic_dermatitis": [
+    {
+      "user": "How severe is my Atopic Dermatitis?",
+      "reply": "For atopic dermatitis: For atopic dermatitis, a clinician considers the extent of inflamed skin, itch and scratching, dryness or thickening, flares, and the effect on sleep and daily activities. Skin changes can look different across skin tones; redness alone does not capture the burden. Oozing, crusting or new signs of infection need assessment rather than an automatic severity score.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich body areas are affected by the atopic dermatitis, including any face, eyelid or skin-fold areas?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.4972432553768158,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "atopic_dermatitis",
+        "condition": "Atopic Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Eczema care and assessment",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nAre the patches limited to a few areas or spread across several body areas? A rough description is enough.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "atopic_dermatitis",
+        "condition": "Atopic Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Eczema care and assessment",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow much do itching and scratching affect sleep and everyday activities? You may describe the itch or rate it from 0 to 10.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "atopic_dermatitis",
+        "condition": "Atopic Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Eczema care and assessment",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nDo symptoms come and go in flares, recur on most days, or stay present between flares? Describe the pattern, or say you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "atopic_dermatitis",
+        "condition": "Atopic Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Eczema care and assessment",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "It comes and goes in flares",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Atopic Dermatitis (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nFlare pattern: It comes and goes in flares\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "unknown",
+      "modelConfidence": 0.477169007062912,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "atopic_dermatitis",
+        "condition": "Atopic Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Atopic dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/atopic-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Eczema care and assessment",
+            "url": "https://www.aad.org/public/diseases/eczema"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "contact_dermatitis": [
+    {
+      "user": "How severe is my Contact Dermatitis?",
+      "reply": "For contact dermatitis: For contact dermatitis, severity involves the spread of the reaction, itch or burning, dryness and cracking, and how it affects daily tasks. Blisters, open skin or infection signs need medical assessment. It also matters whether contact with a possible irritant or allergen is continuing; the chatbot cannot identify the trigger from the rash alone.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich body areas have the contact dermatitis reaction? Include areas that touched a product, material or substance if known.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.4611329734325409,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "contact_dermatitis",
+        "condition": "Contact Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Contact dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Contact dermatitis and finding triggers",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nIs the reaction limited to the contact area or present on other body areas as well?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "contact_dermatitis",
+        "condition": "Contact Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Contact dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Contact dermatitis and finding triggers",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow much do itch, burning or cracking interfere with sleep or everyday tasks such as washing and using your hands?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "contact_dermatitis",
+        "condition": "Contact Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Contact dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Contact dermatitis and finding triggers",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nDid a new product, soap, glove, metal, plant or work material touch the area, and is that contact continuing? You can say no known exposure or that you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "contact_dermatitis",
+        "condition": "Contact Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Contact dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Contact dermatitis and finding triggers",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "A new soap touched the area",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Contact Dermatitis (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nPossible contact exposure (user report): A new soap touched the area\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "symptom",
+      "modelConfidence": 0.20952296257019043,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "contact_dermatitis",
+        "condition": "Contact Dermatitis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Contact dermatitis symptoms",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis/symptoms"
+          },
+          {
+            "title": "AAD: Contact dermatitis and finding triggers",
+            "url": "https://www.aad.org/public/diseases/eczema/types/contact-dermatitis"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "hives": [
+    {
+      "user": "How severe is my Hives?",
+      "reply": "For hives: For hives, discuss how widespread the welts are, itch, swelling, how often they return and their effect on sleep or daily activities. A clinician also considers how long each welt lasts and whether episodes continue over weeks. Hives with breathing or swallowing difficulty, mouth or throat swelling, or feeling faint require immediate medical care; do not wait to finish these questions.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhere do the hives or welts appear, and do they move to different body areas?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "emergency",
+      "modelConfidence": 0.5976535677909851,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "hives",
+        "condition": "Hives",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Hives, recurrence and when to seek care",
+            "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nAre there a few small welts or patches, or do they involve several body areas?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "hives",
+        "condition": "Hives",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Hives, recurrence and when to seek care",
+            "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow much does the itching affect sleep or daily activities? Describe any discomfort without trying to assign a clinical severity grade.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "hives",
+        "condition": "Hives",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Hives, recurrence and when to seek care",
+            "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nAbout how long does one welt last before fading, and for how many days or weeks have new welts kept appearing? It is fine not to know.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "hives",
+        "condition": "Hives",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Hives, recurrence and when to seek care",
+            "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "A welt fades within hours; new welts for two weeks",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Hives (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nWelt duration and recurrence: A welt fades within hours; new welts for two weeks\nDiscuss recurring or widespread hives with a clinician. Breathing or swallowing difficulty, mouth or throat swelling, or feeling faint require immediate medical care.\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "duration",
+      "modelConfidence": 0.8701860308647156,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "hives",
+        "condition": "Hives",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Hives, recurrence and when to seek care",
+            "url": "https://www.aad.org/public/diseases/a-z/hives-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "normal_skin": [
+    {
+      "user": "How severe is my Normal Skin?",
+      "reply": "About the normal-skin screening label: Normal skin is a photo-screening label, not a disease severity grade. It does not confirm that the skin is healthy or rule out a condition. If symptoms persist, worsen or interfere with daily life, those symptoms still need assessment regardless of the photo label.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nDespite the normal-skin screening label, where do you notice symptoms or skin changes? You can also say no symptoms.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "greeting",
+      "modelConfidence": 0.2923378646373749,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "normal_skin",
+        "condition": "Normal Skin",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Symptoms that need a skin assessment",
+            "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nAre the symptoms limited to one small area or noticeable in several areas? You can say no visible changes or that you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "normal_skin",
+        "condition": "Normal Skin",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Symptoms that need a skin assessment",
+            "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nDo any symptoms affect sleep or everyday activities, or are you having no symptoms?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "normal_skin",
+        "condition": "Normal Skin",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Symptoms that need a skin assessment",
+            "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Normal Skin (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nThe normal-skin screening label cannot explain away persistent or worsening symptoms or establish that no condition is present.\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "normal_skin",
+        "condition": "Normal Skin",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Symptoms that need a skin assessment",
+            "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "lichen_planus": [
+    {
+      "user": "How severe is my Lichen Planus?",
+      "reply": "For lichen planus: For lichen planus, a clinician looks at which tissues are involved as well as itch, soreness and effects on daily life. Mouth or genital involvement, nail damage and scalp hair loss can matter even when little skin is affected. Scalp and nail disease can cause lasting damage, so small coverage should not be treated as proof of mild disease.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhere is the lichen planus affecting you: skin, mouth, genitals, scalp or nails? You can name more than one area.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "emergency",
+      "modelConfidence": 0.3391268253326416,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "lichen_planus",
+        "condition": "Lichen Planus",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Lichen planus signs by body site",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"
+          },
+          {
+            "title": "AAD: Lichen planus assessment and treatment",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nIs it limited to one area, or are several skin or mouth, genital, scalp or nail areas involved?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "lichen_planus",
+        "condition": "Lichen Planus",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Lichen planus signs by body site",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"
+          },
+          {
+            "title": "AAD: Lichen planus assessment and treatment",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nDoes itching or soreness affect sleep, eating, drinking, intimate activity or other daily activities?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "lichen_planus",
+        "condition": "Lichen Planus",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Lichen planus signs by body site",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"
+          },
+          {
+            "title": "AAD: Lichen planus assessment and treatment",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nHave you noticed mouth or genital soreness, new scalp hair loss, or splitting or lifting nails? Say which changes you noticed, no such changes, or that you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "lichen_planus",
+        "condition": "Lichen Planus",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Lichen planus signs by body site",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"
+          },
+          {
+            "title": "AAD: Lichen planus assessment and treatment",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No scalp hair loss or nail changes",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Lichen Planus (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nMouth, genital, scalp or nail changes: No scalp hair loss or nail changes\nDiscuss any mouth or genital symptoms, scalp hair loss or nail damage with a clinician; limited skin coverage does not exclude significant involvement at those sites.\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "symptom",
+      "modelConfidence": 0.3989923894405365,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "lichen_planus",
+        "condition": "Lichen Planus",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Lichen planus signs by body site",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-symptoms"
+          },
+          {
+            "title": "AAD: Lichen planus assessment and treatment",
+            "url": "https://www.aad.org/public/diseases/a-z/lichen-planus-treatment"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "psoriasis": [
+    {
+      "user": "How severe is my Psoriasis?",
+      "reply": "For psoriasis: Psoriasis severity depends on more than how a patch looks. A clinician considers how much skin is affected, plaque thickness and scaling, symptoms, and the effect on everyday life. Small patches on the face, scalp, hands, feet, nails or genital skin can still have a major impact.\n\nFor a rough description of coverage, your own whole handprint, including palm, fingers and thumb together, represents about 1% of your body surface. This is only an estimate; coverage alone does not determine whether psoriasis is mild, moderate or severe.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich body areas are affected? Include any scalp, face, hands, feet, nails or genital involvement. You can say 'I'm not sure.'",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.43946871161460876,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "psoriasis",
+        "condition": "Psoriasis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Psoriasis severity assessment",
+            "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+          },
+          {
+            "title": "NPF: Estimating affected body surface",
+            "url": "https://www.psoriasis.org/treat-to-target/"
+          },
+          {
+            "title": "NPF: High-impact psoriasis locations",
+            "url": "https://www.psoriasis.org/about-psoriasis/"
+          },
+          {
+            "title": "NPF: Joint symptoms and psoriatic arthritis",
+            "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nAbout how much skin is affected? For psoriasis, estimate how many of your own whole handprints (palm, fingers and thumb together) would cover all the patches. A rough estimate or 'I'm not sure' is fine.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "psoriasis",
+        "condition": "Psoriasis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Psoriasis severity assessment",
+            "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+          },
+          {
+            "title": "NPF: Estimating affected body surface",
+            "url": "https://www.psoriasis.org/treat-to-target/"
+          },
+          {
+            "title": "NPF: High-impact psoriasis locations",
+            "url": "https://www.psoriasis.org/about-psoriasis/"
+          },
+          {
+            "title": "NPF: Joint symptoms and psoriatic arthritis",
+            "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow is it affecting you: is the itch disturbing sleep, work, school or everyday activities? You can also rate the itch from 0 to 10, or say you are not sure.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "psoriasis",
+        "condition": "Psoriasis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Psoriasis severity assessment",
+            "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+          },
+          {
+            "title": "NPF: Estimating affected body surface",
+            "url": "https://www.psoriasis.org/treat-to-target/"
+          },
+          {
+            "title": "NPF: High-impact psoriasis locations",
+            "url": "https://www.psoriasis.org/about-psoriasis/"
+          },
+          {
+            "title": "NPF: Joint symptoms and psoriatic arthritis",
+            "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nHave you noticed any new joint pain, joint swelling or morning stiffness? You can answer yes, no, or 'I'm not sure.'",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "Yes, new joint stiffness",
+        "No joint symptoms",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "psoriasis",
+        "condition": "Psoriasis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Psoriasis severity assessment",
+            "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+          },
+          {
+            "title": "NPF: Estimating affected body surface",
+            "url": "https://www.psoriasis.org/treat-to-target/"
+          },
+          {
+            "title": "NPF: High-impact psoriasis locations",
+            "url": "https://www.psoriasis.org/about-psoriasis/"
+          },
+          {
+            "title": "NPF: Joint symptoms and psoriatic arthritis",
+            "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No joint symptoms",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Psoriasis (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nJoint symptoms: No joint symptoms\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "symptom",
+      "modelConfidence": 0.7894997000694275,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "psoriasis",
+        "condition": "Psoriasis",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Psoriasis severity assessment",
+            "url": "https://www.aad.org/member/clinical-quality/guidelines/psoriasis"
+          },
+          {
+            "title": "NPF: Estimating affected body surface",
+            "url": "https://www.psoriasis.org/treat-to-target/"
+          },
+          {
+            "title": "NPF: High-impact psoriasis locations",
+            "url": "https://www.psoriasis.org/about-psoriasis/"
+          },
+          {
+            "title": "NPF: Joint symptoms and psoriatic arthritis",
+            "url": "https://www.psoriasis.org/about-psoriatic-arthritis/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ],
+  "rosacea": [
+    {
+      "user": "How severe is my Rosacea?",
+      "reply": "For rosacea: For rosacea, severity involves persistent flushing or color changes, bumps, burning or stinging, skin thickening, and effects on everyday life. Eye involvement is assessed separately; a small facial area does not show how much the eyes are affected. New eye symptoms need medical attention. Eye pain, blurred vision or light sensitivity warrant urgent medical advice.\n\nI can help you describe these factors, but I cannot assign a clinical mild, moderate or severe grade from chat or a photo.\n\nWhich areas are affected by rosacea, such as cheeks, nose, chin or forehead?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2903490662574768,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "rosacea",
+        "condition": "Rosacea",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Rosacea and eye involvement",
+            "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"
+          },
+          {
+            "title": "NHS: Rosacea symptoms and urgent eye advice",
+            "url": "https://www.nhs.uk/conditions/rosacea/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "My arms",
+      "reply": "I've recorded your description.\n\nAre the changes confined to a few small patches or spread over several facial areas? Describe any persistent flushing, bumps or skin thickening.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.9629542231559753,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "rosacea",
+        "condition": "Rosacea",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Rosacea and eye involvement",
+            "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"
+          },
+          {
+            "title": "NHS: Rosacea symptoms and urgent eye advice",
+            "url": "https://www.nhs.uk/conditions/rosacea/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "a few small patches",
+      "reply": "I've recorded your description.\n\nHow much do flushing, burning, stinging or discomfort interfere with everyday activities or wellbeing?",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "location",
+      "modelConfidence": 0.46427714824676514,
+      "action": null,
+      "followUps": [
+        "It affects my sleep",
+        "No effect on daily activities",
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "rosacea",
+        "condition": "Rosacea",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Rosacea and eye involvement",
+            "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"
+          },
+          {
+            "title": "NHS: Rosacea symptoms and urgent eye advice",
+            "url": "https://www.nhs.uk/conditions/rosacea/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No effect on daily activities",
+      "reply": "I've recorded your description.\n\nDo you have dry, gritty or irritated eyes, or any eye pain, blurred vision or light sensitivity? You can say no eye symptoms or that you are not sure. Seek urgent medical advice for eye pain, blurred vision or light sensitivity.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "severity",
+      "modelConfidence": 0.2628595530986786,
+      "action": null,
+      "followUps": [
+        "I'm not sure",
+        "Stop severity questions"
+      ],
+      "treatmentInfo": {
+        "condition_key": "rosacea",
+        "condition": "Rosacea",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Rosacea and eye involvement",
+            "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"
+          },
+          {
+            "title": "NHS: Rosacea symptoms and urgent eye advice",
+            "url": "https://www.nhs.uk/conditions/rosacea/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    },
+    {
+      "user": "No eye symptoms",
+      "reply": "Here is your symptom-burden summary (your descriptions, not a clinical severity grade):\nCondition discussed: Rosacea (not a confirmed diagnosis from this chat).\nAffected areas: My arms\nExtent estimate: a few small patches\nSymptoms and daily-life impact: No effect on daily activities\nEye symptoms: No eye symptoms\nNew eye irritation needs clinician assessment. Eye pain, blurred vision or light sensitivity warrant urgent medical advice, even when facial skin changes seem small.\nA clinician needs to examine you to establish the condition and assess its severity. Small coverage or a high photo-model score cannot establish mild disease or rule out a more significant problem.",
+      "intent": "severity_guidance",
+      "confidence": null,
+      "confidenceSource": null,
+      "predictedIntent": "symptom",
+      "modelConfidence": 0.6363025307655334,
+      "action": null,
+      "followUps": [
+        "When should I see a doctor?",
+        "Summarize our conversation"
+      ],
+      "treatmentInfo": {
+        "condition_key": "rosacea",
+        "condition": "Rosacea",
+        "topic": "severity",
+        "sources": [
+          {
+            "title": "AAD: Rosacea and eye involvement",
+            "url": "https://www.aad.org/public/diseases/rosacea/treatment/necessary"
+          },
+          {
+            "title": "NHS: Rosacea symptoms and urgent eye advice",
+            "url": "https://www.nhs.uk/conditions/rosacea/"
+          }
+        ],
+        "source_checked_on": "2026-10-22"
+      }
+    }
+  ]
+}

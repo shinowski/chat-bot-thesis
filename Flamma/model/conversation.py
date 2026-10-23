@@ -17,6 +17,7 @@ class Conversation:
         "location": None,
         "duration": None,
         "severity": None,
+        "severity_discussion": None,
         "medication": None,
         "image_uploaded": False,
         "image_declined": False,
@@ -55,6 +56,7 @@ class Conversation:
             image_condition=None, image_knowledge_key=None, knowledge_disease=None, knowledge_origin=None, last_knowledge_topics=[], last_management_style=None,
             pending_knowledge_choices=[], pending_knowledge_topics=[], pending_product_clarification=False,
             pending_medication_report=None, pending_screening_choices=None,
+            severity_discussion=None,
             last_image_status="rejected", last_image_feedback=feedback,
         )
 

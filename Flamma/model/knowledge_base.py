@@ -2,6 +2,7 @@ import json
 import re
 from pathlib import Path
 from model.text_understanding import normalize_message, clean_message
+from model.severity_support import severity_question
 
 
 def is_course_question(message):
@@ -48,6 +49,8 @@ def topic_requests(message):
     )]
     if is_course_question(message):
         topics.insert(0, 'course')
+    if severity_question(message):
+        topics.insert(0, 'severity')
     return topics
 
 
@@ -105,6 +108,8 @@ class KnowledgeBase:
             self.treatments = json.load(file)
         with (Path(__file__).resolve().parents[1] / 'data/course_guidance.json').open(encoding='utf-8') as file:
             self.courses = json.load(file)
+        with (Path(__file__).resolve().parents[1] / 'data/severity_guidance.json').open(encoding='utf-8') as file:
+            self.severities = json.load(file)
         self.aliases = {}
         for key, entry in self.data.items():
             for alias in [key.replace('_', ' '), entry['name'], *entry.get('aliases', [])]:

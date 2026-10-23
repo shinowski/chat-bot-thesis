@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-22T20:59:22.031078+08:00",
+  "active_model": "intent_v7.pkl",
+  "active_model_sha256": "6433f9949491d0e13a3c76e97afe99ebaef3660dd2600ee2eac00b7e44263e0e",
+  "final_samples": 260,
+  "v5_accuracy": 0.9076923076923077,
+  "v5_macro_f1": 0.8927087314139854,
+  "v7_accuracy": 0.9307692307692308,
+  "v7_macro_f1": 0.9295507465925712,
+  "original_errors_fixed": 7,
+  "new_final_v7_errors": 18,
+  "software_tests_passed": 354,
+  "real_model_conversation_turns_passed": 289,
+  "browser_successful": true,
+  "heldout_image_results": "pending_dataset",
+  "dermatologist_review": "pending_reviewer",
+  "human_usability": "pending_participants",
+  "observed_open_issue": "Uniform and noisy skin-colored synthetic inputs accepted by image gate."
+}

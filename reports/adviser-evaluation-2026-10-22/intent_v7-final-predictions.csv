@@ -1,0 +1,261 @@
+﻿id,text,expected,short_reply,ambiguous,predicted,correct
+F001,"Heya Flamma, are you around this evening?",greeting,False,False,greeting,True
+F002,"Good afternoon there, skin helper.",greeting,True,False,greeting,True
+F003,"Hullo bot, I'd like to begin a chat.",greeting,False,False,greeting,True
+F004,"Hiya, nice to meet you here.",greeting,True,False,greeting,True
+F005,"Morning Flamma, anyone online?",greeting,True,False,greeting,True
+F006,"Hellooo there, just saying hi.",greeting,True,False,greeting,True
+F007,"Greetings to you, Flamma assistant.",greeting,True,False,bot_identity,False
+F008,"Hey hey, first time opening this chat.",greeting,False,False,greeting,True
+F009,Hi Flamma :) ready to talk?,greeting,True,False,greeting,True
+F010,"G'day skin assistant, hello!",greeting,True,False,greeting,True
+F011,"Good eve, Flamma.",greeting,True,False,greeting,True
+F012,Helo there little chatbot.,greeting,True,False,greeting,True
+F013,"Howdy Flamma, how's your day going?",greeting,True,False,greeting,True
+F014,"Hello again, I'm back at the keyboard.",greeting,False,False,goodbye,False
+F015,"A pleasant morning to you, bot.",greeting,True,False,greeting,True
+F016,Heyyy Flamma!,greeting,True,False,greeting,True
+F017,Hiya there ðŸ‘‹,greeting,True,False,greeting,True
+F018,"Hii bot, good afternoon to you.",greeting,True,False,greeting,True
+F019,"Just dropping in to say hello, Flamma.",greeting,False,False,greeting,True
+F020,"Greetings, skin information assistant!",greeting,True,False,bot_identity,False
+F021,My skin has little rough flakes that catch on clothing.,symptom,False,False,symptom,True
+F022,I keep noticing a prickly itchy sensation without a clear pattern.,symptom,False,False,symptom,True
+F023,Some newly raised specks feel rough when I touch them.,symptom,False,False,symptom,True
+F024,There are dry reddish islands of skin that keep flaking off.,symptom,False,False,symptom,True
+F025,The surface feels tight and scratchy after washing.,symptom,False,False,symptom,True
+F026,I noticed a cluster of pink bumps with tiny scales.,symptom,False,False,symptom,True
+F027,Skin keeps peeling in thin strips and feels irritated.,symptom,False,False,symptom,True
+F028,An uneven patch has started to sting whenever it gets wet.,symptom,False,False,symptom,True
+F029,There's a persistent itch with a grainy texture to the skin.,symptom,False,False,symptom,True
+F030,New little welts keep appearing and then fading away.,symptom,False,False,symptom,True
+F031,I see flaky dots and the skin feels uncomfortable.,symptom,False,False,symptom,True
+F032,My skin looks blotchy and feels like it is burning lightly.,symptom,False,False,symptom,True
+F033,"Red rough patches, that's what I'm seeing.",symptom,False,False,symptom,True
+F034,Itchyy little bumbs are showing up on my skin.,symptom,False,False,symptom,True
+F035,The rash feels scratchier after I get sweaty.,symptom,False,False,symptom,True
+F036,A scaly patch is shedding small white flakes.,symptom,False,False,symptom,True
+F037,My skin is becoming cracked and rough to the touch.,symptom,False,False,symptom,True
+F038,I can feel small itchy ridges even without looking.,symptom,False,False,symptom,True
+F039,Dryness and a prickling feeling are the changes I've noticed.,symptom,False,False,symptom,True
+F040,There are tiny reddish pimples surrounded by flaky skin.,symptom,False,False,symptom,True
+F041,The affected strip follows the crease behind my left knee.,location,False,False,location,True
+F042,It's concentrated along the outer edge of my right palm.,location,False,False,location,True
+F043,The area involved is just below my left collarbone.,location,False,False,location,True
+F044,Only the skin between my second and third toes is affected.,location,False,False,symptom,False
+F045,The mark sits beside my right eyebrow rather than on my eyelid.,location,False,False,location,True
+F046,It shows up where my left wrist meets the base of my hand.,location,False,False,location,True
+F047,The affected skin lies under my jaw on the left side.,location,False,False,location,True
+F048,It's along my right shoulder blade close to the spine.,location,False,False,location,True
+F049,The trouble is limited to the front of my left shin.,location,False,False,location,True
+F050,"Near the heel of my right foot, just underneath.",location,False,False,location,True
+F051,"Both earlobes, especially their lower edges.",location,True,False,location,True
+F052,The patch is on the back of my right thumb.,location,False,False,location,True
+F053,"Around my bellybutton, forming a small ring.",location,False,False,location,True
+F054,The skin on my upper left thigh is the bit I mean.,location,False,False,location,True
+F055,"Left forarm, near the wrist crease.",location,True,False,location,True
+F056,"Right ankel, above the sock line.",location,True,False,location,True
+F057,The affected place is the left side of my forehead.,location,False,False,location,True
+F058,The fold beneath my right armpit is where it is.,location,False,False,location,True
+F059,Along my hairline at the back of my neck.,location,False,False,location,True
+F060,It's the outer part of my left elbow that's affected.,location,False,False,location,True
+F061,This particular skin change began about seventeen days ago.,duration,False,False,duration,True
+F062,I've had this issue for roughly thirty-six hours altogether.,duration,False,False,duration,True
+F063,The first change was eleven nights back.,duration,False,False,duration,True
+F064,It's been there since the morning before yesterday.,duration,False,False,duration,True
+F065,I noticed its start around six and a half weeks ago.,duration,False,False,duration,True
+F066,The rash first appeared about forty days before today.,duration,False,False,duration,True
+F067,The skin problem has lasted nine full days so far.,duration,False,False,duration,True
+F068,Its onset was approximately fourteen weeks back.,duration,False,False,duration,True
+F069,It started during the weekend before last.,duration,False,False,duration,True
+F070,I've been dealing with this since early September.,duration,False,False,duration,True
+F071,"Around nineteen days, give or take a day.",duration,False,False,duration,True
+F072,It has persisted for nearly four and a half months.,duration,False,False,duration,True
+F073,"Noticed it sixteen hours ago, still present.",duration,False,False,duration,True
+F074,The change has been around since Tuesday evening.,duration,False,False,duration,True
+F075,Started 13 dyas ago and never fully went away.,duration,False,False,duration,True
+F076,About 7 weks since the first skin change.,duration,False,False,duration,True
+F077,I first saw it at the beginning of last month.,duration,False,False,duration,True
+F078,Five nights have passed since it showed up.,duration,False,False,duration,True
+F079,This started a little less than three months ago.,duration,False,False,duration,True
+F080,Only about forty-five minutes since I noticed the rash.,duration,False,False,duration,True
+F081,I'd rate the discomfort as mild rather than moderate.,severity,False,False,severity,True
+F082,"The itch feels moderately intense, not severe.",severity,False,False,severity,True
+F083,It's severe enough to disrupt what I'm doing.,severity,False,False,severity,True
+F084,The irritation is quite mild at the moment.,severity,False,False,severity,True
+F085,My current severity rating would be moderate.,severity,False,False,severity,True
+F086,"The discomfort is extremely intense, I would say severe.",severity,False,False,severity,True
+F087,"It's barely bothersome, so mild is the best description.",severity,False,False,severity,True
+F088,"Moderate discomfort, somewhere in the middle.",severity,True,False,severity,True
+F089,The itch is very strong and I'd call it severe.,severity,False,False,severity,True
+F090,I'd pick mild on your severity scale.,severity,False,False,severity,True
+F091,I'd put it in the moderate category today.,severity,False,False,severity,True
+F092,Severe is the closest description of how intense it feels.,severity,False,False,severity,True
+F093,"The level is mild, although I notice it.",severity,False,False,severity,True
+F094,Moderately irritating but still manageable.,severity,True,False,severity,True
+F095,It's a sevre level of discomfort.,severity,True,False,severity,True
+F096,I'd describe the itch as modrate.,severity,True,False,severity,True
+F097,"Mild intensity, just a little annoying.",severity,True,False,severity,True
+F098,My rating for the intensity is severe.,severity,False,False,severity,True
+F099,"Somewhere around moderate, certainly beyond mild.",severity,True,False,severity,True
+F100,The discomfort is mild overall this evening.,severity,False,False,severity,True
+F101,"Yep, you've understood that correctly.",confirmation,True,False,confirmation,True
+F102,"That's right, the details you repeated are accurate.",confirmation,False,False,confirmation,True
+F103,"Correct, that's what I was trying to say.",confirmation,False,False,confirmation,True
+F104,"Affirmative, I agree with that summary.",confirmation,True,False,confirmation,True
+F105,"Yup, that matches what I told you.",confirmation,False,False,confirmation,True
+F106,"Exactly so, you got the details right.",confirmation,False,False,confirmation,True
+F107,"Yes indeed, that's the one I meant.",confirmation,False,False,confirmation,True
+F108,"Absolutely, that interpretation is correct.",confirmation,True,False,confirmation,True
+F109,"Right you are, I confirm that.",confirmation,True,False,confirmation,True
+F110,"Indeed yes, that's accurate.",confirmation,True,False,confirmation,True
+F111,"You understood me properly, yes.",confirmation,True,False,confirmation,True
+F112,That's a correct restatement of it.,confirmation,True,False,confirmation,True
+F113,"Yes, I can confirm those details.",confirmation,True,False,confirmation,True
+F114,"Yeh, precisely what I meant.",confirmation,True,False,unknown,False
+F115,"Yess, you've got it.",confirmation,True,False,confirmation,True
+F116,"Agreed, the summary matches.",confirmation,True,False,confirmation,True
+F117,"Spot on, that is correct.",confirmation,True,False,confirmation,True
+F118,I confirm that what you wrote is right.,confirmation,False,False,confirmation,True
+F119,"Yes exactly, no correction needed there.",confirmation,True,False,confirmation,True
+F120,"Yep yep, accurate.",confirmation,True,False,confirmation,True
+F121,I dabbed a fragrance-free moisturizer onto it after washing.,medication,False,False,medication,True
+F122,I've already tried a small amount of hydrocortisone cream.,medication,False,False,medication,True
+F123,I'm applying an emollient ointment before going to bed.,medication,False,False,medication,True
+F124,I took an antihistamine tablet for the itching yesterday.,medication,False,False,medication,True
+F125,A pharmacist's recommended lotion is what I have used.,medication,False,False,medication,True
+F126,I've used petroleum jelly on the dry patch.,medication,False,False,medication,True
+F127,I washed it and then applied a prescribed steroid cream.,medication,False,False,medication,True
+F128,I have been putting an antibiotic ointment on it.,medication,False,False,medication,True
+F129,The only product I've applied is plain moisturizer.,medication,False,False,medication,True
+F130,I've tried a cooling gel on the irritated skin.,medication,False,False,medication,True
+F131,I used a prescription cream left over from an earlier visit.,medication,False,False,medication,True
+F132,I have not applied any cream or taken any medicine for it.,medication,False,False,medication,True
+F133,No products at all have been used on this rash.,medication,False,False,medication,True
+F134,I used calamine lotion after the itch began.,medication,False,False,medication,True
+F135,Been aplying moisturiser before bed.,medication,True,False,medication,True
+F136,Tried an oinment from the pharmacy already.,medication,False,False,medication,True
+F137,I've been taking the tablets the doctor prescribed.,medication,False,False,medication,True
+F138,I have already used a steroid lotion on the patch.,medication,False,False,medication,True
+F139,So far I've only applied a mild barrier cream.,medication,False,False,medication,True
+F140,I put an unscented skin cream on the affected area.,medication,False,False,medication,True
+F141,My tongue is swelling and now it's getting hard to swallow.,emergency,False,False,emergency,True
+F142,The rash is accompanied by trouble breathing right now.,emergency,False,False,emergency,True
+F143,My lips suddenly swelled and I can barely breathe.,emergency,False,False,emergency,True
+F144,My throat feels swollen and I am unable to swallow.,emergency,False,False,emergency,True
+F145,Breathing has become difficult and my face is swelling.,emergency,False,False,emergency,True
+F146,I cannot swallow properly because my tongue is getting bigger.,emergency,False,False,emergency,True
+F147,I'm struggling to breathe while my mouth is swollen.,emergency,False,False,emergency,True
+F148,My airway feels tight and I cannot breathe normally.,emergency,False,False,emergency,True
+F149,There's swelling around my eyes and lips happening now.,emergency,False,False,emergency,True
+F150,I'm short of breath and my throat is swelling up.,emergency,False,False,emergency,True
+F151,I am having difficulty swallowing with swollen lips.,emergency,False,False,emergency,True
+F152,My face suddenly swelled and breathing is hard.,emergency,False,False,emergency,True
+F153,Right now my tongue is swollen and I can't breathe well.,emergency,False,False,emergency,True
+F154,I have trouble swallowing and my mouth is swelling.,emergency,False,False,emergency,True
+F155,My thorat is swolen and breathing feels difficult.,emergency,False,False,emergency,True
+F156,"Cant brethe properly, my lips are getting bigger.",emergency,False,False,emergency,True
+F157,My chest feels tight and I'm struggling with breathing.,emergency,False,False,emergency,True
+F158,I am unable to breathe and my tongue is swollen.,emergency,False,False,emergency,True
+F159,Swelling in my throat is making it hard to swallow now.,emergency,False,False,emergency,True
+F160,My lips and eyes are swelling and I feel short of breath.,emergency,False,False,emergency,True
+F161,Could I attach a close-up photograph for the screening?,image_upload,False,False,image_upload,True
+F162,I would like to submit a skin snapshot in this chat.,image_upload,False,False,image_upload,True
+F163,I'm ready to share a photo of the patch with you.,image_upload,False,False,image_upload,True
+F164,Where should I attach my picture of the irritated skin?,image_upload,False,False,image_upload,True
+F165,Let me send a photograph rather than describe the texture.,image_upload,False,False,image_upload,True
+F166,I'd like to upload a JPEG of the affected skin now.,image_upload,False,False,image_upload,True
+F167,I have a close-up photo ready to send for screening.,image_upload,False,False,image_upload,True
+F168,Can I share a picture from my phone's camera roll?,image_upload,False,False,image_upload,True
+F169,I'd prefer to show you an image of the patch.,image_upload,False,False,image_upload,True
+F170,Please let me attach the skin photograph I took today.,image_upload,False,False,image_upload,True
+F171,I'm sending a photo so you can run the image model.,image_upload,False,False,image_upload,True
+F172,Can you give me the option to upload a skin picture?,image_upload,False,False,image_upload,True
+F173,I'd like to add a photograph to this conversation.,image_upload,False,False,image_upload,True
+F174,Could we use the photo upload for my skin concern?,image_upload,False,False,image_upload,True
+F175,Wanna uplod a close-up pic of this patch.,image_upload,False,False,image_upload,True
+F176,Can I attatch my skin pictur here please?,image_upload,False,False,image_upload,True
+F177,I want to share the image I've saved on my device.,image_upload,False,False,image_upload,True
+F178,I'd like to submit a PNG photo for the image screening.,image_upload,False,False,image_upload,True
+F179,Here comes a picture I'd like you to screen.,image_upload,False,False,image_upload,True
+F180,Please help me send a clear skin photo from my gallery.,image_upload,False,False,image_upload,True
+F181,"I'll end this conversation here, goodbye Flamma.",goodbye,False,False,goodbye,True
+F182,"I'm signing off for the evening, take care.",goodbye,False,False,goodbye,True
+F183,"That's all for today, bye for now bot.",goodbye,False,False,goodbye,True
+F184,"I'm heading out now, see you another day.",goodbye,False,False,goodbye,True
+F185,"Goodnight Flamma, I'm closing the chat.",goodbye,True,False,goodbye,True
+F186,"I'll leave the conversation now, farewell.",goodbye,True,False,goodbye,True
+F187,"Time for me to go, goodbye skin helper.",goodbye,False,False,goodbye,True
+F188,"I'm done chatting today, see you later.",goodbye,False,False,goodbye,True
+F189,"Catch you next time, Flamma, bye.",goodbye,True,False,goodbye,True
+F190,"I'll be leaving now, have a good evening.",goodbye,False,False,goodbye,True
+F191,"I'm closing this tab, goodbye for today.",goodbye,False,False,goodbye,True
+F192,"See you around, I'm off now.",goodbye,True,False,goodbye,True
+F193,"Farewell assistant, that ends my visit.",goodbye,True,False,goodbye,True
+F194,"I'll talk to you another time, goodnight.",goodbye,False,False,goodbye,True
+F195,"Byee Flamma, gotta go now.",goodbye,True,False,goodbye,True
+F196,"See ya bot, signing out.",goodbye,True,False,goodbye,True
+F197,"I'll stop the conversation now, take care.",goodbye,False,False,goodbye,True
+F198,"Until the next chat, goodbye.",goodbye,True,False,goodbye,True
+F199,"I'm going offline now, bye assistant.",goodbye,True,False,goodbye,True
+F200,"That will be my last message today, farewell.",goodbye,False,False,goodbye,True
+F201,Many thanks for putting that into plain language.,thanks,False,False,unknown,False
+F202,I appreciate you helping me organize these details.,thanks,False,False,thanks,True
+F203,Thank you for explaining the score so clearly.,thanks,False,False,unknown,False
+F204,"That explanation was useful, thanks a bunch.",thanks,False,False,thanks,True
+F205,I'm grateful for your patience with my questions.,thanks,False,False,thanks,True
+F206,Thanks for keeping track of the details I gave.,thanks,False,False,thanks,True
+F207,"Much appreciated, that answered my question.",thanks,True,False,thanks,True
+F208,Thank you kindly for taking the time to explain.,thanks,False,False,thanks,True
+F209,Cheers for clearing up that confusion.,thanks,True,False,thanks,True
+F210,"I appreciate that response, thank you Flamma.",thanks,False,False,thanks,True
+F211,Thanks a million for walking me through it.,thanks,False,False,goodbye,False
+F212,"Your explanation helped me understand, thank you.",thanks,False,False,thanks,True
+F213,Grateful for the information you've shared.,thanks,True,False,thanks,True
+F214,Big thanks for the careful explanation.,thanks,True,False,thanks,True
+F215,"Thnks for explaining that bit, bot.",thanks,True,False,unknown,False
+F216,"Thankss Flamma, appreciate the help.",thanks,True,False,thanks,True
+F217,I'm thankful for the clarification you gave.,thanks,False,False,thanks,True
+F218,"That was helpful to read, many thanks.",thanks,False,False,thanks,True
+F219,Thanks for answering without making it complicated.,thanks,False,False,thanks,True
+F220,I appreciate the help with this conversation.,thanks,False,False,thanks,True
+F221,Which parts of this screening are you able to help with?,bot_identity,False,False,bot_identity,True
+F222,Are you a trained clinician or a software assistant?,bot_identity,False,False,bot_identity,True
+F223,What sort of information does Flamma provide?,bot_identity,False,False,bot_identity,True
+F224,Can you explain what powers this chatbot's replies?,bot_identity,False,False,bot_identity,True
+F225,Are your answers generated by a doctor in real time?,bot_identity,False,False,bot_identity,True
+F226,What are the limits of your skin screening abilities?,bot_identity,False,False,bot_identity,True
+F227,Does saving my chat also retrain your text classifier?,bot_identity,False,False,bot_identity,True
+F228,Who is able to access the photos I leave in this chat?,bot_identity,False,False,bot_identity,True
+F229,Can you explain the difference between your score and a diagnosis?,bot_identity,False,False,bot_identity,True
+F230,Is Flamma designed to replace a dermatologist's visit?,bot_identity,False,False,bot_identity,True
+F231,How do you remember details from earlier in our chat?,bot_identity,False,False,bot_identity,True
+F232,What does your confidence percentage actually describe?,bot_identity,False,False,bot_identity,True
+F233,Are you able to prescribe a personal medicine dose?,bot_identity,False,False,medication,False
+F234,Where is my conversation stored after I close this tab?,bot_identity,False,False,bot_identity,True
+F235,Wat kind of assistant is Flamma meant to be?,bot_identity,False,False,bot_identity,True
+F236,Do u learn new facts from every chat message?,bot_identity,False,False,bot_identity,True
+F237,What model do you use to recognize my message intent?,bot_identity,False,False,bot_identity,True
+F238,Who made you a skin information assistant?,bot_identity,False,False,bot_identity,True
+F239,Are the replies from a local information library?,bot_identity,False,False,bot_identity,True
+F240,What can this prototype reliably claim about its accuracy?,bot_identity,False,False,unknown,False
+F241,Is that one the other thing I mentioned somewhere?,unknown,False,True,unknown,True
+F242,"Would the same apply to it, whatever it was?",unknown,False,True,location,False
+F243,Should I do that now or perhaps the opposite?,unknown,False,True,unknown,True
+F244,Which of those things are you talking about exactly?,unknown,False,True,unknown,True
+F245,"It might be this, or it might not, I can't decide.",unknown,False,True,unknown,True
+F246,Can you do the thing with the stuff from before?,unknown,False,True,medication,False
+F247,What about the second thing if there wasn't a first one?,unknown,False,True,unknown,True
+F248,Could that work for this without knowing what this is?,unknown,False,True,bot_identity,False
+F249,What does that refer to when I haven't sent anything?,unknown,False,True,unknown,True
+F250,The thing is different in a way I can't describe.,unknown,False,True,unknown,True
+F251,"Maybe that, maybe something else entirely.",unknown,True,True,unknown,True
+F252,"Is it okay though, whatever it is?",unknown,False,True,confirmation,False
+F253,Would you say so about that thing?,unknown,False,True,confirmation,False
+F254,What am I supposed to mean by this?,unknown,False,True,unknown,True
+F255,Uhh whut abt that other thing tho?,unknown,False,True,unknown,True
+F256,That bit? which bit exactly?,unknown,True,True,unknown,True
+F257,Does this count as that or is that this?,unknown,False,True,confirmation,False
+F258,I have a question but haven't decided what it is.,unknown,False,True,unknown,True
+F259,"Perhaps yes, perhaps no, I need to clarify the question.",unknown,False,True,confirmation,False
+F260,Something about it doesn't quite make sense to me yet.,unknown,False,True,unknown,True

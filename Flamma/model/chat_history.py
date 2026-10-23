@@ -5,6 +5,7 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
+from model.reply_choices import with_reply_choices
 
 
 class ChatHistory:
@@ -75,7 +76,7 @@ class ChatHistory:
             "SELECT payload FROM messages WHERE owner=? AND conversation_id=? ORDER BY created_at, rowid",
             (owner, chat_id),
         ).fetchall()
-        return [json.loads(row["payload"]) for row in rows]
+        return [with_reply_choices(json.loads(row["payload"])) for row in rows]
 
     def latest_image_result(self, owner, chat_id):
         row = self.db.execute("""
@@ -97,7 +98,7 @@ class ChatHistory:
         for message_id in [receipt['user_id'], receipt['bot_id']]:
             row = self.db.execute('SELECT payload FROM messages WHERE owner=? AND conversation_id=? AND id=?',
                                   (owner, chat_id, message_id)).fetchone()
-            messages.append(json.loads(row['payload']))
+            messages.append(with_reply_choices(json.loads(row['payload'])))
         bot = messages[1]
         result = {key: value for key, value in bot.items() if key not in {'id', 'who', 'text', 'createdAt'}}
         result['reply'] = bot['text']
@@ -107,6 +108,7 @@ class ChatHistory:
 
     def save_turn(self, owner, chat_id, text, result, state, image=None, mime=None,
                   request_id=None, fingerprint=None, response_status=200):
+        result = with_reply_choices(result)
         now = datetime.now(timezone.utc).isoformat()
         user_id, bot_id = uuid4().hex, uuid4().hex
         user = {"id": user_id, "who": "user", "text": text or "Uploaded an image", "createdAt": now}

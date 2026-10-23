@@ -9,6 +9,8 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 ACTIVE_MODEL_MANIFEST = PROJECT_DIR / 'artifacts/active_intent_model.json'
+# Mirror the active image service's acceptance floor at the integration boundary.
+IMAGE_CONFIDENCE_THRESHOLD = 0.55
 
 
 def intent_model_path():

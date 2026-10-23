@@ -92,7 +92,9 @@ class SafetyTests(unittest.TestCase):
         with patch.object(bot.classifier, 'predict', side_effect=AssertionError('Text inference must not run')):
             result = bot.reply('My rash is blistering', image=object())
         self.assertEqual(result['intent'], 'medical_attention')
-        self.assertEqual(result['followUps'], [])
+        self.assertGreaterEqual(len(result['followUps']), 3)
+        self.assertNotIn('Continue screening', result['followUps'])
+        self.assertNotIn('Choose photo', result['followUps'])
         self.assertIsNone(result['action'])
         self.assertTrue(bot.conversation.get('screening_paused'))
         self.assertEqual(bot.image_classifier.calls, 0)

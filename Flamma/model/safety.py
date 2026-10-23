@@ -7,6 +7,7 @@ These rules and their urgency wording still require clinician review.
 import re
 
 from model.text_understanding import normalize_message, negation_prefix
+from model.reply_choices import with_reply_choices
 
 
 SAFETY_RESPONSES = {
@@ -137,14 +138,17 @@ def safety_response(intent, conversation, message=None):
     """Available even before the embedding model has loaded."""
     if intent in {"emergency", "medical_attention"}:
         conversation.set("screening_paused", True)
+        session = conversation.get('severity_discussion')
+        if session:
+            conversation.set('severity_discussion', dict(session, active=False))
         conversation.set("last_knowledge_topics", [])
         if message:
             conversation.add_symptom(message)
     conversation.set("last_reply_intent", intent)
     if intent != "safety_check":
         conversation.set("pending_question", None)
-    return dict(
+    return with_reply_choices(dict(
         reply=SAFETY_RESPONSES[intent], intent=intent, confidence=None,
         confidenceSource=None, modelConfidence=None, predictedIntent=None,
         followUps=[], action=None,
-    )
+    ))

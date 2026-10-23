@@ -1,0 +1,14 @@
+﻿intent,training_examples,precision,recall,f1-score,support
+bot_identity,108,1.0,1.0,1.0,10.0
+confirmation,144,1.0,1.0,1.0,10.0
+duration,463,1.0,0.9,0.9473684210526315,10.0
+emergency,196,1.0,1.0,1.0,10.0
+goodbye,134,1.0,1.0,1.0,10.0
+greeting,110,1.0,1.0,1.0,10.0
+image_upload,162,1.0,0.7,0.8235294117647058,10.0
+location,1022,0.6428571428571429,0.9,0.75,10.0
+medication,501,1.0,1.0,1.0,10.0
+severity,195,1.0,1.0,1.0,10.0
+symptom,3096,0.8,0.8,0.8,10.0
+thanks,125,1.0,1.0,1.0,10.0
+unknown,149,1.0,1.0,1.0,10.0

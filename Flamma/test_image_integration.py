@@ -89,7 +89,7 @@ class ImageChatTests(unittest.TestCase):
                 self.assertEqual(self.upload().get_json()["classification"], normalized)
 
     def test_rejections_leave_image_step_incomplete(self):
-        for reason in ["no_skin_detected", "out_of_scope", "low_confidence", "inconclusive", "default"]:
+        for reason in ["no_skin_detected", "out_of_scope", "low_confidence", "inconclusive", "too_blurry", "too_large", "default"]:
             with self.subTest(reason=reason):
                 bot = make_bot()
                 bot.image_classifier.result = {"status": "rejected", "reason": reason}
@@ -103,6 +103,22 @@ class ImageChatTests(unittest.TestCase):
         result = self.upload().get_json()
         self.assertIn("couldn't reach a reliable result", result['reply'])
         self.assertNotIn("couldn't read this image", result['reply'])
+
+    def test_blurry_rejection_explains_how_to_retake_and_keeps_choices(self):
+        self.bot.image_classifier.result = {'status': 'rejected', 'reason': 'too_blurry'}
+        result = self.upload().get_json()
+        self.assertEqual(result['intent'], 'image_rejected')
+        self.assertIn('too blurry', result['reply'])
+        self.assertIn('retake', result['reply'])
+        self.assertGreaterEqual(len(result['followUps']), 3)
+        self.assertIsNone(self.bot.conversation.get('classification'))
+
+    def test_accepted_but_slightly_blurry_photo_keeps_result_and_retaking_hint(self):
+        self.bot.image_classifier.result['quality'] = {'blur_status': 'warn', 'blur_score': 10.0}
+        result = self.upload().get_json()
+        self.assertEqual(result['intent'], 'image_classification')
+        self.assertIn('slightly blurry', result['reply'])
+        self.assertIn('not a confirmed diagnosis', result['reply'])
 
     def test_unavailable_image_service_returns_retry_message(self):
         with patch.object(self.bot.image_classifier, "predict", side_effect=ImageClassifierError("offline")):
@@ -257,7 +273,7 @@ class ImageChatTests(unittest.TestCase):
                 result = self.client.post("/predict", json={"message": message, "conversation_id": "request"}).get_json()
                 self.assertEqual(result["intent"], "image_request")
                 self.assertEqual(result["action"], "upload_image")
-                self.assertEqual(result["followUps"], [])
+                self.assertEqual(result["followUps"], ['Choose photo', 'Text only', 'Summarize our conversation'])
                 self.assertIn("Choose photo", result["reply"])
                 self.assertNotIn("How severe", result["reply"])
 
@@ -285,7 +301,8 @@ class ImageChatTests(unittest.TestCase):
     def test_emergency_still_takes_priority_over_photo_requests(self):
         result = self.bot.reply("can't breathe, can i send a photo?")
         self.assertEqual(result["intent"], "emergency")
-        self.assertEqual(result["followUps"], [])
+        self.assertGreaterEqual(len(result["followUps"]), 3)
+        self.assertNotIn('Choose photo', result['followUps'])
 
     def test_oversized_upload_returns_friendly_error(self):
         self.app.config["MAX_CONTENT_LENGTH"] = 100

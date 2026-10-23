@@ -1,0 +1,135 @@
+{
+  "scope": "Chromium desktop/mobile emulation with real text model and simulated image responses; not human usability or image recognition.",
+  "evaluated_at": "2026-10-22T12:56:58.572Z",
+  "checks": [
+    {
+      "check": "responsive layout and composer",
+      "width": 360,
+      "passed": true,
+      "scroll": 360,
+      "textareaVisible": true,
+      "sendVisible": true,
+      "accessibleName": true
+    },
+    {
+      "check": "responsive layout and composer",
+      "width": 390,
+      "passed": true,
+      "scroll": 390,
+      "textareaVisible": true,
+      "sendVisible": true,
+      "accessibleName": true
+    },
+    {
+      "check": "responsive layout and composer",
+      "width": 768,
+      "passed": true,
+      "scroll": 768,
+      "textareaVisible": true,
+      "sendVisible": true,
+      "accessibleName": true
+    },
+    {
+      "check": "responsive layout and composer",
+      "width": 1366,
+      "passed": true,
+      "scroll": 1366,
+      "textareaVisible": true,
+      "sendVisible": true,
+      "accessibleName": true
+    },
+    {
+      "check": "multi-turn, treatment context, persistence, reset",
+      "passed": true
+    },
+    {
+      "check": "fallback and emergency routing",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "atopic_dermatitis",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "contact_dermatitis",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "lichen_planus",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "psoriasis",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "rosacea",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "normal_skin",
+      "passed": true
+    },
+    {
+      "check": "real browser upload with simulated image result",
+      "label": "rejected",
+      "passed": true
+    },
+    {
+      "check": "uncaught browser errors",
+      "count": 0,
+      "passed": true
+    }
+  ],
+  "reply_timings": [
+    {
+      "message": "my rash is itchy on my arm for two weeks",
+      "milliseconds": 134.8163000000004
+    },
+    {
+      "message": "I used a cream for three days",
+      "milliseconds": 62.11610000000019
+    },
+    {
+      "message": "summarize our conversation",
+      "milliseconds": 74.60509999999977
+    },
+    {
+      "message": "What is psoriasis?",
+      "milliseconds": 201.2446
+    },
+    {
+      "message": "and treatment?",
+      "milliseconds": 81.20539999999983
+    },
+    {
+      "message": "and contagious?",
+      "milliseconds": 140.63760000000002
+    },
+    {
+      "message": "reset",
+      "milliseconds": 134.7394000000004
+    },
+    {
+      "message": "summarize our conversation",
+      "milliseconds": 131.01519999999982
+    },
+    {
+      "message": "banana",
+      "milliseconds": 82.46060000000034
+    },
+    {
+      "message": "I cannot breathe",
+      "milliseconds": 75.98090000000047
+    }
+  ],
+  "exceptions": [],
+  "failure": null,
+  "successful": true
+}
